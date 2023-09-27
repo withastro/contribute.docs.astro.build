@@ -47,3 +47,10 @@ English `README.md` files for all official Astro integrations to create the inte
 A full list of all the English error messages is found here: https://github.com/withastro/astro/blob/main/packages/astro/src/core/errors/errors-data.ts
 
 All other content, including all non-English lanaguage content, is found within the Astro docs repo itself: https://github.com/withastro/docs 
+
+Make a pull request to the appropriate file:
+
+- as part of your feature PR, if the source file is in the main Astro core repo
+- as a separate PR to the docs repo, if the source file is in the docs repo
+
+Be sure to fill out the PR template for each repo, which will allow you to link an implementation PR to a corresponding docs PR.
