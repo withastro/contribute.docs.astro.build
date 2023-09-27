@@ -1,4 +1,177 @@
 ---
-title: Guide to writing code samples
+title: Writing code samples
 description: How to write and annotate code samples for Astro documentation.
 ---
+Code samples are key to any software documentation site!
+
+Astro docs takes great care not only in the visual representation of our code samples, but also in thoughtfully crafting the text around them.
+
+Don't worry! We'll help you out in a PR if your code authoring needs some adjustment before merging. But, you can make use of all our features below and preview them locally to make sure your code looks the way you want.
+
+If you are **editing existing code samples**, then please make sure to preview your updated code sample! Update any necessary syntax such as line highlighting or title (file name).
+
+If you are **adding new code samples**, you have the option of adding a file name (usually recommended!) to be displayed as a title. You can also highlight individual words, phrases, or entire lines in regular or "diff" (red/green) style.
+
+**All extra code styling is written on the opening line of the code block, immediately after the language.**
+
+Here are two examples of what our code snippets look like written in Markdown, just so you can see what it looks like in action. Syntax explanations follow.
+
+#### Example 1
+
+- Use the file name as a title
+- highlight rows 9 and 10
+
+``````markdown
+```astro title="src/pages/nested-components.astro" {9-10}
+``````
+
+#### Example 2
+
+- use the file name as a title (alt method)
+- apply "+ diff" styling (green backround) to any occurrence of `<Button />`
+- highlight any occurrence of `{props.title}` and `{props.social}`
+
+``````markdown
+```jsx /{props.(title|socialLinks)}/ ins="<Button />"
+// src/components/MySidebar.jsx
+``````
+
+## Syntax
+
+The code snippets in Astro docs are powered by [`astro-expressive-code`](https://github.com/expressive-code/). Documentation whose source is written directly in the Astro docs repository can make full use of [Expressive Code's syntax highlighting and text marking features](https://github.com/expressive-code/expressive-code/blob/main/packages/astro-expressive-code/README.md#usage-in-markdown--mdx-documents).
+
+
+However, code examples written in the `withastro/astro/` core repo should use [these specific Expressive Code annotations](https://github.com/expressive-code/expressive-code/blob/main/packages/@expressive-code/plugin-text-markers/README.md) to ensure compatibility in plain Markdown format. These code blocks must also be legible in less "expressive" environments such as directly on GitHub repositories as READMEs.
+
+### Example - docs repo
+
+The following code block will be highlighted as JavaScript,
+wrapped in a code editor frame with the file name "example.js",
+and lines 2 and 3 will be marked as "diff" lines:
+
+``````
+```js title="example.js" ins={3} del={2}
+  function thisIsJavaScript() {
+-   console.log('Old code to be removed')
++   console.log('New and shiny code!')
+  }
+```
+``````
+
+### Example - Astro core repo
+
+The following code block will be highlighted as JavaScript,
+wrapped in a code editor frame with the file name "example.js",
+and the line range 2-4 will be marked:
+
+``````
+```diff lang="js"
+// example.js
+  function thisIsJavaScript() {
+    // This entire block gets highlighted as JavaScript,
+    // and we can still add diff markers to it!
+-   console.log('Old code to be removed')
++   console.log('New and shiny code!')
+  }
+```
+``````
+
+These are the annotations you'll use most frequently in Astro docs.
+
+### File Name as Title
+
+Most code should include a sample file name so that we give the reader not only copy-pastable code, but also provide the file into which that code should be pasted.
+
+`title="src/pages/index.astro"`
+
+Alternatively, write the file name as a code comment in a separate line. Write the file name of `.astro` files immediately after the opening `---`
+
+``````markdown
+ ```astro
+ ---
+ // src/pages/index.astro
+ ---
+```
+``````
+
+``````markdown
+ ```jsx
+ // src/components/MyReactComponent.jsx
+``````
+
+### Line Highlighting
+
+Use Curly braces to highlight (default), or show "diff" style (+/-) "inserted" or "deleted" lines.
+
+- {4-7,10} - Highlights lines 4, 5, 6, 7 and 10
+- del={2} - Shows "diff" style (-) at line 2
+- ins={7-9} - Shows "diff" style (+) lines 7-9
+
+### Text Highlighting
+
+Use quotation marks to highlight (default), or assign red/green "diff" style background colors for individual words and phrases.
+
+Regular expressions are supported within slashes `/ /`. See a handy [tool for converting between natural English and Regex](https://www.autoregex.xyz/)!
+
+- "{item}" - All instances of `{item}` are highlighted
+
+- del="My blog title" - All instances of "My blog title" have a red background color
+
+- ins="Astro.props" - All instances of "Astro.props" have a green background color
+
+- /{frontmatter.(title|description)}/ - Highlight all instances of `{frontmatter.title}` and `{frontmatter.description}`
+
+> ***Note***
+>
+> - del="<p class=\"hi\">" - Use `\` to escape quotation marks and other special characters in the search string
+>
+>- del='\<p class="hi">' - Use single quotes to make it easier to match double quotes
+
+## Explaining code samples
+
+Every code sample is a special snowflake, but we always strive to
+
+- Include a sample file name, so that it's obvious to the reader where they will add this code. Readers may be scanning for code snippets only, and your helpful explanation of what this code is for and where it should be used is may go unnoticed.
+
+
+- Demonstrate a real, actual use case. no `foo`/ `bar`.
+
+
+- Introduce code samples with a full, standalone sentence on a new line starting with "The following example shows..." (Docs does not use the phrase "like so" at the end of a sentence.)
+
+    The following examples show introducing a code sample with a sentence that starts with the phrase, "The following example..."
+    
+    - "The following example shows configuring your base to always use a trailing slash."
+    - "The following example shows importing and using a Card component with an author's name passed as props." 
+    
+This helps us
+    
+- ensure that the code samples in fact illustrate something someone might actually do.
+- reduce the chances that you are relying on the reader to interpret what you mean by "do it like this."
+- make sure the description of a code snippet always **precedes** the sample, and that it is clear which snippet it's describing in the event that there are several code snippets in a row.
+
+### Multiple code samples
+
+**Telling a story with multiple files can be tricky.** If you just plop 3 code samples together in a "Say you have these files..." and THEN you write something that kind of explains a way in which they work together, people have to SCROLL BACK UP past the code samples they probably skipped the first time in order to see what you mean. It's very un-flowy!
+
+The "The following code sample shows..." pattern (of course doesn't always have to be exactly those words! just the idea that you're telling the reader what to look for before you show them code) helps in this situation, because **it forces you to call out what's important in each snippet**, as you go. THEN, when the reader has had some very specific things all pointed out to them, you can connect some dots and ascribe meaning.
+
+The following example shows how to clearly annotate a more complex situation involving multiple code snippets by keeping each code block's own description separate, as an introductory line:
+
+**Less helpful structure :**
+- "Pretend you had the following three files:"
+- *3 code samples in a row*
+- all the text explaining what's happening.
+
+**More helpful structure:**
+- "The following example shows `draft:true` configured in `astro.mjs`, which will prevent blog posts with the draft property from being built."
+- *Code sample of the config*
+- "The following `.md` page includes the `draft` property in the YAML frontmatter...
+- *Code sample of the Markdown file*
+- The following example below shows a function to query and return data from all your blog posts that will produce an array of objects you can filter based on the `draft` property before rendering the list of posts on your Blog Index page.
+
+
+## Tips
+
+- look at other similar entries on the page for an idea of structure, style etc. If they are wrong, then *we* are wrong, and we'll fix it all!
+- 
