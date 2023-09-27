@@ -138,7 +138,7 @@ We always strive to:
 - Include a sample file name, so that it's obvious to the reader where they will add this code. Readers may be scanning for code snippets only, and your helpful explanation of what this code is for and where it should be used is may go unnoticed.
 
 
-- Demonstrate a real, actual use case. no `foo`/ `bar`.
+- Demonstrate a real, actual use case with correct, working code. No `foo`/ `bar`. No showing all possible values for a config setting. (Your reader will always only have one option configured!) Pick a real, working code example that matches something they might have in their own project.
 
 
 - Introduce code samples with a full, standalone sentence on a new line starting with "The following example shows..." (Docs does not use the phrase "like so" at the end of a sentence.)

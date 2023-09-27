@@ -27,6 +27,12 @@ It's perhaps too early if you can't envision a user path or aren't ultimately cl
 
 If you are adding a new feature to Astro, you must document any new **option**, **configuration**, or **method** that someone building a project with Astro might use.
 
+It is important to clearly **define your new features** in a way that a reader does not have to dig into paragraphs of text to understand them. It is fine to state what something is before you have explained the context in which it is used! 
+
+Start by imagining a reader scanning the page who only wants, or only needs, to understand **what** something is. (They understand the context, and perhaps just need to know which options they can configure.) Even the reader who doesn't know when or why they will use a feature will benefit from a clear explanation of **what** something is first. That reader will then be in a great position to ask, "Oh, and when would I use this?" or "Why would I configure this?" and read further.
+
+Include a basic usage example, following our [guide to including code samples](/guides/code-samples/).
+
 ## What should NOT be documented
 
 Generally, you do not need to document implementation details. You may choose to additionally include details that will help people **make decisions as they build their own projects**: choosing when to set a value other than a default, understanding the pros and cons or caveats of certain design decisions, etc. But, implementation details should never be provided **instead** of usage details and real-world examples.
@@ -35,6 +41,9 @@ For example, if a reader must choose between setting a value to `include` or `ex
 
 Ultimately, our goal is to document **how to build with Astro** and not **how Astro is built**.
 
+Additionally, you do not need to document all possible usages of your feature. You may include a common advanced case, but you should not document usage that is unsupported or "off the happy path." You are not required to demonstrate all things possible, and in fact too many options can overwhelm someone trying to learn how to use your feature. 
+
+"You can do this, but I wouldn't recommend it..." is **not** something for docs! Don't lead your reader down a dangerous path. They are free to explore themselves, and seek support for advanced or atypical use cases.
 
 ## Where do we document X?
 
