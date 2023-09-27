@@ -4,7 +4,7 @@ description: How to write and annotate code samples for Astro documentation.
 ---
 Code samples are key to any software documentation site!
 
-Astro docs takes great care not only in the visual representation of our code samples, but also in thoughtfully crafting the text around them.
+Astro docs takes great care not only in the visual representation of our code samples, but also in [thoughtfully crafting the text around them](#explaining-code-samples).
 
 Don't worry! We'll help you out in a PR if your code authoring needs some adjustment before merging. But, you can make use of all our features below and preview them locally to make sure your code looks the way you want.
 
@@ -14,7 +14,7 @@ If you are **adding new code samples**, you have the option of adding a file nam
 
 **All extra code styling is written on the opening line of the code block, immediately after the language.**
 
-Here are two examples of what our code snippets look like written in Markdown, just so you can see what it looks like in action. Syntax explanations follow.
+Here are two examples of what our code snippets look like written in Markdown/MDX, just so you can see what it looks like in action. Syntax explanations follow.
 
 #### Example 1
 
@@ -76,15 +76,17 @@ and the line range 2-4 will be marked:
 ```
 ``````
 
-These are the annotations you'll use most frequently in Astro docs.
+These are the annotations you'll use most frequently in Astro docs:
 
 ### File Name as Title
 
 Most code should include a sample file name so that we give the reader not only copy-pastable code, but also provide the file into which that code should be pasted.
 
+For code in the Astro docs repo, include a title attribute with quotation marks around the filename:
+
 `title="src/pages/index.astro"`
 
-Alternatively, write the file name as a code comment in a separate line. Write the file name of `.astro` files immediately after the opening `---`
+Alternatively, (required for code in the Astro core repo) write the file name as a code comment in a separate line. Write the file name of `.astro` files immediately after the opening `---`
 
 ``````markdown
  ```astro
@@ -121,15 +123,17 @@ Regular expressions are supported within slashes `/ /`. See a handy [tool for co
 
 - /{frontmatter.(title|description)}/ - Highlight all instances of `{frontmatter.title}` and `{frontmatter.description}`
 
-> ***Note***
->
-> - del="<p class=\"hi\">" - Use `\` to escape quotation marks and other special characters in the search string
->
->- del='\<p class="hi">' - Use single quotes to make it easier to match double quotes
+:::note
+- `del="<p class=\"hi\">"` - Use `\` to escape quotation marks and other special characters in the search string
+
+- `del='\<p class="hi">'` - Use single quotes to make it easier to match double quotes
+:::
 
 ## Explaining code samples
 
-Every code sample is a special snowflake, but we always strive to
+The text explaining your code sample is just as important as the code itself! By following some basic guidelines, you can help your reader understand what your code samples are supposed to illustrate.
+
+We always strive to:
 
 - Include a sample file name, so that it's obvious to the reader where they will add this code. Readers may be scanning for code snippets only, and your helpful explanation of what this code is for and where it should be used is may go unnoticed.
 
@@ -144,19 +148,20 @@ Every code sample is a special snowflake, but we always strive to
     - "The following example shows configuring your base to always use a trailing slash."
     - "The following example shows importing and using a Card component with an author's name passed as props." 
     
+
 This helps us
     
 - ensure that the code samples in fact illustrate something someone might actually do.
 - reduce the chances that you are relying on the reader to interpret what you mean by "do it like this."
-- make sure the description of a code snippet always **precedes** the sample, and that it is clear which snippet it's describing in the event that there are several code snippets in a row.
+- prep the reader so that they already know what the code *does* and only need to figure out *how* that result is achieved.
 
 ### Multiple code samples
 
 **Telling a story with multiple files can be tricky.** If you just plop 3 code samples together in a "Say you have these files..." and THEN you write something that kind of explains a way in which they work together, people have to SCROLL BACK UP past the code samples they probably skipped the first time in order to see what you mean. It's very un-flowy!
 
-The "The following code sample shows..." pattern (of course doesn't always have to be exactly those words! just the idea that you're telling the reader what to look for before you show them code) helps in this situation, because **it forces you to call out what's important in each snippet**, as you go. THEN, when the reader has had some very specific things all pointed out to them, you can connect some dots and ascribe meaning.
+Our "The following code sample shows..." pattern before each individual code block helps you write clearly in this. **It forces you to call out what's important in each snippet**, as you go. Then, when the reader has had these specific things pointed out to them, you can connect some dots and create meaning for the reader.
 
-The following example shows how to clearly annotate a more complex situation involving multiple code snippets by keeping each code block's own description separate, as an introductory line:
+The following example shows how to clearly annotate a more complex situation involving multiple code snippets by introducing each code sample individually:
 
 **Less helpful structure :**
 - "Pretend you had the following three files:"
@@ -165,13 +170,14 @@ The following example shows how to clearly annotate a more complex situation inv
 
 **More helpful structure:**
 - "The following example shows `draft:true` configured in `astro.mjs`, which will prevent blog posts with the draft property from being built."
-- *Code sample of the config*
-- "The following `.md` page includes the `draft` property in the YAML frontmatter...
-- *Code sample of the Markdown file*
+- ` // Code sample of the config`
+- "The following `.md` page includes the `draft` property in the YAML frontmatter to indicate that this page is not ready to be published.
+- ` // Code sample of the Markdown file`
 - The following example below shows a function to query and return data from all your blog posts that will produce an array of objects you can filter based on the `draft` property before rendering the list of posts on your Blog Index page.
+- ` // Code sample of the function`
 
 
 ## Tips
 
-- look at other similar entries on the page for an idea of structure, style etc. If they are wrong, then *we* are wrong, and we'll fix it all!
+- Look at other similar entries on the page for an idea of structure, style etc. If they are wrong, then *we* are wrong, and we'll fix it all!
 - 
