@@ -57,9 +57,26 @@ A full list of all the English error messages is found here: https://github.com/
 
 All other content, including all non-English lanaguage content, is found within the Astro docs repo itself: https://github.com/withastro/docs 
 
+## How pull requests work
+
 Make a pull request to the appropriate file:
 
 - as part of your feature PR, if the source file is in the main Astro core repo
 - as a separate PR to the docs repo, if the source file is in the docs repo
 
 Be sure to fill out the PR template for each repo, which will allow you to link an implementation PR to a corresponding docs PR.
+
+Use the `#docs-ptal` channel in Discord when you have a PR ready for review (from either repository). Please indicate how "urgently" a review is required, and do not be afraid to send multiple messages about the same PR when necessary!
+
+If you are an Astro Maintainer with GitHub permissions, you will be responsible for merging **your own implementation PR** only after Docs has approved any documentation, **including the changeset** of that PR. Otherwise, a maintainer will merge your PR at the appropriate time.
+
+Unlike PRs to the astro repo, PRs to the docs repo are published live immediately upon merging. Therefore, **only Team DX merges PRs marked as `merge on release`** that are waiting for a feature to be released before updating the live docs site. Maintainers are welcome to merge their own docs after approval by Team DX for small updates and fixes that do not document an unreleased feature.
+
+:::note[PR APPROVALS]
+It is very common for several people to review docs PRs, and not all approvals mean that your PR can be merged! Team Docs encourages our community members to review PRs to catch small problems *before* Team DX edits larger contributions, or even to practice reviewing! 
+
+If your PR is a very small typo fix or correction, then any community member can be your "proofreader" so you can merge your own PR 
+
+Any more substantial writing must be approved by a Team DX member, and all new feature documentation must be approved by the Docs Lead personally before the PR is considered ready to merge.
+:::
+
