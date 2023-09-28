@@ -1,5 +1,5 @@
 ---
-title: Code samples
+title: How to include code samples
 description: How to write and annotate code samples for Astro documentation.
 ---
 Code samples are key to any software documentation site!

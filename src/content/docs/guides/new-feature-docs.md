@@ -1,5 +1,5 @@
 ---
-title: New feature docs
+title: Adding docs for new features
 description: A guide to writing docs for your new Astro feature.
 ---
 
