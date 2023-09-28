@@ -64,7 +64,7 @@ Make a pull request to the appropriate file:
 - as part of your feature PR, if the source file is in the main Astro core repo
 - as a separate PR to the docs repo, if the source file is in the docs repo
 
-Be sure to fill out the PR template for each repo, which will allow you to link an implementation PR to a corresponding docs PR.
+Be sure to fill out the PR template for each repo, which will allow you to link an implementation PR to a corresponding docs PR. 
 
 Use the `#docs-ptal` channel in Discord when you have a PR ready for review (from either repository). Please indicate how "urgently" a review is required, and do not be afraid to send multiple messages about the same PR when necessary!
 
@@ -82,3 +82,16 @@ If your PR is a smaller fix or correction, then any community member can be your
 Any more substantial writing, including "rewriting to make it sound better", must be approved by a Team DX member, and all new feature documentation must be approved by the Docs Lead personally before the PR is considered ready to merge.
 :::
 
+## Changesets
+
+You will also be responsible for writing a changeset for your feature. The changeset should focus on **what has changed**, and **must include any breaking changes**, including changes to default behavior. Most users will have several default settings configured (often by not setting any value themselves), so changes to defaults can have a significant impact on someone's project!
+
+For new features, describe what people are now able to do that they could not before. The changeset is an opportunity to call people's attention to new things they might wish to try in their Astro project.
+
+Astro releases a blog post for every minor release, the contents of which are auto-generated from changesets to provide a "first draft" that is then manually edited. The first line of your changeset will generate an `<h2>` for the blog post, so choose something that is descriptive and to the point (e.g. Adds a new `flamethrow` view transitions animation). Then, leave a blank line before describing the feature.
+
+:::tip[Don't hide the good stuff in the changeset!]
+Changesets are typically read once, when someone is upgrading to the latest version of a package. Documentation is a constant reference that will be revisited and consulted frequently.
+
+Make sure that the helpful explanations and examples in both your changeset and your PR description are captured in the actual feature documentation, too!
+:::
