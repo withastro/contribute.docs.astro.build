@@ -3,7 +3,7 @@ title: Custom components
 description: A guide to using the custom components available in Astro Docs.
 ---
 
-Astro Docs uses several custom components. Be sure to always check a preview of your components in the browser to ensure they are rendering properly.
+Astro Docs uses several custom components that are available for use in any `.mdx` files. Note that these components cannot be used for docs that live in the astro core repo. Be sure to always check a preview of your components in the browser to ensure they are rendering properly.
 
 ### Aside Component
 
