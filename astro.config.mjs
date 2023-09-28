@@ -19,6 +19,10 @@ export default defineConfig({
 					autogenerate: { directory: 'roles' },
 				},
 				{
+					label: 'Reviewers',
+					autogenerate: { directory: 'reviewers' },
+				},
+				{
 					label: 'Reference',
 					autogenerate: { directory: 'reference' },
 				},
