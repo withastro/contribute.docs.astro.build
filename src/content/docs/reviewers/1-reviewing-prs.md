@@ -2,6 +2,9 @@
 title: Intro to reviewing PRs
 description: How to review PRs for Astro documentation.
 ---
+
+-- DRAFT --
+
 When we review a PR, we are communicating:
 - to the person who made the PR
 - to (other) maintainers who are relying on our assessments
