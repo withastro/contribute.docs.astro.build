@@ -68,7 +68,7 @@ Be sure to fill out the PR template for each repo, which will allow you to link 
 
 Use the `#docs-ptal` channel in Discord when you have a PR ready for review (from either repository). Please indicate how "urgently" a review is required, and do not be afraid to send multiple messages about the same PR when necessary!
 
-If you are an Astro Maintainer with GitHub permissions, you will be responsible for merging **your own implementation PR** only after Docs has approved any documentation, **including the changeset** of that PR. Otherwise, a maintainer will merge your PR at the appropriate time.
+If you are an Astro Maintainer with GitHub permissions, you will be responsible for merging **your own implementation PR** only after Docs has approved any documentation, **including the changeset** of that PR. Otherwise, a maintainer will merge your PR at the appropriate time. There is a nightly GitHub action that runs to create a PR to the docs repo with any documentation changes from the astro core repo. Normal docs changes will therefore be live on the docs site the next day after merging. This action can also be run manually to expedite the process, and is regularly done so for major and minor releases.
 
 Unlike PRs to the astro repo, PRs to the docs repo are published live immediately upon merging. Therefore, **only Team DX merges PRs marked as `merge on release`** that are waiting for a feature to be released before updating the live docs site. Minor releases happen every other Tuesdays for the astro core package itself and the Docs Lead is aware of this regular schedule. Other packages, such as integrations, only release when necessary and you should also verify that any `merge on release` docs are released alongside the package as appropriate.
 
