@@ -70,13 +70,15 @@ Use the `#docs-ptal` channel in Discord when you have a PR ready for review (fro
 
 If you are an Astro Maintainer with GitHub permissions, you will be responsible for merging **your own implementation PR** only after Docs has approved any documentation, **including the changeset** of that PR. Otherwise, a maintainer will merge your PR at the appropriate time.
 
-Unlike PRs to the astro repo, PRs to the docs repo are published live immediately upon merging. Therefore, **only Team DX merges PRs marked as `merge on release`** that are waiting for a feature to be released before updating the live docs site. Maintainers are welcome to merge their own docs after approval by Team DX for small updates and fixes that do not document an unreleased feature.
+Unlike PRs to the astro repo, PRs to the docs repo are published live immediately upon merging. Therefore, **only Team DX merges PRs marked as `merge on release`** that are waiting for a feature to be released before updating the live docs site. Minor releases happen every other Tuesdays for the astro core package itself and the Docs Lead is aware of this regular schedule. Other packages, such as integrations, only release when necessary and you should also verify that any `merge on release` docs are released alongside the package as appropriate.
+
+Maintainers are welcome to merge their own docs after appropriate approval for small updates and fixes that do not document an unreleased feature.
 
 :::note[PR APPROVALS]
 It is very common for several people to review docs PRs, and not all approvals mean that your PR can be merged! Team Docs encourages our community members to review PRs to catch small problems *before* Team DX edits larger contributions, or even to practice reviewing! 
 
-If your PR is a very small typo fix or correction, then any community member can be your "proofreader" so you can merge your own PR 
+If your PR is a smaller fix or correction, then any community member can be your "proofreader" so you can merge your own PR.
 
-Any more substantial writing must be approved by a Team DX member, and all new feature documentation must be approved by the Docs Lead personally before the PR is considered ready to merge.
+Any more substantial writing, including "rewriting to make it sound better", must be approved by a Team DX member, and all new feature documentation must be approved by the Docs Lead personally before the PR is considered ready to merge.
 :::
 
