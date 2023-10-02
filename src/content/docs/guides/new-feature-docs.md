@@ -98,3 +98,10 @@ Changesets are typically read once, when someone is upgrading to the latest vers
 
 Make sure that the helpful explanations and examples in both your changeset and your PR description are captured in the actual feature documentation, too!
 :::
+
+
+## When to use `#docs-ptal` and/or involve a Docs Maintainer
+
+Team Docs is a "code owner" on the files mentioned above and in *most* cases, should be pinged for approval on any text changes. Some obvious exceptions include typos and link fixes. However, even a tiny change in wording of our documentation is reason to use `#docs-ptal` and/or wait for an approval from one of our Docs Maintainers.
+
+Even a minor change in phrasing can change the nuance of a sentence. Docs would typically prefer to see these changes before merging, however small, unless they are truly fixes/corrections. Additionally, the word or phrase you are changing may be used in other parts of the documentation as "standard wording" and a change here might mean updating other parts of the page or site. For example, you may be updating the way you describe the usage of one integration or adapter, but we might have a corresponding section or example for each one that should therefore also change. Sometimes only the docs maintainers have a larger "big picture" awareness of the larger effects a smaller change may have throughout the rest of the documentation.
