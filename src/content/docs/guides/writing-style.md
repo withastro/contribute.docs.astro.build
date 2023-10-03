@@ -9,10 +9,11 @@ Please use the following as a general guideline, and thank you in advance for un
 
 All readers can benefit from clear, straightforward writing, but this can be particularly important for people who:
 
-- are reading documentation in a non-native language.
-- are frustrated, tired, or in a hurry.
-- have cognitive, learning or attention difficulties.
-- come from a non-traditional development background.
+- are reading documentation in a non-native language
+- are frustrated, tired, or in a hurry
+- have cognitive, learning, or attention difficulties
+- come from a non-traditional development background
+- are translating our documentation into other languages
 
 We aim for **clear** and **helpful** documentation that serves the reader above all else!
 
@@ -25,7 +26,7 @@ Usually this means choosing:
 - writing out abbreviations and acronyms in full
 - bullet points and section headings to break up chunks of text
 
-You can check your writing by pasting it into [Hemingway App](https://hemingwayapp.com/). It will show you if a sentence is too long and will encourage you to use active voice, which is generally shorter and easier to read.
+You can check your writing by pasting it into [Hemingway App](https://hemingwayapp.com/). It will show you if (it thinks) a sentence is too long and will encourage you to use active voice, which is generally shorter and easier to read.
 
 ### Voice
 

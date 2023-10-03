@@ -15,6 +15,7 @@ export default defineConfig({
 				{
 					label: 'Guides',
 					items: [
+						{ label: 'Why we write docs', link: '/guides/why-we-doc/' },
 						{ label: 'Writing and Style Guide', link: '/guides/writing-style/' },
 						{ label: 'Adding docs for a new feature', link: '/guides/new-feature-docs/' },
 						{ label: 'How to write code samples', link: '/guides/code-samples/' },
