@@ -5,6 +5,12 @@ description: The general writing and style guide for Astro docs.
 
 Please use the following as a general guideline, and thank you in advance for understanding that contributions may be edited to match existing style, tone, conventions and structure.
 
+We have intentionally kept this page more about our conventions (e.g. the heading levels we use) than detailled writing advice beyond a few bullet points with general helpful tips for readability. Many of our community contributors in open-source are not writers, and are not interested in detailed grammar lessons. That's what we have PR reviewers and editors for! 
+
+:::tip
+If you'd like to see in more detail [how your submission will be reviewed](/reviewers/1-reviewing-prs/), or you're interested in contributing by reviewing existing PRs, you can find more information in our Reviewers section of this site. Here you'll find where the magic really happens at Astro Docs, including the common grammar, formatting and sentence structures we are on the lookout to improve to give our readers the best experience we can.
+:::
+
 ## Readability
 
 All readers can benefit from clear, straightforward writing, but this can be particularly important for people who:
