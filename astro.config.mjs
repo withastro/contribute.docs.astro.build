@@ -9,6 +9,15 @@ export default defineConfig({
 			social: {
 				github: 'https://github.com/withastro/starlight',
 			},
+			  head: [
+			    {
+			      tag: 'meta',
+			      attrs: {
+			        name: 'robots',
+			        content: 'noindex'
+			      },
+			    },
+			  ],
 			sidebar: [
 				{ label: 'Welcome', link: '/guides/welcome/' },
 
