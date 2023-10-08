@@ -52,6 +52,14 @@ Related to the first point, will they see your edits as nitpicking (beyond obvio
 
 These are just some externalities that we have to face when editing that mean that while we WANT the tightest, cleanest version in docs, it's OK for several reasons if we don't get there right away.
 
+Remember authors may be anxious because:
+
+- uncomfortable about the quality of their writing
+- might not be native English speakers
+- despite all the guidance might still be confused or overwhelmed or just very worried about getting something wrong.
+
+Since quality is *not* our only goal, we also have to balance the secondary goal of community-building. Happy, confident contributors are users of, and ambassadors for Astro.
+
 ------
 
 ## General format
