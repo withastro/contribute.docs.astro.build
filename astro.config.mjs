@@ -19,7 +19,7 @@ export default defineConfig({
 			    },
 			  ],
 			sidebar: [
-				{ label: 'Welcome', link: '/guides/welcome/' },
+				{ label: 'Welcome', link: '/welcome/' },
 				{
 					label: 'First-time Contributors',
 					autogenerate: { directory: 'first-time' },
@@ -29,9 +29,9 @@ export default defineConfig({
 					label: 'Guides',
 					items: [
 						{ label: 'Why we write docs', link: '/guides/why-we-doc/' },
+						{ label: 'How we write docs', link: '/guides/how-we-doc/' },
 						{ label: 'Writing and Style Guide', link: '/guides/writing-style/' },
 						{ label: 'Adding docs for a new feature', link: '/guides/new-feature-docs/' },
-						{ label: 'How to write code samples', link: '/guides/code-samples/' },
 						{ label: 'Translating Astro docs', link: '/guides/i18n/' },
 						{ label: 'Contributing a Recipe', link: '/guides/recipe-writing/' },
 					],

@@ -63,6 +63,8 @@ All other content, including all non-English lanaguage content, is found within 
 
 ## How pull requests work
 
+If you have never made a pull request (PR) to Astro docs, you can learn more about [making a larger contribution](/first-time/5-larger-contributions/) and our [PR review and merging process](first-time/6-pr-review-process/) in our First-Time contributors section.
+
 Make a pull request to the appropriate file:
 
 - as part of your feature PR, if the source file is in the main Astro core repo
