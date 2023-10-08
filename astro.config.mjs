@@ -20,6 +20,10 @@ export default defineConfig({
 			  ],
 			sidebar: [
 				{ label: 'Welcome', link: '/guides/welcome/' },
+				{
+					label: 'First-time Contributors',
+					autogenerate: { directory: 'first-time' },
+				},
 
 				{
 					label: 'Guides',
