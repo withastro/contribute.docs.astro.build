@@ -76,6 +76,33 @@ Headings should not end in punctuation (e.g. ":") but should format `<code>` whe
 
 Do use headings to break up text into organized sections! Many readers prefer to skim, and your headings will show up in the sidebar / table of contents menu to help your readers navigate, and let them know they are on the correct page.
 
+Don't write headings as questions (from [BC style guide](https://digital.gov.bc.ca/about/style-guide/)):
+
+<blockquote>
+
+[...] The structure often doesn’t allow us to front-load the heading [...] a question can introduce doubt to the reader and skew search engine optimization (SEO) results.  
+
+We know that many people use search engines like Google by typing a question in the search bar. Google rewards web pages that answer these questions. As a government body, we want to have clear and authoritative answers and content.
+
+Examples
+
+**Original:** Is there evidence that the sky is blue? 
+
+We know that the sky is blue. Let’s just say it 
+
+**Updated:** The sky is blue 
+
+**Original:** Should I be worried about data privacy and security? 
+
+If a reader of your content wasn’t worried about data privacy and security before visiting your website, they may be now
+We’ve introduced doubt and highlighted that other people are asking this question 
+
+**Updated:** Data privacy and security 
+
+This statement of fact is clear, concise and delivered with an authoritative voice 
+People who asked the original question get an answer 
+</blockquote>
+
 ## Examples (e.g. examples)
 
 Current practice is to use the words "for example" in full within the text of a sentence, but (e.g. Netlify, Vercel) inside a parenthetical so as to not take the reader out of the flow the sentence.
