@@ -6,9 +6,26 @@ Every page on [docs.astro.build](https://docs.astro.build/) has an **Edit this p
 
 If you have never made a pull request (PR) before, this is a great way to make a small change to Astro docs! 
 
-:::note
-Please only add new text content to the docs **in English**, by modifying only **`.mdx` files located within `src/content/docs/en/`**.
+## Page content source location
+
+The English content of our website is written in **`.mdx` files located within `src/content/docs/en/`**. Clicking "Edit this page" will take you directly to the file you need, but you can also navigate to any page file from the [Astro docs repo](https://github.com/withastro/docs) and clik the pencil icon to edit the file.
+
+Please check the very top of the file as there may be additional instructions specific to that page! For example, the source content for that page may be [generated in a different file](#pages-generated-from-outside-sources) and you should not make a change directly to this file.
+
+:::note[CHANGING EXISTING DOCUMENTATION]
+All **changes to the documentation** (rewording existing documentation, adding new sections etc.) occur **in English** only, by modifying only **`.mdx` files located within `src/content/docs/en/`**. All new or changed content is approved in English first, and then is translated separately.
 :::
+
+By default, when you edit an English page, our Translation Tracker updates every other language with a "needs updating" status. Normally, this is what we want! If an explanation has changed, or a code sample has been updated, then the other languages should make the appropriate change, too.
+
+However, if your change is an **English-only correction** (e.g. a typo fix to an English word) that does not otherwise alter the documentation, then please be sure to title your pull request appropriately when you [create a pull request](#creating-a-pull-request).
+
+Documentation for every other language is located in a separate folder within `src/content/docs/`. The page content of these documents is never generated from outside sources, and is always changed in these files. To fix a small error in these pages, use the same procedure as editing an English page. However, always keep the content an exact representation of the English docs. Do not revise wording or sections here, and only match the English content.
+
+If editing a translated page makes you notice a problem with the current English documentation, or you would like to suggest an improvement, please [file an issue](/first-time/3-file-an-issue/) and let us know! Our translators often spot things that could be better in our docs, and we appreciate the help!
+
+See our [i18n guide for translators](/guides/i18n/) for more information about translating the docs!
+
 
 ## Pages generated from outside sources
 
@@ -34,6 +51,8 @@ Translated pages are always edited directly in the docs repo.
 
 5. Once you have committed your edits to your fork, follow the prompts to **create a pull request**.
 
+You can also read an annotated blog post with screenshots [demonstrating the process of editing the docs this way](https://www.rainsberger.ca/posts/contribute-open-source-docs-edit-page-on-github/).
+
 ## Creating a pull request
 
 1. Choose a title that is short, but descriptive of your change. If your change does **not** require translating or a similar update to the other language pages (e.g. fixing an English typo), please include `[i18nIgnore]` in your subject. If you are translating a non-English page, please indicate the language in the subject. For example, to propose an edit to a French page, include `i18n(fr)` in the PR title.
@@ -45,6 +64,4 @@ Translated pages are always edited directly in the docs repo.
 Every pull request needs to be [reviewed by our contributors and approved by a maintainer](/first-time/6-pr-review-process/).
 
 The docs site will be automatically updated whenever pull requests are merged.
-
-You can also read an annotated blog post with screenshots [demonstrating the process of editing the docs this way](https://www.rainsberger.ca/posts/contribute-open-source-docs-edit-page-on-github/).
 
