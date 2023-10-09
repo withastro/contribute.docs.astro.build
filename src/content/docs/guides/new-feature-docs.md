@@ -88,16 +88,16 @@ Make sure that the helpful explanations and examples in both your changeset and 
 
 ### Requesting a review from Docs
 
-Team Docs is a "code owner" on the files mentioned above and in *most* cases, should be pinged for approval on any text changes. Some obvious exceptions include typos and link fixes. However, even a tiny change in wording of our documentation is reason to use `#docs-ptal` and/or wait for an approval from one of our Docs Maintainers.
+Team Docs is a "code owner" on the files mentioned above in the astro repo and in *most* cases, is required to approve any text changes. Some exceptions include obvious typos and link fixes where you are confident that no actual content changed. However, even a tiny change in wording of our documentation is reason to use `#docs-ptal` and/or wait for an approval from one of our Docs Maintainers.
 
-Use the `#docs-ptal` channel in Discord when you have a PR ready for review (from either repository). Please indicate how "urgently" a review is required, and do not be afraid to send multiple messages about the same PR when necessary!
+Astro Maintainers can use the `#docs-ptal` channel in Discord when you have a PR ready for review (from either repository). Please indicate how "urgently" a review is required, and do not be afraid to send multiple messages about the same PR when necessary! If you do not have access to post in this channel, then you can post a similar message in `#docs` instead. Take a look at the messages posted in the PTAL channel for a model of how to post your request for a review.
 
 Even a minor change in phrasing can change the nuance of a sentence. Docs would typically prefer to see these changes before merging, however small, unless they are truly fixes/corrections. Additionally, the word or phrase you are changing may be used in other parts of the documentation as "standard wording" and a change here might mean updating other parts of the page or site. For example, you may be updating the way you describe the usage of one integration or adapter, but we might have a corresponding section or example for each one that should therefore also change. Sometimes only the docs maintainers have a larger "big picture" awareness of the larger effects a smaller change may have throughout the rest of the documentation.
 
 :::note[PR APPROVALS]
 It is very common for several people to review docs PRs, and not all approvals mean that your PR can be merged! Team Docs encourages our community members to review PRs to catch small problems *before* Team DX edits larger contributions, or even to practice reviewing! 
 
-If your PR is a smaller fix or correction, then any community member can be your "proofreader" so you can merge your own PR.
+If your PR is a smaller fix or correction, then any community member can be a Maintainer's "proofreader" so that they can merge their own PR.
 
 Any more substantial writing, including "rewriting to make it sound better", must be approved by a Team DX member, and all new feature documentation must be approved by the Docs Lead personally before the PR is considered ready to merge.
 :::
