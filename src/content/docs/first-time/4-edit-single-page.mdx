@@ -2,8 +2,47 @@
 title: Edit a single page
 description: How to edit a single page on GitHub.com.
 ---
-On every page in docs, you can find an "edit this page" link in the right sidebar on desktop mode. This is the way to make a contribution that updates a small section of one single page, such as a typo fix, right in your browser.
+Every page on [docs.astro.build](https://docs.astro.build/) has an **Edit this page** link in the sidebar on desktop mode. Click that link to edit the source code for that page in GitHub. This is the way to make a contribution that updates a small section of one single page, such as a typo fix, right in your browser.
 
-If you have never made a pull request (PR) before, or you do not know whether you will make more, or [larger contributions](/first-time/5-larger-contributions/) to docs in the future, this is a great way to make a small change to Astro docs! 
+If you have never made a pull request (PR) before, this is a great way to make a small change to Astro docs! 
 
-More instructions go here.
+:::note
+Please only add new text content to the docs **in English**, by modifying only **`.mdx` files located within `src/content/docs/en/`**.
+:::
+
+## Pages generated from outside sources
+
+Some of our English-language pages are generated from outside sources and maintained in another repo. Currently, these files are `configuration-reference.md`, all of our error messages, and all those under the `/integrations-guides/` directory.
+
+The page's **Edit this page** link should redirect you to the file that should be changed, even if it is not in the Astro docs repo itself. Alternatively, you can get the correct URL from the file's `githubURL` frontmatter property.
+
+:::note
+All of these English generated pages in the docs repo will have a dev-only warning at the top and the `githubURL`frontmatter property. Please do look at the top of the file before you make changes and submit a pull request, as there are additional instructions there when necessary.
+
+Translated pages are always edited directly in the docs repo.
+:::
+
+## Edit this Page via GitHub
+
+1. Click the "Edit this page" link to be taken to the file with the source code for that page in **GitHub**.
+
+2. Click on the pencil icon when viewing this file to edit it.
+
+3. Use GitHub's browser editor to make your proposed changes to the page.
+
+4. After you make your changes, click **Commit changes**. This will automatically create a [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks) of the docs in your GitHub account with the changes.
+
+5. Once you have committed your edits to your fork, follow the prompts to **create a pull request**.
+
+## Creating a pull request
+
+1. Choose a title that is short, but descriptive of your change. If your change does **not** require translating or a similar update to the other language pages (e.g. fixing an English typo), please include `[i18nIgnore]` in your subject. If you are translating a non-English page, please indicate the language in the subject. For example, to propose an edit to a French page, include `i18n(fr)` in the PR title.
+
+2. Choose and fill out the appropriate template. Be sure to include any useful information or extra content, such as a linked Issue.
+
+3. Submit your changes for review.
+
+Every pull request needs to be [reviewed by our contributors and approved by a maintainer](/first-time/6-pr-review-process/).
+
+You can also read an annotated blog post with screenshots [demonstrating the process of editing the docs this way](https://www.rainsberger.ca/posts/contribute-open-source-docs-edit-page-on-github/).
+
