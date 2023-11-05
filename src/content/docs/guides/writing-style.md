@@ -148,7 +148,7 @@ Here are some tips and examples to match Astro Docs' style for instructional con
 
 ### Avoid "storytelling"
 
-🗣️ Recipes should be a set of instructions to follow, as concisely and directly as possible.
+🗣️ Recipes are a set of instructions to follow, as concisely and directly as possible.
 
   - Do not tell a story around what is happening.
   
