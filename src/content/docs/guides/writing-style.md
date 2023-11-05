@@ -44,7 +44,7 @@ Please use the following conventions when contributing to the docs:
 
 ✏️ Write in neutral, factual sentences.
 
-  - Astro docs states information as facts and does not incorporate characters or try to "tell a story". (We love Houston, but he's not in our Docs!)
+  - Astro docs states information as facts and does not incorporate characters or try to "tell a story." (We love Houston, but he's not in our Docs!)
   - Use direct, factual statements such as, "Layouts are Astro components used to provide a reusable UI structure, such as a page template."
   - Use a neutral tone that is friendly, respectful and assuring, but not overly casual. Do not talk down to the reader but do not make assumptions about what they already know. Remember, they are reading the docs to learn!
 
