@@ -66,7 +66,7 @@ Please use the following conventions when contributing to the docs:
 
 ## Headings
 
-Do use headings to break up text into organized sections! Many readers prefer to skim, and your headings will show up in the sidebar / table of contents menu to help your readers navigate, and let them know they are on the correct page.
+Do use headings to break up text into organized sections. Headings are the foundation of page organization! Many readers prefer to skim, and your headings will show up in the sidebar / table of contents menu to help your readers navigate, and let them know they are on the correct page.
 
 #️⃣ New sections start at the `<h2>` level. The page title is an `<h1>` element.
 
