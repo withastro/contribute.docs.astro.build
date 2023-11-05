@@ -129,7 +129,7 @@ Here are some tips and examples to match Astro Docs' style for instructional con
 
   Certain words and phrases are problematic in instructions for two reasons:
 
-  1. **Most** of the time, they are used in a way that is **not** helpful to the reader. It is *almost* safe to recommend never using them because they almost always result in a poor reader experience.
+  1. **Most** of the time, they are used in a way that is **not** helpful to the reader. They *almost always* result in a poor reader experience.
 
   2. There can be **very specific situations** where they are appropriate, so you can't *forbid* them... even though we really want to, because it's advanced practice to get this right! 
 
