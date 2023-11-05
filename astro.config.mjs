@@ -21,19 +21,23 @@ export default defineConfig({
 			sidebar: [
 				{ label: 'Welcome', link: '/welcome/' },
 				{
+					label: "About Doc'ing",
+					items: [
+						{ label: 'Why we write docs', link: '/about-docs/why-we-doc/' },
+						{ label: 'How we write docs', link: '/about-docs/how-we-doc/' },
+					],
+				},
+				{
 					label: 'First-time Contributors',
 					autogenerate: { directory: 'first-time' },
 				},
-
 				{
-					label: 'Guides',
+					label: 'Contributing Guides',
 					items: [
-						{ label: 'Why we write docs', link: '/guides/why-we-doc/' },
-						{ label: 'How we write docs', link: '/guides/how-we-doc/' },
 						{ label: 'Writing and Style Guide', link: '/guides/writing-style/' },
 						{ label: 'Adding docs for a new feature', link: '/guides/new-feature-docs/' },
-						{ label: 'Translating Astro docs', link: '/guides/i18n/' },
 						{ label: 'Contributing a Recipe', link: '/guides/recipe-writing/' },
+						{ label: 'Translating Astro docs', link: '/guides/i18n/' },	
 					],
 				},
 				{

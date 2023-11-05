@@ -5,10 +5,12 @@ description: The general writing and style guide for Astro docs.
 
 Please use the following as a general guideline, and thank you in advance for understanding that contributions may be edited to match existing style, tone, conventions and structure.
 
-We have intentionally kept this page more about our conventions (e.g. the heading levels we use) than detailled writing advice beyond a few bullet points with general helpful tips for readability. Many of our community contributors in open-source are not writers, and are not interested in detailed grammar lessons. That's what we have PR reviewers and editors for! 
+We have intentionally kept this page more about our conventions (e.g. the heading levels we use) with only a few general pieces of writing advice. Many of our community contributors in open-source are not writers, and are not interested in detailed grammar lessons. That's what we have PR reviewers and editors for! 
 
 :::tip
-If you'd like to see in more detail [how your submission will be reviewed](/reviewers/1-reviewing-prs/), or you're interested in contributing by reviewing existing PRs, you can find more information in our Reviewers section of this site. Here you'll find where the magic really happens at Astro Docs, including the common grammar, formatting and sentence structures we are on the lookout to improve to give our readers the best experience we can.
+You can find information about [what our reviewers will be looking for](/reviewers/1-reviewing-prs/) if you're interested in learning more about what makes a great Docs submission. You can see the common grammar, formatting, and sentence structures we are on the lookout to improve to give our readers the best experience we can.
+
+If this interests you, consider contributing as a PR reviewer! No invitation necessary: read the PR reviewing guide, find an open Docs PR, and join us! 
 :::
 
 ## Readability
@@ -34,106 +36,126 @@ Usually this means choosing:
 
 You can check your writing by pasting it into [Hemingway App](https://hemingwayapp.com/). It will show you if (it thinks) a sentence is too long and will encourage you to use active voice, which is generally shorter and easier to read.
 
-### Voice
+Also see tips on how to [write inclusive documentation](https://developers.google.com/style/inclusive-documentation) and [write accessible documentation](https://developers.google.com/style/accessibility).
 
-Please try to use the following language conventions when contributing to the docs:
+## Writing Style
 
-- When addressing the reader, do so in the present tense and do not include yourself. You can use *you*, but do not use *we*, *we'll*, *us*, *let's* etc. (You are not with the reader at this exact moment.) Instead, use phrases like, "You can now safely delete this line of code." Or simply, "Delete this line of code. It is no longer needed." **Never use I**. Astro docs is not about what you can do!  
+Please use the following conventions when contributing to the docs:
 
-- It's OK to use exclamation points every now and then, but please try to do so only when emphasizing something that is truly exciting, surprising, or encouraging/reassuring. If you are not sure, use a period instead. Exclamation points can send "positive vibes" to the reader. But, if a reader is frustrated, confused, or in a serious state of mind, then exclamation points can seem insensitive or juvenile. Do not use too many.
+✏️ Write in neutral, factual sentences.
 
-### Tone
+  - Astro docs states information as facts and does not incorporate characters or try to "tell a story". (We love Houston, but he's not in our Docs!)
+  - Use direct, factual statements such as, "Layouts are Astro components used to provide a reusable UI structure, such as a page template."
+  - Use a neutral tone that is friendly, respectful and assuring, but not overly casual. Do not talk down to the reader but do not make assumptions about what they already know. Remember, they are reading the docs to learn!
 
-As a general guide for writing tone, you can follow the [Google Developers Guide](https://developers.google.com/style/tone):
+✏️ Only document how Astro works.
 
->In your documents, aim for a voice and tone that's conversational, friendly, and respectful without being overly colloquial or frivolous; a voice that's casual and natural and approachable, not pedantic or pushy. Try to sound like a knowledgeable friend who understands what the developer wants to do.
->
->Don't try to write exactly the way you speak; you probably speak more colloquially and verbosely than you should write, at least for developer documentation. But aim for a conversational tone rather than a formal one.
->
->Don't try to be super-entertaining, but also don't aim for super-dry. Be human, let your personality show, and be memorable. But remember that the primary purpose of the document is to provide information to someone who's looking for it and may be in a hurry.
->
->Remember that many readers aren't fluent English speakers, many of them come from cultures different from yours, and your document might be translated into other languages. For more information, see Writing for a global audience.
+  - It is not our role to document how React, Tailwind, or JavaScript works. It **is** our role to document how to use a UI framework component **in Astro**, or how to configure the `@astrojs/react` integration so that a reader can use React **in Astro**.
+  - Link to external sources when information about, or about using, other technologies may be helpful. For example:
+    > [Markdown](https://daringfireball.net/projects/markdown/) is commonly used to author text-heavy content like blog posts and documentation. Astro includes built-in support for standard Markdown files that can also include [frontmatter YAML](https://dev.to/paulasantamaria/introduction-to-yaml-125f) to define custom metadata such as a title, description, and tags.
 
-Also see tips on how to [write inclusive documentation](https://developers.google.com/style/inclusive-documentation) and [write accessible documentation](https://developers.google.com/style/accessibility)
+✏️ When addressing the reader to give instructions, do so in the present tense and do not include yourself. 
+    
+  - Use phrases like, "You can now safely delete this line of code." Or simply, "Delete this line of code. It is no longer needed."
+  - Do not use *we*, *we'll*, *us*, *let's* etc. (You are not with the reader.)
+  - **Never use I**. Astro docs is not about what you can do!  
 
-## Lists vs. Headings
+✏️ It's OK to use exclamation points every now and then, but please try to do so only when emphasizing something that is truly exciting, surprising, or to be encouraging and reassuring. If you are not sure, use a period instead. 
 
-Both lists and headings are used in our docs for readability. We will often start by using `<ul>` to list related items.
-
-But, when individual line items become large, span multiple paragraphs, or contain too many `<code>` terms affecting readability, then we will change to section headings.
-
-Use unordered (bulleted) lists when the order of the items is not important.
-
-Use ordered (numbered) lists when giving steps or instructions to be followed in sequence.
+  - Exclamation points can send "positive vibes" to the reader. But, if a reader is frustrated, confused, or in a serious state of mind, then exclamation points can seem insensitive or childish. Do not use too many.
 
 ## Headings
 
-New sections should be at the `<h2>` level. The page title is an `<h1>` element.
-
-Please keep headings short. `<h2>` and `<h3>` headings will appear in the right sidebar / "On this page" menu, so please check previews and consider shortening headings if the sidebar entry looks too long.
-
-Headings should not end in punctuation (e.g. ":") but should format `<code>` when appropriate.
-
 Do use headings to break up text into organized sections! Many readers prefer to skim, and your headings will show up in the sidebar / table of contents menu to help your readers navigate, and let them know they are on the correct page.
 
-Don't write headings as questions (from [BC style guide](https://digital.gov.bc.ca/about/style-guide/)):
+#️⃣ New sections start at the `<h2>` level. The page title is an `<h1>` element.
 
-<blockquote>
+#️⃣ Please keep headings short. 
 
-[...] The structure often doesn’t allow us to front-load the heading [...] a question can introduce doubt to the reader and skew search engine optimization (SEO) results.  
+  - `<h2>` and `<h3>` headings will appear in the right sidebar / "On this page" menu
+  - Preview the sidebar in the browser and rephrase to shorten headings if the sidebar entry looks too long.
 
-We know that many people use search engines like Google by typing a question in the search bar. Google rewards web pages that answer these questions. As a government body, we want to have clear and authoritative answers and content.
+#️⃣ Do not end headings with punctuation (e.g. ":")
 
-Examples
+#️⃣ Do format text as `<code>` that would normally be formatted in regular paragraphs.
 
-**Original:** Is there evidence that the sky is blue? 
+## Lists
 
-We know that the sky is blue. Let’s just say it 
+Both lists and headings are used in our docs for readability.
 
-**Updated:** The sky is blue 
+📑 Use lists for a group of related items, such as a complete set of configuration options or object properties.
 
-**Original:** Should I be worried about data privacy and security? 
+  - But, when individual line items become large, span multiple paragraphs, or contain too many `<code>` terms affecting readability, then we will often change to section headings.
 
-If a reader of your content wasn’t worried about data privacy and security before visiting your website, they may be now
-We’ve introduced doubt and highlighted that other people are asking this question 
+📑 Use unordered (bulleted) lists when the order of the items is not important.
 
-**Updated:** Data privacy and security 
-
-This statement of fact is clear, concise and delivered with an authoritative voice 
-People who asked the original question get an answer 
-</blockquote>
+📑 Use ordered (numbered) lists when giving steps or instructions to be followed in sequence.
 
 ## Examples (e.g. examples)
 
-Current practice is to use the words "for example" in full within the text of a sentence, but (e.g. Netlify, Vercel) inside a parenthetical so as to not take the reader out of the flow the sentence.
+🫴 Use the words "for example" in full when writing a clause to to indroduce a single example situation or hypothetical.
 
-> For example, when passing props . . .
+  > For example, when passing props . . .
 
-> If you store your Astro project in an online Git provider (e.g. GitHub, GitLab), you can . . .
+🫴 Give lists of examples (e.g. frameworks, attributes) separated by commas inside parentheses. Use "e.g." as the abbreviation for "example".
 
-## Recipe Writing
+  > If you store your Astro project in an online Git provider (e.g. GitHub, GitLab), you can . . .
 
-Here are some tips and examples to match Astro Docs' style for instructional content, like a recipe:
+:::note
+Examples are **some** (but not all) possible options. If your list of examples contains **every possibility**, it is no longer a list of "examples"!
 
-### Imperative (instruction, command) tense
+To provide a complete list, use parentheses without "e.g."
 
-Whenever possible, give the reader a direct instruction:
+> Include the required image properties (`src`, `alt`) and any additional optional properties...
+:::
 
-e.g. Type the command...
+## Giving Instructions
 
-Do not use *"Let's..."* or *"Next, we will..."*. You are not sitting there with your reader! (This also means you will never need the words *we*, *us*, and *our*. If you see them, rephrase!)
+Here are some tips and examples to match Astro Docs' style for instructional content (e.g. recipes).
 
-If you must address the reader, it is OK to use "you" and "your". Especially for emphasis in very important steps where something could go wrong:
+### Imperative (command) tense
 
-e.g. Before continuing, you must check your... or else...
+🗣️ Whenever possible, give the reader a direct instruction:
+
+  > Run the following command ...
+
+  - Do not use *"Let's..."* or *"Next, we will..."*. You are not sitting there with your reader! (This also means you will never need the words *we*, *us*, and *our*. If you see them, rephrase!)
+
+  - If you must address the reader, it is OK to use "you" and "your". In particular, you can use this for emphasis in very important steps where something could go wrong:
+
+    > Before continuing, you must check your... or else...
+
+ 🗣️ Avoid words that cause doubt or confusion. 
+
+  Certain words and phrases are problematic in instructions for two reasons:
+
+  1. **Most** of the time, they are used in a way that is **not** helpful to the reader. It is *almost* safe to recommend never using them because they almost always result in a poor reader experience.
+
+  2. There can be **very specific situations** where they are appropriate, so you can't *forbid* them... even though we really want to, because it's advanced practice to get this right! 
+
+  - **You should...** (Do I have to? What happens if I don't? How bad is that?)
+
+    Avoid this phrase most of the time. You *can* use this phrase in situations where you are describing what the reader should be experiencing (e.g. in the case of a successful installation). But even then, it is almost always possible to rephrase to avoid "should."
+
+    > If the installation was successful, you should see a prompt to continue.
+    > 
+    > After a successful installation, there will be a prompt to continue.
+
+
+  - **You can...** (I *can* do a lot of things. Should I? Are you telling me to?) 
+  
+    Use this phrase **only to give permission or state that an option exists**. (This was just used above!) Do not use this in general instructions that you expect the reader to follow.
 
 ### Avoid "storytelling"
 
-Recipes should be a set of instructions to follow, as concisely and directly as possible. Do not tell a story around what is happening, but do provide context or clarity if needed as a brief goal/benefit/reason.
+🗣️ Recipes should be a set of instructions to follow, as concisely and directly as possible.
 
-Here is an example edit we made to one of our own recipes to illustrate the difference:
+  - Do not tell a story around what is happening.
+  
+  - If you feel it is needed, you can some provide brief context or clarity in the form of a goal, benefit, or reason.
 
-**Example:** Introduce a set of instructions with a "Big Step" (e.g. overall goal) + reason before listing specific steps to follow
+
+**Example Edit:** Instead of "telling a story" to introduce your instructions, start with a "Big Step" (e.g. overall goal) + reason.
 
 **Before: narrative style**
 > As well as needing your content in different languages, you will often need to translate labels for UI elements around your site. We can do this by creating dictionaries of terms instead of hard-coding text in one language in our templates.
@@ -147,15 +169,21 @@ Here is an example edit we made to one of our own recipes to illustrate the diff
 > 1.
 > 2. ...
 
+
 ### Opinionated Instructions
 
-Sometimes you will need to give an instruction where the reader has options. You want to illustrate the example with the specific choice you made, but you also want to make it clear that other decisions are acceptable.
+When you give an instruction where the reader has options, you will need to choose one option yourself and provide an **opinionated example**. To provide a helpful example to illustrate the outcome, yet still make it clear that other decisions are acceptable:
 
-In this case, try to separate the instruction from the opinion. First, give the action to take with a more general description. Then state the opinionated choice that your example uses. Your reader will be able to first process what you are doing and then will see the choice you have made. They can still follow your instruction, making a choice that works for their own project.
+⚖️ Separate the instruction from the opinion. 
 
-This can be easier to follow (and perhaps more reassuring!) than a statement that gives multiple options. This is also usually easier to write since you do not have to remind the reader that this file is from *your* example, and may not appear in their project.
+  1. Give the action to take with the reason, goal or criteria. 
+  2. State the opinionated choice that your example uses. 
+  
+Your reader will be able to first process what you are doing and then will see the choice you have made. They can still follow your instruction, making a choice that works for their own project.
 
-**Example:** An instruction to add a component where the component *could* go in multiple files/places and still achieve the goal.
+This can be easier for a reader to follow than a statement that gives multiple options and forces them to consider several possibilities. This is also easier for you to write because it allows you to proceed with certain assumptions that, even if not true in the reader's project, have been made clear for the purposes of the example.
+
+**Example Edit:** Instead of listing possible choices that work, provide the underlying criteria so the reader can make an appropriate choice for their situation. Then, tell the reader which choice you have made and show it in an example.
 
 **Before: vague initial instruction**
 
