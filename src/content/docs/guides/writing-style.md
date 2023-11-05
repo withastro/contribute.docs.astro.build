@@ -44,9 +44,16 @@ Please use the following conventions when contributing to the docs:
 
 ✏️ Write in neutral, factual sentences.
 
-  - Astro docs states information as facts and does not incorporate characters or try to "tell a story." (We love Houston, but he's not in our Docs!)
-  - Use direct, factual statements such as, "Scripts can be used to add event listeners, send analytics data, play animations, and everything else JavaScript can do on the web."
-  - Use a neutral tone that is friendly, respectful and assuring, but not overly casual. Do not talk down to the reader, and do not make assumptions about what they already know. Remember, they are reading the docs to learn!
+  - State facts directly. Do not try to be funny or whimsical. 
+    
+    > ✅ Scripts can be used to add event listeners, send analytics data, play animations, and everything else JavaScript can do on the web.
+    > 
+    > ❌ Scripts are like magical fairy godmothers that bring your static page to life with a wave of their wand!
+    
+    These "colourful" statements may be fun to read for some people (in some moods), but they are less useful for conveying helpful information to the reader. They may not be universally-understood references, and can cause confusion. For every reader, these statements introduce additional mental effort to pick out the important information from the "fluff."
+    
+  - Astro docs does not incorporate any characters as guides, or try to "tell a story" throughout docs. Each piece of content is standalone.
+  - Use a neutral tone that is calm, friendly, respectful and assuring, but not overly casual. Do not talk down to the reader, and do not make assumptions about what they already know. Remember, they are reading the docs to learn!
 
 ✏️ Only document how Astro works.
 
