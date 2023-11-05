@@ -198,3 +198,5 @@ This can be easier for a reader to follow than a statement that gives multiple o
 
 **After: add necessary context to the instruction, followed by opinionated usage**
 > Add the `LanguagePicker` component to your site in a component that is shown on every page. The example below adds this to the page footer:
+
+Read more about [explaining your code samples](/reference/code-samples/#explaining-code-samples) in the Reference section.
