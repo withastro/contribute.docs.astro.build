@@ -172,7 +172,7 @@ Here are some tips and examples to match Astro Docs' style for instructional con
 
 ### Opinionated Instructions
 
-When you give an instruction where the reader has options, you will need to choose one option yourself and provide an **opinionated example**. To provide a helpful example to illustrate the outcome, yet still make it clear that other decisions are acceptable:
+When an instruction can be completed in a variety of ways (e.g. install the UI framework integration of your choice), you will need to provide a usage example without knowing which option your reader has chosen. Astro docs uses **opinionated instructions** in these situations, choosing a single option to document as an example of the concept.
 
 ⚖️ Separate the instruction from the opinion. 
 
