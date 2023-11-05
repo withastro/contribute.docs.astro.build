@@ -54,7 +54,7 @@ Please use the following conventions when contributing to the docs:
   - Link to external sources when information about, or about using, other technologies may be helpful. For example:
     > [Markdown](https://daringfireball.net/projects/markdown/) is commonly used to author text-heavy content like blog posts and documentation. Astro includes built-in support for standard Markdown files that can also include [frontmatter YAML](https://dev.to/paulasantamaria/introduction-to-yaml-125f) to define custom metadata such as a title, description, and tags.
 
-✏️ When addressing the reader to give instructions, do so in the present tense and do not include yourself. 
+✏️ When addressing the reader to give instructions, use the present tense and do not include yourself. 
     
   - Use phrases like, "You can now safely delete this line of code." Or simply, "Delete this line of code. It is no longer needed."
   - Do not use *we*, *we'll*, *us*, *let's* etc. (You are not with the reader.)
