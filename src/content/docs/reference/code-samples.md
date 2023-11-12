@@ -6,39 +6,21 @@ Code samples are key to any software documentation site!
 
 Astro docs takes great care not only in the visual representation of our code samples, but also in [thoughtfully crafting the text around them](#explaining-code-samples).
 
-Don't worry! We'll help you out in a PR if your code authoring needs some adjustment before merging. But, you can make use of all our features below and preview them locally to make sure your code looks the way you want.
+Don't worry: we'll help you out in a PR if your code authoring needs some adjustment before merging. But, you can make use of all our features below and preview them locally to make sure your code looks the way you want.
 
-If you are **editing existing code samples**, then please make sure to preview your updated code sample! Update any necessary syntax such as line highlighting or title (file name).
-
-If you are **adding new code samples**, you have the option of adding a file name (usually recommended!) to be displayed as a title. You can also highlight individual words, phrases, or entire lines in regular or "diff" (red/green) style.
-
-**All extra code styling is written on the opening line of the code block, immediately after the language.**
-
-Here are two examples of what our code snippets look like written in Markdown/MDX, just so you can see what it looks like in action. Syntax explanations follow.
-
-#### Example 1
+Here is an example of what our code snippets look like written in Markdown/MDX, just so you can see what it looks like in action. Syntax explanations follow.
 
 - Use the file name as a title
 - highlight rows 9 and 10
-
-``````markdown
-```astro title="src/pages/nested-components.astro" {9-10}
-``````
-
-#### Example 2
-
-- use the file name as a title (alt method)
 - apply "+ diff" styling (green backround) to any occurrence of `<Button />`
-- highlight any occurrence of `{props.title}` and `{props.social}`
 
 ``````markdown
-```jsx /{props.(title|socialLinks)}/ ins="<Button />"
-// src/components/MySidebar.jsx
+```astro title="src/pages/nested-components.astro" {9-10} ins="<Button />"
 ``````
 
 ## Syntax
 
-The code snippets in Astro docs are powered by [`astro-expressive-code`](https://github.com/expressive-code/). Documentation whose source is written directly in the Astro docs repository can make full use of [Expressive Code's syntax highlighting and text marking features](https://github.com/expressive-code/expressive-code/blob/main/packages/astro-expressive-code/README.md#usage-in-markdown--mdx-documents).
+The code snippets in Astro docs are powered by [`astro-expressive-code`](https://github.com/expressive-code/). Most of Astro docs is written directly in the Astro docs repository and can make full use of [Expressive Code's syntax highlighting and text marking features](https://github.com/expressive-code/expressive-code/blob/main/packages/astro-expressive-code/README.md#usage-in-markdown--mdx-documents).
 
 
 However, code examples written in the `withastro/astro/` core repo should use [these specific Expressive Code annotations](https://github.com/expressive-code/expressive-code/blob/main/packages/@expressive-code/plugin-text-markers/README.md) to ensure compatibility in plain Markdown format. These code blocks must also be legible in less "expressive" environments such as directly on GitHub repositories as READMEs.
@@ -47,13 +29,13 @@ However, code examples written in the `withastro/astro/` core repo should use [t
 
 The following code block will be highlighted as JavaScript,
 wrapped in a code editor frame with the file name "example.js",
-and lines 2 and 3 will be marked as "diff" lines:
+and lines 2 and 3 will be marked as "diff" line (no need to type `+` or `-` yourself!):
 
 ``````
 ```js title="example.js" ins={3} del={2}
   function thisIsJavaScript() {
--   console.log('Old code to be removed')
-+   console.log('New and shiny code!')
+    console.log('Old code to be removed')
+    console.log('New and shiny code!')
   }
 ```
 ``````
@@ -76,7 +58,9 @@ and the line range 2-4 will be marked:
 ```
 ``````
 
-These are the annotations you'll use most frequently in Astro docs:
+## Commmon Annotations
+
+Following are the annotations you'll use most frequently in Astro docs. For a complete reference, please see [the Expressive Code documentation](https://github.com/expressive-code/expressive-code/blob/main/packages/astro-expressive-code/README.md).
 
 ### File Name as Title
 
@@ -105,13 +89,13 @@ Alternatively, (required for code in the Astro core repo) write the file name as
 
 Use Curly braces to highlight (default), or show "diff" style (+/-) "inserted" or "deleted" lines.
 
-- {4-7,10} - Highlights lines 4, 5, 6, 7 and 10
-- del={2} - Shows "diff" style (-) at line 2
-- ins={7-9} - Shows "diff" style (+) lines 7-9
+- {4-7, 10} - Highlights lines 4, 5, 6, 7 and 10
+- del={2} - Shows "diff" style including (-) at line 2
+- ins={7-9} - Shows "diff" style including (+) lines 7-9
 
 ### Text Highlighting
 
-Use quotation marks to highlight (default), or assign red/green "diff" style background colors for individual words and phrases.
+Use quotation marks to highlight (default), or assign red/green "diff" style background colors for individual words and phrases. (Note: these apply for the words/text only, and do not affect the entire line.)
 
 Regular expressions are supported within slashes `/ /`. See a handy [tool for converting between natural English and Regex](https://www.autoregex.xyz/)!
 
@@ -120,8 +104,6 @@ Regular expressions are supported within slashes `/ /`. See a handy [tool for co
 - del="My blog title" - All instances of "My blog title" have a red background color
 
 - ins="Astro.props" - All instances of "Astro.props" have a green background color
-
-- /{frontmatter.(title|description)}/ - Highlight all instances of `{frontmatter.title}` and `{frontmatter.description}`
 
 :::note
 - `del="<p class=\"hi\">"` - Use `\` to escape quotation marks and other special characters in the search string
@@ -141,7 +123,7 @@ We always strive to:
 - Demonstrate a real, actual use case with correct, working code. No `foo`/ `bar`. No showing all possible values for a config setting. (Your reader will always only have one option configured!) Pick a real, working code example that matches something they might have in their own project.
 
 
-- Introduce code samples with a full, standalone sentence on a new line starting with "The following example shows..." (Docs does not use the phrase "like so" at the end of a sentence.)
+- Introduce code samples with a full, standalone sentence on a new line starting with a phrase such as, "The following example shows..." (Docs does not use the phrase "like so" at the end of a sentence.)
 
     The following examples show introducing a code sample with a sentence that starts with the phrase, "The following example..."
     
@@ -157,11 +139,11 @@ This helps us
 
 ### Multiple code samples
 
-**Telling a story with multiple files can be tricky.** If you just plop 3 code samples together in a "Say you have these files..." and THEN you write something that kind of explains a way in which they work together, people have to SCROLL BACK UP past the code samples they probably skipped the first time in order to see what you mean. It's very un-flowy!
+**Telling a story with multiple files can be tricky.** If you just drop multiple code samples together on your reader with an introduction such as, "Say you have these files..." and then after you write a single explanation of the way in which they work together, people have to scroll back up to the code samples again (that they probably skipped the first time) in order to see what you mean. It's very un-flowy!
 
-Our "The following code sample shows..." pattern before each individual code block helps you write clearly in this. **It forces you to call out what's important in each snippet**, as you go. Then, when the reader has had these specific things pointed out to them, you can connect some dots and create meaning for the reader.
+Our "The following code sample shows..." pattern before each individual code block helps you write clearly, especially when multiple code samples are involved. **It forces you to call out what's important in each snippet** as you go. Then, when you have pointed out the important part of each individual code sample, you can connect some dots and create meaning for the reader.
 
-The following example shows how to clearly annotate a more complex situation involving multiple code snippets by introducing each code sample individually:
+The following example shows how to improve upon and clearly annotate a situation involving multiple code snippets by introducing each code sample individually:
 
 **Less helpful structure :**
 - "Pretend you had the following three files:"
@@ -180,4 +162,5 @@ The following example shows how to clearly annotate a more complex situation inv
 ## Tips
 
 - Look at other similar entries on the page for an idea of structure, style etc. If they are wrong, then *we* are wrong, and we'll fix it all!
-- 
+ 
+- Please make sure to preview your updated code sample! It is easy for a typo to affect the display of a code snippet, and we appreciate you checking first before submitting your PR.

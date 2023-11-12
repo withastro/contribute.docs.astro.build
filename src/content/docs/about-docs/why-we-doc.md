@@ -12,4 +12,4 @@ Good documentation helps some**one** do some**thing**: our goal is to document *
 
 We write to help a reader accomplish what they came into docs to do (learn, build, verify, upgrade, evaluate, troubleshoot...) and then, as quickly as possible, **get out of docs and back to their own project**.
 
--- Sarah Rainsberger, Astro Docs Lead. From "Stop Writing; Start Helping" presented at ViteConf 2023.
+-- Sarah Rainsberger, Astro Docs Lead. From ["Stop Writing; Start Helping"](https://www.youtube.com/watch?v=jcpkVJr-rUw&list=PLqGQbXn_GDmkOsHI7-Wrbv1GgAA4tJZhg&index=26) presented at ViteConf 2023.
