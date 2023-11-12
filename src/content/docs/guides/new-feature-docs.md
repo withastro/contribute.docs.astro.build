@@ -4,7 +4,7 @@ description: A guide to writing docs for your new Astro feature.
 ---
 Use the following guidance to document a new Astro core or integration feature.
 
-If you'd like to see what will go into reviewing your documentation submission, you can see what our reviewers will be looking for in our [PR reviewing guide](/reviewers/1-reviewing-prs/).
+If you'd like to see what will go into reviewing your documentation submission, you can see what our reviewers will be looking for in our [PR reviewing guide](/reviewers/0-reviewing-prs/).
 
 ## When to involve docs ?
 
