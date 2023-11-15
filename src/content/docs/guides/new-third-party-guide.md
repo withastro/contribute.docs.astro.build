@@ -19,7 +19,7 @@ Submissions for full guides without first creating a stub page may be refused.
     - e.g. `keystatic: { file: 'keystatic.svg', padding: '0' },`
 - Create a new MDX page named for your service in [the CMS guides content folder](https://github.com/withastro/docs/tree/main/src/content/docs/en/guides/cms)
     - e.g. `keystatic.mdx`
-- Use the following frontmatter values in your `.mdx` file:
+- Use an existing guide as a reference, and the following frontmatter values in your `.mdx` file:
     ```
     ---
     title: Keystatic & Astro
@@ -36,11 +36,6 @@ Submissions for full guides without first creating a stub page may be refused.
     ```
 - Use only the following `##` (`<h2>`) headings in the body of the file as needed, and add any appropriate content.
     ```
-    ## Using Keystatic CMS with Astro
-
-    <!-- a **short** description is permitted here-->
-    <!-- this section is OPTIONAL -->
-    
     ## Official Resources
 
     - Check out [the official Keystatic guide](https://keystatic.com/docs/installation-astro)
@@ -49,5 +44,6 @@ Submissions for full guides without first creating a stub page may be refused.
     ## Community Resources
     ```
 
-
  You can use this past PR for CaisyCMS as a model: https://github.com/withastro/docs/pull/3749/files
+
+ If you decide to extend your stub into a full-guide, please consult the [Recipe Writing Guide](https://astro-docs-docs.netlify.app/guides/recipe-writing/) for more information about writing step-by-step guides for Astro docs.
