@@ -54,36 +54,33 @@ Like all contributions to our docs, take a look at our [Writing Guide](https://g
 
 ## CMS, Deploy and Migrate
 
-The `src/content/guides/` directory in the docs has three subdirectories for established guide categories:
+The `src/content/guides/` directory in the docs has four subdirectories for established guide categories:
 
 - `cms/`
+- `backend/`
 - `deploy/`
 - `migrate-to-astro/`
 
-The best way to start a new guide for these sections is to choose an existing one as an example.
+The best way to start writing a new guide for these sections is to choose an existing one as an example.
 
-These require:
+If a page does not exist, you will first need to [create a stub](/guides/new-third-party-stub/) by adding:
 - A new guide page.
 - A logo in `public/logos/`.
 - An update to [`src/data/logo.ts`](https://github.com/withastro/docs/blob/main/src/data/logos.ts) to add the logo.
 
-### Add a new guide
+### Writing a new guide
 
-1. Add a new `.mdx` file to one of the subdirectories. Copy the contents of an existing file, and change the `title` and `description` in the frontmatter.
+1. Find a comparable guide in one of the subdirectories. Copy the contents of an existing file, and be sure the `title` and `description` in the frontmatter are accurate and follow the established pattern.
 
 2. Edit the body of the file. This should match the structure of other guides of that type. For example, a deployment guide should have a step-by-step “How to Deploy” section. A migration guide should have “Key Similarities,” “Key Differences,” and “Switch from X to Astro” sections.
 
-3. Add a logo to `public/logos/`. Ideally, this should be an SVG. Use [SVGOMG](https://jakearchibald.github.io/svgomg/) to optimize its file size.
+3. Add a logo to `public/logos/` if one does not already exist. Ideally, this should be an SVG. Use [SVGOMG](https://jakearchibald.github.io/svgomg/) to optimize its file size.
 
-4. Update [`src/data/logo.ts`](https://github.com/withastro/docs/blob/main/src/data/logos.ts) to add the logo.
+4. Update [`src/data/logo.ts`](https://github.com/withastro/docs/blob/main/src/data/logos.ts) to add the logo if necessary.
 
-### Add a new stub
+### Adding content to an existing stub
 
-Some guides are marked as `stub: true` in the frontmatter. These are not yet full guides, but instead include introductory content and link to external resources.
-
-If you don't have a full guide yet, feel free to create a stub with an introductory paragraph and a “Community Resources” and/or “Official Resources” section following the steps above. See [this example PR creating a new stub](https://github.com/withastro/docs/pull/2336/files).
-
-You can expand a stub, even if it's an incremental improvement. For example, you can expand a CMS guide by adding an "Integrating with Astro" section to explain how to connect the CMS to Astro. You can also provide a step-by-step section to use that integration to build something. (See [Making a blog with Astro and Contentful](https://docs.astro.build/en/guides/cms/contentful/#making-a-blog-with-astro-and-contentful).)
+If you don't have a full guide yet, you can expand a stub, even if it's an incremental improvement. For example, you can expand a CMS guide by adding an "Integrating with Astro" section to explain how to connect the CMS to Astro. You can also provide a step-by-step section to use that integration to build something. (See [Making a blog with Astro and Contentful](https://docs.astro.build/en/guides/cms/contentful/#making-a-blog-with-astro-and-contentful).)
 
 ### Add new links
 

@@ -7,15 +7,15 @@ If you'd like to add a new guide to using Astro with a third-party CMS, backend 
 
 Creating a stub page involves adding a logo and creating a short page of content using a template. New stubs do not require much editing effort and can often be merged into docs quickly. 
 
-We recommend first creating a stub and linking to other guides (official guides, starter templates and tutorials, as well as community blog posts or videos) so that the new page will be available soon. Then, if you want to provide a full guide that requires testing and editing from our Docs team, additional content can be added at a later date. 
+We recommend first creating a stub and linking to other guides (official guides, starter templates and tutorials, as well as community blog posts or videos) so that the new page will be available soon. Then, if you want to [write a full guide](/guides/recipe-writing/) that requires testing and editing from our Docs team, additional content can be added at a later date. 
 
 Submissions for full guides without first creating a stub page may be refused.
 
 ## Creating a Stub page
 
-- Upload an optimized SVG logo to [the public `logos` folder](https://github.com/withastro/docs/tree/main/public/logos) named for your service
+- Upload an SVG logo optimized with [SVGOMG](https://jakearchibald.github.io/svgomg/) to [the `public/logos/` folder](https://github.com/withastro/docs/tree/main/public/logos) named for your service
     - e.g. `keystatic.svg`
-- Add an entry for your service in [the `logos.ts` data file](https://github.com/withastro/docs/blob/main/src/data/logos.ts) of the form:
+- Add an entry for your service in [the `src/data/logos.ts` data file](https://github.com/withastro/docs/blob/main/src/data/logos.ts) of the form:
     - e.g. `keystatic: { file: 'keystatic.svg', padding: '0' },`
 - Create a new MDX page named for your service in [the CMS guides content folder](https://github.com/withastro/docs/tree/main/src/content/docs/en/guides/cms)
     - e.g. `keystatic.mdx`
