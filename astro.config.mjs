@@ -36,6 +36,7 @@ export default defineConfig({
 					items: [
 						{ label: 'Writing and Style Guide', link: '/guides/writing-style/' },
 						{ label: 'Adding docs for a new feature', link: '/guides/new-feature-docs/' },
+						{ label: 'Adding a new Astro + X guide', link: '/guides/new-third-party-guide/' },
 						{ label: 'Contributing a Recipe', link: '/guides/recipe-writing/' },
 						{ label: 'Translating Astro docs', link: '/guides/i18n/' },	
 					],
