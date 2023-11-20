@@ -7,7 +7,7 @@ export default defineConfig({
 		starlight({
 			title: 'Astro Docs Docs (AD²)',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/sarah11918/astro-docs-docs'
 			},
 			  head: [
 			    {
