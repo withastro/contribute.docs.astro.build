@@ -2,15 +2,17 @@
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
-This is a personal work-in-progress to convert [Astro's Contributor Guides](https://docs.astro.build/en/contribute/) from individual Markdown files in a GitHub repo to a stand-alone website.
+This is a work-in-progress to convert [Astro's Contributor Guides](https://docs.astro.build/en/contribute/) from individual Markdown files in a GitHub repo to a stand-alone website.
 
-It's easier to write long-form content in Starlight than un-connected `.md` files!
+Started as a personal project by Sarah because:
 
-I enjoy built-in navigation, tables of content while I write to keep me organized.
-
-I can include the the components I'm documenting directly in the file. 
-
-And, it's easier for our community members to read, navigate, and ultimately contribute to our documentation.
+> It's easier to write long-form content in Starlight than un-connected `.md` files!
+>
+> I enjoy built-in navigation, tables of content while I write to keep me organized.
+>
+> I can include the the components I'm documenting directly in the file. 
+>
+> And, it's easier for our community members to read, navigate, and ultimately contribute to our documentation.
 
 ## Want to make your own Starlight documentation site?
 ```
