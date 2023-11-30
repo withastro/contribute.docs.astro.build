@@ -1,5 +1,5 @@
 ---
-title: Code samples
+title: Including code samples
 description: How to write and annotate code samples for Astro documentation.
 ---
 Code samples are key to any software documentation site!
@@ -123,7 +123,7 @@ We always strive to:
 - Demonstrate a real, actual use case with correct, working code. No `foo`/ `bar`. No showing all possible values for a config setting. (Your reader will always only have one option configured!) Pick a real, working code example that matches something they might have in their own project.
 
 
-- Introduce code samples with a full, standalone sentence on a new line starting with a phrase such as, "The following example shows..." (Docs does not use the phrase "like so" at the end of a sentence.)
+- Introduce code samples with a full, standalone sentence on a new line starting with a phrase such as, "The following example shows..." ([Docs does not use the phrase "like so"](#topic--like-so) at the end of a sentence.)
 
     The following examples show introducing a code sample with a sentence that starts with the phrase, "The following example..."
     
@@ -136,6 +136,16 @@ This helps us
 - ensure that the code samples in fact illustrate something someone might actually do.
 - reduce the chances that you are relying on the reader to interpret what you mean by "do it like this."
 - prep the reader so that they already know what the code *does* and only need to figure out *how* that result is achieved.
+
+### Topic: "... like so:"
+
+When we clearly say, "Add the following line to your config file" with a code sample showing diff notation for the added line, "like so" isn't necessary.
+
+In slightly more complicated examples, "like so" is often a substitue for explaining what to do. It leaves too much to the reader's interpretation, and forces them to guess the pattern you intend to show.
+
+"The following example shows a slide animation attribute added to a header component" is very explicit about what you intend the code snippet to illustrate. Compare this with "Add slide animation, like so:" The more explicit instruction primes the reader for what to look for, instead of forcing them to find and interpret the relevant code. At the same time, this kind of instruction introduces vocabulary and phrases that will help reinforce how to talk about and describe building with Astro.
+
+By spelling out exactly what the code in the snippet is doing, you can better create a "MadLibs" type fill-in-the-blank pattern for someone who doesn't want to add a slide animation to a header... but instead wants to add a fade animation to a footer! They now have a very concrete way of describing what they are doing in a way that matches what they'll read (or search for) in docs, or ask for help with in support.
 
 ### Multiple code samples
 

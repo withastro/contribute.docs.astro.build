@@ -3,13 +3,12 @@ title: Contributing a Recipe
 description: A guide to writing a recipe for Astro docs.
 ---
 
-Our "Recipes" section in the sidebar highlights **step-by-step how-to guides** for **accomplishing a specific task** in Astro. These include established landing pages for deployment, CMS, and migration guide, as well as a [dedicated section](https://docs.astro.build/en/recipes/) for a wider range of tasks you can accomplish with Astro.
+Our "Recipes" section in the sidebar highlights **step-by-step how-to guides** for **accomplishing a specific task** in Astro.
 
 Astro docs welcomes recipe contributions that:
 
 - Edit an [existing recipe](#edit-existing-recipes) with corrected content or [new resource links](#add-new-links), by PRing the existing file in the docs repo.
 - Add a new [community recipe](#community-recipes) by PRing a link to the ["More Recipes" page](#more-recipes-page): `src/content/docs/en/recipes.mdx`.
-- [Add a new CMS, Deploy or Migration recipe](#cms-deploy-and-migrate) to these existing categories.
 - Add a new [official recipe](#official-recipes), by PRing a new page (`.mdx` file) to the `src/content/docs/recipes/` folder.
 
 
@@ -21,9 +20,9 @@ You can use the "Edit This Page" link in the right sidebar to make a change on G
 
 ## Community Recipes
 
-Community Recipes are for external links that fit the definition of a recipe: short, focused how-to guides. This lets us include community resources without requiring long-term maintenance. They are listed on our [More Recipes](https://docs.astro.build/en/recipes/) page in docs.
+Community Recipes are for external links that fit the definition of a recipe: typically short, focused how-to guides. This lets us include community resources without requiring long-term maintenance. They are listed on our [More Recipes](https://docs.astro.build/en/recipes/) page in docs.
 
-You can share a published recipe in our “Community Recipes” section. This includes posts on a personal or company blog, or on your preferred blogging platform like [DEV.to](https://dev.to/). This follows the IndieWeb principle of “Publish (on your) Own Site, Syndicate Elsewhere” (often abbreviated to [POSSE](https://indieweb.org/POSSE)).
+You can share a published recipe in our “Community Recipes” section. This can be a post on a personal or company blog, or on your preferred blogging platform like [DEV.to](https://dev.to/). The site must not be behind a paywall or login, as we are committed to sharing resources that are available to everyone. This follows the IndieWeb principle of “Publish (on your) Own Site, Syndicate Elsewhere” (often abbreviated to [POSSE](https://indieweb.org/POSSE)) and allows us to share and promote your content to the wider Astro community while allowing you to retain full ownership of your content.
 
 After you publish your article, [open a PR adding a link to this page](https://github.com/withastro/docs/edit/main/src/content/docs/en/recipes.mdx).
 
@@ -42,19 +41,15 @@ Our recipe format is inspired by Diataxis's [how-to guides](https://diataxis.fr/
 
 See our [HTML Forms](https://docs.astro.build/en/recipes/build-forms-api/) recipe as an example. It teaches a specific, practical goal (how to build and handle a form). It provides an example that can be modified and incorporated into your project. It uses step-by-step instructions and keeps explanations to a minimum.
 
-Examples that would not be considered recipes:
+Examples that we do not consider to be recipes:
 - A blog post in narrative form that reports on what you did instead of structuring concise instructions for the reader to follow. (e.g. "How I finally got content collections set up with my custom remark plugin in my Astro project")
 - A walk-through that teaches more than one task. (e.g. "How to set up Vue, TypeScript, and Partytown in Astro")
 - A conceptual explanation of a topic, instead of a how-to guide that leads the reader through completing a specific task. (e.g. "How partial hydration works in Astro")
 
-Like all contributions to our docs, take a look at our [Writing Guide](https://github.com/withastro/docs/blob/main/contributor-guides/writing-and-style-guide.md
-) and [Main Contributing Guide](https://github.com/withastro/docs/blob/main/CONTRIBUTING.md
-) for guidance on drafting your PR.
 
+## CMS, Deploy and Migrate to Astro Guides
 
-## CMS, Deploy and Migrate
-
-The `src/content/guides/` directory in the docs has four subdirectories for established guide categories:
+The `src/content/guides/` directory in the docs has four subdirectories for established guide categories that also follow a recipe structure:
 
 - `cms/`
 - `backend/`
@@ -84,15 +79,15 @@ If you don't have a full guide yet, you can expand a stub, even if it's an incre
 
 ### Add new links
 
-The CMS, Deploy, and Migrate guides all have sections for external links. You can add a new link by [creating a PR](https://github.com/withastro/docs/blob/main/CONTRIBUTING.md).
+The CMS, Deploy, and Migrate guides all have sections for external links. You can add a new link by [editing the page](/first-time/4-edit-single-page/) and making a PR.
 
 ## Add a new official recipe
 
-The Official Recipes section is for officially maintained recipes, found in the `src/content/guides/recipes` folder, that do not fit into one of our pre-existing categories. Like the rest of our docs, these must meet the standards of our [Writing Guide](https://github.com/withastro/docs/blob/main/contributor-guides/writing-and-style-guide.md) and require long-term maintenance to make sure they're up to date.
+The Official Recipes section is for officially maintained recipes, found in the `src/content/guides/recipes/` folder, that do not fit into one of our pre-existing categories. Like the rest of our docs, these must meet the standards of our [Writing Guide](/guides/writing-style/).
 
 To add an official recipe:
 
-1. Add a new `.mdx` file in the `src/content/guides/recipes` folder with the following frontmatter: 
+1. Add a new `.mdx` file in the `src/content/guides/recipes/` folder with the following frontmatter: 
 
     ```mdx
     ---
@@ -103,10 +98,10 @@ To add an official recipe:
     ---
     ```
 
-2. Add an introduction: what will the recipe accomplish? (1 paragraph is fine.)
+2. Add an introduction: what will the recipe accomplish? (A single sentence or paragraph is fine. Be clear about what the reader will now have or be able to do.)
 
 3. Add a `## Prerequisites` section that includes any required configurations or steps to take before starting the recipe. If your recipe works with any project setup, you can skip this section.
 
-4. Add a `## Recipe` section that includes a numbered list of steps.
+4. Add a `## Recipe` section that includes a numbered list of steps. Follow our guidance for [writing instructions](/guides/writing-style/#giving-instructions) that are clear and helpful.
 
 5. If you have external references or links, add a ``## Resources`` section at the end.
