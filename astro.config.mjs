@@ -17,6 +17,14 @@ export default defineConfig({
 			        content: 'noindex'
 			      },
 			    },
+			    {
+			      tag: 'script',
+			      attrs: {
+				src: 'https://cdn.usefathom.com/script.js',
+				'data-site': 'EZBHTSIG',
+				defer: true,
+			       },
+			    },
 			  ],
 			sidebar: [
 				{ label: 'Welcome', link: '/welcome/' },
