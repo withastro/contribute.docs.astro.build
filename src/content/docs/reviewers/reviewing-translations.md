@@ -1,5 +1,5 @@
 ---
-title: Reviewing ranslations as a non-native speaker
+title: Reviewing translations as a non-native speaker
 description: How to review translation PRs as a non-native language speaker.
 ---
 
