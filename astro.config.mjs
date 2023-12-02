@@ -1,8 +1,17 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
+/* https://vercel.com/docs/projects/environment-variables/system-environment-variables#system-environment-variables */
+const VERCEL_PREVIEW_SITE =
+	process.env.VERCEL_ENV !== 'production' &&
+	process.env.VERCEL_URL &&
+	`https://${process.env.VERCEL_URL}`;
+
+const site = VERCEL_PREVIEW_SITE || 'https://contribute.docs.astro.build/';
+
 // https://astro.build/config
 export default defineConfig({
+	site,
 	integrations: [
 		starlight({
 			title: 'Astro Docs Docs (AD²)',
