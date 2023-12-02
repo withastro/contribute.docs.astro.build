@@ -22,6 +22,11 @@ export default defineConfig({
 			components: {
 				Head: './src/starlight-overrides/Head.astro',
 			},
+			logo: {
+				dark: './src/assets/logo-dark.svg',
+				light: './src/assets/logo-light.svg',
+				replacesTitle: true,
+			},
 			  head: [
 			    {
 			      tag: 'meta',
