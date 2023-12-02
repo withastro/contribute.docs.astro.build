@@ -18,6 +18,9 @@ export default defineConfig({
 			social: {
 				github: 'https://github.com/sarah11918/astro-docs-docs'
 			},
+			components: {
+				Head: './src/starlight-overrides/Head.astro',
+			},
 			  head: [
 			    {
 			      tag: 'meta',
