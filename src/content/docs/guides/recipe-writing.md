@@ -11,6 +11,9 @@ Astro docs welcomes recipe contributions that:
 - Add a new [community recipe](#community-recipes) by PRing a link to the ["More Recipes" page](#more-recipes-page): `src/content/docs/en/recipes.mdx`.
 - Add a new [official recipe](#add-a-new-official-recipe), by PRing a new page (`.mdx` file) to the `src/content/docs/recipes/` folder.
 
+:::tip 
+Recipes must follow both our [general writing style](/guides/writing-style/#writing-style), and advice for [writing instructions](/guides/writing-style/#giving-instructions).
+:::
 
 ## Edit Existing Recipes
 
