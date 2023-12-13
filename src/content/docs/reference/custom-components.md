@@ -68,7 +68,7 @@ This component takes two props:
 ```mdx
 import Since from '~/components/Since.astro';
 
-<Since v="1.0.0" />
+<p><Since v="1.0.0" /></p>
 ```
 
 This will render the text “**Added in:** `astro@1.0.0`”.
@@ -85,7 +85,7 @@ The standard usage of this component is on its own line, immediately following t
 ```mdx
 ## `Astro.clientAddress`
 
-<Since v="1.0.0-rc" />
+<p><Since v="1.0.0-rc" /></p>
 
 Specifies the IP address of the request. This property is only available when building for SSR (server-side rendering) and should not be used for static sites.
 ```
