@@ -18,6 +18,9 @@ export default defineConfig({
 			social: {
 				github: 'https://github.com/withastro/contribute.docs.astro.build'
 			},
+			editLink: {
+				baseUrl: 'https://github.com/withastro/contribute.docs.astro.build/edit/main/'
+			},
 			customCss: ["./src/styles/theme.css"],
 			components: {
 				Head: './src/starlight-overrides/Head.astro',
