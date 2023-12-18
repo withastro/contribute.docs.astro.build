@@ -16,7 +16,10 @@ export default defineConfig({
 		starlight({
 			title: 'Astro Docs Docs (AD²)',
 			social: {
-				github: 'https://github.com/sarah11918/astro-docs-docs'
+				github: 'https://github.com/withastro/contribute.docs.astro.build'
+			},
+			editLink: {
+				baseUrl: 'https://github.com/withastro/contribute.docs.astro.build/edit/main/'
 			},
 			customCss: ["./src/styles/theme.css"],
 			components: {
@@ -28,13 +31,6 @@ export default defineConfig({
 				replacesTitle: true,
 			},
 			  head: [
-			    {
-			      tag: 'meta',
-			      attrs: {
-			        name: 'robots',
-			        content: 'noindex'
-			      },
-			    },
 			    {
 			      tag: 'script',
 			      attrs: {
