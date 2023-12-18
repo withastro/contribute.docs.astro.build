@@ -16,7 +16,7 @@ export default defineConfig({
 		starlight({
 			title: 'Astro Docs Docs (AD²)',
 			social: {
-				github: 'https://github.com/sarah11918/astro-docs-docs'
+				github: 'https://github.com/withastro/contribute.docs.astro.build'
 			},
 			customCss: ["./src/styles/theme.css"],
 			components: {
