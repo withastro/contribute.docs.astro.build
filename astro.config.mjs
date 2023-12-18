@@ -29,13 +29,6 @@ export default defineConfig({
 			},
 			  head: [
 			    {
-			      tag: 'meta',
-			      attrs: {
-			        name: 'robots',
-			        content: 'noindex'
-			      },
-			    },
-			    {
 			      tag: 'script',
 			      attrs: {
 				src: 'https://cdn.usefathom.com/script.js',
