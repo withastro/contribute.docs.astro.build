@@ -56,7 +56,7 @@ When you see PRs that have not yet been labelled, you can help by adding one or 
 
 - `improve existing documentation` is used for smaller, but non-trivial documentation improvements to items that are currently documented. This distinction is helpful because we have already considered this feature as part of the entire Docs site, and the change might be small enough to be localized. For example, improving the wording of an explanation or adding an extra example to illustrate a particular nuance of a topic that we have already documented.
 
-- `site improvement` is a broad category, but is used to label site issues and maintenance tasks as opposed to content and writing tasks. This distinction is helpful to allow community members and maintainers to easily filter tasks to either focus on or ignore content writing Issues and PRs. This allows community members (and maintainers!) more easily contribute according to their own skills and interests.
+- `site improvement` is a broad category, but is used to label site issues and maintenance tasks as opposed to content and writing tasks. This distinction is helpful to allow community members and maintainers to easily filter tasks to either focus on or ignore content writing Issues and PRs. This allows community members (and maintainers!) to more easily contribute according to their own skills and interests.
 
 - `merge on release` is used for PRs with accompanying Astro feature PRs that should **not** be merged until the feature has been released.
 
@@ -96,7 +96,7 @@ For PRs that are translations to existing Docs content, including new page addit
 - Consult the [Internationalization Guide](/guides/i18n/) to familiarize yourself with the translators' process.
 - If you see "LGTM" in a message within the PR, that means at least one other native speaker has approved the translation, and the PR can be immediately merged! 🥳
 - If you speak the language natively, check the content for accuracy. Note: some languages have created their own glossaries and/or language guides located in their language folder within `/src/i18n/`.
-- If you do not speak the language natively, and the PR has not had any recent activity, you can use online translation tools (e.g. Google Translate) and scan the results for anything that looks wildly out of place. Also, visit the page in the PR’s Netlify deploy preview to verify that nothing is visually out of place. While we always prefer to have a review from a native speaker of the language, having translated docs with some errors is usually better than having no docs at all.
+- If you do not speak the language natively, and the PR has not had any recent activity, you can use our [guide to reviewing translation PRs for non-native speakers](/reviewers/reviewing-translations/) and perform some manual checks that ensure a PR is "good enough" to publish. While we always prefer to have a review from a native speaker of the language, having translated docs with some errors is usually better than having no docs at all.
 
 ## Merging PRs
 
