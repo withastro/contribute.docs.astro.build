@@ -18,24 +18,6 @@ The following is the answer to that question **for Astro Maintainers**, so that 
 
 ## Triaging Issues and PRs
 
-Docs uses a label system in GitHub to categorize Issues and PRs **according to general topic area**.
-
-The docs site involves not only content (writing and technical content), but also everything involved in managing an Astro site: site UI, architecture, accessibility (a11y) issues, internationalization (i18n) with multiple languages in active translation and various automation processes surrounding PRs, page generation and translation status. It's A. LOT.
-
-When you see PRs that have not yet been labelled, you can help by adding one or more labels. Our common labels include:
-
-- `i18n` includes page translations and other efforts to keep the translators organized, including GitHub actions, automation, and site UI relevant to supporting multiple languages.
-
-- `add new content` is used for something previously undocumented on the website. (i.e. We haven't thought in detail about how to write about this topic before.) This tag is useful because it reminds us that we should make sure we really understand this new thing, and any implications elsewhere in the Docs, while documenting it. (Does it replace an existing feature that we need to deprecate? Does this change an instruction or recommendation documented elsewhere? If a brand new feature, does it require a technical documentation in Reference and also a more user-friendly mention somewhere in Learn? Should other existing pages link to this?)
-
-- `improve existing documentation` is used for smaller, but non-trivial documentation improvements to items that are currently documented. This distinction is helpful because we have already considered this feature as part of the entire Docs site, and the change might be small enough to be localized. For example, improving the wording of an explanation or adding an extra example to illustrate a particular nuance of a topic that we have already documented.
-
-- `site improvement` is a broad category, but is used to label site issues and maintenance tasks as opposed to content and writing tasks. This distinction is helpful to allow community members and maintainers to easily filter tasks to either focus on or ignore content writing Issues and PRs. This allows community members (and maintainers!) more easily contribute according to their own skills and interests.
-
-
-
-## Merging PRs
-
 Astro's Docs community, and repository, is _extremely active_. 
 
 It is a complex project handling Issues and PRs coming from all directions. In order to accept the greatest number of contributions from the greatest number of community members, with the fewest number of merge conflicts possible... many PRs will be created that are intended to be simply stepping stones to a desired end result. 
@@ -58,9 +40,29 @@ As a maintainer, here are some helpful things you can do:
 
 - Mention a particular maintainer or community member whose guidance or inclusion you know would be helpful. Different maintainers work on different parts of Astro, and if you know who the right person to seek extra clarification or approval from is, ping them!
 
-- Merge a PR yourself, even without any consultation or discussion, if it's an obvious fix like a typo or broken link.
+- [Merge a PR yourself](#merging-prs), even without any consultation or discussion, if it's an obvious fix like a typo or broken link.
 
-### Content
+### Labels
+
+Docs uses a [label system in GitHub](https://github.com/withastro/docs/labels) to categorize Issues and PRs **according to general topic area** and also to help us organize when to merge.
+
+The docs site involves not only content (writing and technical content), but also everything involved in managing an Astro site: site UI, architecture, accessibility (a11y) issues, internationalization (i18n) with multiple languages in active translation and various automation processes surrounding PRs, page generation and translation status. It's A. LOT.
+
+When you see PRs that have not yet been labelled, you can help by adding one or more labels. Our common labels include:
+
+- `i18n` includes page translations and other efforts to keep the translators organized, including GitHub actions, automation, and site UI relevant to supporting multiple languages. This label will be automatically applied to any PR changing a non-`/en/` page file.
+
+- `add new content` is used for something previously undocumented on the website. (i.e. We haven't thought in detail about how to write about this topic before.) This tag is useful because it reminds us that we should make sure we really understand this new thing, and any implications elsewhere in the Docs, while documenting it. (Does it replace an existing feature that we need to deprecate? Does this change an instruction or recommendation documented elsewhere? If a brand new feature, does it require a technical documentation in Reference and also a more user-friendly mention somewhere in Learn? Should other existing pages link to this?)
+
+- `improve existing documentation` is used for smaller, but non-trivial documentation improvements to items that are currently documented. This distinction is helpful because we have already considered this feature as part of the entire Docs site, and the change might be small enough to be localized. For example, improving the wording of an explanation or adding an extra example to illustrate a particular nuance of a topic that we have already documented.
+
+- `site improvement` is a broad category, but is used to label site issues and maintenance tasks as opposed to content and writing tasks. This distinction is helpful to allow community members and maintainers to easily filter tasks to either focus on or ignore content writing Issues and PRs. This allows community members (and maintainers!) more easily contribute according to their own skills and interests.
+
+- `merge on release` is used for PRs with accompanying Astro feature PRs that should **not** be merged until the feature has been released.
+
+### Types of PRs
+
+#### Content
 
 For PRs related to text content, including formatting of content for ease of readability as well as organizing and structuring content:
 
@@ -68,7 +70,7 @@ For PRs related to text content, including formatting of content for ease of rea
 - Proofread, edit, make suggestions and leave "LGTM" (and/or "NWTWWHB") as appropriate.
 - For most non-trivial PRs, the Docs Lead will likely want to do a final review themselves before the PR is merged.
 
-### Site UI/Architecture
+#### Site UI/Architecture
 
 For PRs related to the Astro Docs website itself, including accessibility (a11y) issues, UI elements and project structure:
 
@@ -87,7 +89,7 @@ We encourage our maintainers to audit and improve the accessibility of our code 
 - The A11yProject's [extensive list of resources](https://www.a11yproject.com/resources/) contains articles about accessibility testing, free developer tools, podcasts, and more. Also, it's worth looking at their blog posts and checklist for more insights!
 - MDN (Mozilla Developers Network) has interesting, easy-to-follow [accessibility tutorials, guides, and documentation](https://developer.mozilla.org/en-US/docs/Web/Accessibility).
 
-### Language Translations
+#### Language Translations
 
 For PRs that are translations to existing Docs content, including new page additions as well as smaller updates and corrections:
 
@@ -96,69 +98,64 @@ For PRs that are translations to existing Docs content, including new page addit
 - If you speak the language natively, check the content for accuracy. Note: some languages have created their own glossaries and/or language guides located in their language folder within `/src/i18n/`.
 - If you do not speak the language natively, and the PR has not had any recent activity, you can use online translation tools (e.g. Google Translate) and scan the results for anything that looks wildly out of place. Also, visit the page in the PR’s Netlify deploy preview to verify that nothing is visually out of place. While we always prefer to have a review from a native speaker of the language, having translated docs with some errors is usually better than having no docs at all.
 
-<!-- #### Correcting an Incorrect Translation Status
+## Merging PRs
 
-If the Translation Status Overview Issue incorrectly shows "needs updating" for a page (e.g. a typo fix to an English page triggered the status update), take the following steps to manually update the tracker:
+Every Astro maintainer has the authority to merge PRs in the docs repo. We do have some particular workflows that we ask you to follow to help keep us organized and make sure the appropriate people know what's happening:
 
-- Open the [Translation Status Overview](https://github.com/withastro/docs/issues/438) Issue.
-- Click the "Edit" button.
-- Find the big JSON object at the end (i.e. the translation's internal progress data).
-- Replace the `lastMajorChange` value of the affected languages with today's date and hour.
+1. No PR can merge without the approval (can be in the form of a comment e.g. "LGTM!") from someone else. 
 
-The JSON object will look something like this:
-```json
-{
-"zh-cn": {
-      "comparing-astro-vs-other-tools.md": {
-        "lastChange": "2022-07-27T19:08:40.000Z",
-        "lastCommitMsg": "Core Concepts PR follow-up (#1126)",
-        // This property below is the one you should change!
-        "lastMajorChange": "2022-07-27T19:08:40.000Z", 
-        "lastMajorCommitMsg": "Core Concepts PR follow-up (#1126)"
-      },
-      // (other pages...)
-  }
-  // (other languages...)
-}
+    Tiny corrections and typo fixes may be merged with a "LGTM!" or approving comment from any community member. A maintainer's approval is not required for small, obvious corrections.
+
+2. Anything that is not a fix/correction, including small sentence changes, must wait for an approval from a Team DX/Astro Docs maintainer.
+
+    Even the smallest change to text can have a big change in meaning, or can have a ripple effect on other sections of the docs! It's important that one of our regular Docs maintainers be aware of these changes.
+
+3. Check the changes in the Vercel deploy preview. This is the easiest way to catch small formatting mistakes that are often overlooked when just viewing the files changed.
+
+4. When you are satisfied that a PR can be merged into docs, add the label `Merge Queue`.
+
+    This ensures that anyone else looking at the PRs knows at a glance which PRs have been fully-approved, and helps when PRs take several minutes to merge one-at-a-time. It is also fine to leave a PR in this state with this label for someone else to merge.
+
+5. Always `update branch` before merging a PR and wait for all checks to pass. 
+
+    The Vercel deploy build will probably take the longest, and if you are confident that this PR will not cause a build failure and the previous deploy preview looked fine, you do not have to wait for the new deploy build to finish before merging.
+
+6. If there have been participants active in the comments who have not made their own commit and you would like them to receive credit for helping, visit [Kevin's Co-author Message Generator](https://coauthor.kevinzunigacuellar.com/) and paste in the GitHub link to the PR.
+
+    This will provide a message you can copy directly into (overwrite) the squash and merge commit and will give co-author credit to every account involved with this PR. We encourage this! Participants do not need to have a commit to have been helpful!
+
+
+### First-time Contributors
+
+Always check to see whether a PR has been submitted by a `first-time contributor`! The PR author's status should be visible at the top of the PR description. Normally, it will read `contributor`.
+
+For a first-time contributor, follow the above process but additionally:
+
+1. Make sure the checks run! You can do this by either authorizing the workflow manually or updating branch.
+2. Include a friendly final comment or review message thanking them, and welcoming them to Team Docs.
+3. Reply to the DocsBot congratulations message in the `#docs` channel with the following message:
+
+```
+:rotating_light:  **FIRST-TIME CONTRIBUTOR ALERT** :rotating_light: 
+Welcome to Team Docs, [name]! {pun mentioning some word in the PR title} [emoji]
 ```
 
-This process tells the tracker that the page was updated "now". The next time a PR gets merged, the translation tracking script will be rerun and the page will appear to have been updated, removing its "needs updating" icon. -->
 
 ## Submitting your own PRs
 
 This section is much shorter now that we are protecting the `main` branch of the Astro repos! 😅
 
-If your PR depends on a core PR being merged first, please **mark your PR as a draft** so that it does not get merged first. Please also link to the other PR so that we can easily check on its status when we are doing PR reviews.
+If your PR depends on a core PR being merged first, please **label your PR as `merge on release`** so that it does not get merged first. Please also link to the other PR so that we can easily check on its status when we are doing PR reviews.
 
 If your PR includes content for the Docs site to be translated and reflected in all languages, please **only submit your content in English**. This includes any related updates to the navigation sidebar etc. We have a robust system in place for updating the status of affected pages and all related site infrastructure in our other languages, and often our translators are in the best position to notice the "ripple effects" of your changes in their specific pages.
 
-If your PR includes content changes that should *not* be reflected in other languages (e.g. an English typo fix), then you can add the keyword "en-only" or "typo" in a commit message, and our system will *not* flag this page as needing a translation update. (This can be added in the "Squash and Merge" text field.)
+If your PR includes content changes that should *not* be reflected in other languages (e.g. an English typo fix), please add the phrase `[i18nIgnore]` to the title, and our system will *not* flag this page as needing a translation update. (This can alternatively be added in the "Squash and Merge" text field.)
 
-Other maintainers who leave review comments will mention you by name so that you will receive a GitHub notification. This is our default way of alerting you of activity on your PR. **If this is not a good way to get your attention, then please state in the PR whether you would like to be pinged on Discord.**
+Use the `/ptal` command in the `#docs-ptal` channel to ask for a review.
 
 Maintainers who submit PRs are expected to **merge their own PRs**, but only **after receiving an LGTM**.
 
 Typically, this will be an approval from another maintainer, often the Docs Lead or Docs Infrastructure Lead. But, in the case of minor PRs (e.g. typo fixes, broken links, etc.), any second LGTM is acceptable.
-
-### `Co-authored-by:` credit
-
-We have a "DocsBot" that posts congratulation messages in the #docs Discord channel. **Our bot also acknowledges co-authors!** During "Squash and Merge," if you would like to acknowledge any reviewer, please type in the exact phrase `Co-authored-by:` and include any missing reviewers or contributors whom you'd like to acknowledge! For example:
-
-```
-Co-authored-by: Sarah Rainsberger <sarah@rainsberger.ca>
-Co-authored-by: Chris Swithinbank <swithinbank@gmail.com>
-Co-authored-by: Yan Thomas <61414485+Yan-Thomas@users.noreply.github.com>
-Co-authored-by: Hippo <6137925+hippotastic@users.noreply.github.com>
-Co-authored-by: Kevin Zuniga Cuellar <46791833+kevinzunigacuellar@users.noreply.github.com>
-Co-authored-by: ElianCodes <hello@elian.codes>
-Co-authored-by: Reuben Tier <64310361+TheOtterlord@users.noreply.github.com>
-```
-
-You must use the exact co-author's name and email associated with their GitHub account. You can look up that information using a GitHub commit they have made from any PR, even one from another repository! Please don't hesitate to take the extra step and include others!
-
-From an individual's commit, e.g. `https://github.com/withastro/docs/commit/de11f2f2abf7ef54c874ebe0c85301d9bad36094`, add `.patch` to the end of the URL.
-
-This will bring up a "patchfile" containing all of the information about the commit, including the author's name and email address associated with the commit. You'll find this information in a field labelled `From:`.
 
 ## Note on Dependencies
 
