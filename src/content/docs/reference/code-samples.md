@@ -72,7 +72,7 @@ For code in the Astro docs repo, include a title attribute with quotation marks 
 
 Alternatively, (required for code in the Astro core repo) write the file name as a code comment in a separate line. Write the file name of `.astro` files immediately after the opening `---`
 
-``````markdown
+``````markdown title=""
  ```astro
  ---
  // src/pages/index.astro
