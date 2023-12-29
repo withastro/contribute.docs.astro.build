@@ -211,3 +211,41 @@ import RecipeLinks from "~/components/RecipeLinks.astro";
 
 <RecipeLinks slugs={["en/recipes/captcha", "en/recipes/build-forms-api"]}/>
 ```
+
+### FileTree Component
+
+Import and use the `<FileTree />` component to produce collapsable file trees in docs. Use hyphens (`-`) at different tab depths to show the file structure.
+
+Please remember to add a `/` at the end of a folder name!
+
+```mdx
+import FileTree from '~/components/FileTree.astro'
+
+### Example Project Tree
+
+A common Astro project directory might look like this:
+
+<FileTree>
+- public/
+  - robots.txt
+  - favicon.svg
+  - social-image.png
+- src/
+  - components/
+    - Header.astro
+    - Button.jsx
+  - layouts/
+    - PostLayout.astro
+  - pages/
+    - posts/
+      - post1.md
+      - post2.md
+      - post3.md
+    - index.astro
+  - styles/
+    - global.css
+- astro.config.mjs
+- package.json
+- tsconfig.json
+</FileTree>
+```
