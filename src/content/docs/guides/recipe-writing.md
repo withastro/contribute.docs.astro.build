@@ -8,7 +8,7 @@ Our "Recipes" section in the sidebar highlights **step-by-step how-to guides** f
 Astro docs welcomes recipe contributions that:
 
 - Edit an [existing recipe](#edit-existing-recipes) with corrected content or [new resource links](#add-new-links), by PRing the existing file in the docs repo.
-- Add a new [community recipe](#community-recipes) by PRing a link to the ["More Recipes" page](#more-recipes-page): `src/content/docs/en/recipes.mdx`.
+- Add a new [community recipe](#community-recipes) by PRing a link to the ["More Recipes" page](https://docs.astro.build/en/recipes/): `src/content/docs/en/recipes.mdx`.
 - Add a new [official recipe](#add-a-new-official-recipe), by PRing a new page (`.mdx` file) to the `src/content/docs/recipes/` folder.
 
 :::tip 

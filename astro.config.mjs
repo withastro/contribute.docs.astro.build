@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightLinksValidator from 'starlight-links-validator';
 
 /* https://vercel.com/docs/projects/environment-variables/system-environment-variables#system-environment-variables */
 const VERCEL_PREVIEW_SITE =
@@ -14,6 +15,7 @@ export default defineConfig({
 	site,
 	integrations: [
 		starlight({
+			plugins: [starlightLinksValidator()],
 			title: 'Astro Docs Docs (AD²)',
 			social: {
 				github: 'https://github.com/withastro/contribute.docs.astro.build'

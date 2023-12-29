@@ -34,7 +34,7 @@ It is important to clearly **define your new features** in a way that a reader d
 
 Start by imagining a reader scanning the page who only wants, or only needs, to understand **what** something is. (They understand the context, and perhaps just need to know which options they can configure.) Even the reader who doesn't know when or why they will use a feature will benefit from a clear explanation of **what** something is first. That reader will then be in a great position to ask, "Oh, and when would I use this?" or "Why would I configure this?" and read further.
 
-Include a basic usage example, following our [guide to including code samples](/guides/code-samples/).
+Include a basic usage example, following our [guide to including code samples](/reference/code-samples/).
 
 ## What should NOT be documented
 
