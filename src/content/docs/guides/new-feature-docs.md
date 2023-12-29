@@ -54,8 +54,6 @@ The source content for Astro's documentation lives within two different reposito
 
 All content for the English Configuration Reference page in docs is written in JSDoc in this file: https://github.com/withastro/astro/blob/main/packages/astro/src/%40types/astro.ts 
 
-English `README.md` files for all official Astro integrations to create the integration guides are found within each individual package here: https://github.com/withastro/astro/tree/main/packages/integrations
-
 A full list of all the English error messages is found here: https://github.com/withastro/astro/blob/main/packages/astro/src/core/errors/errors-data.ts
 
 All other content, including all non-English lanaguage content, is found within the Astro docs repo itself: https://github.com/withastro/docs 
