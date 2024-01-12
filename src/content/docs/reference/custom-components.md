@@ -249,3 +249,14 @@ A common Astro project directory might look like this:
 - tsconfig.json
 </FileTree>
 ```
+
+Hightlighting is available by writing an item in bold. Inline comments may also be added.
+
+```
+<FileTree>
+- folder/
+  - file.js
+  - **highlighted-file.ts**
+  - file.astro With an inline comment too
+</FileTree>
+```
