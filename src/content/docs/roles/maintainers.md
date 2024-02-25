@@ -100,7 +100,7 @@ For PRs that are translations to existing Docs content, including new page addit
 - If you speak the language natively, check the content for accuracy. Note: some languages have created their own glossaries and/or language guides located in their language folder within `/src/i18n/`.
 - If you do not speak the language natively, and the PR has not had any recent activity, you can use our [guide to reviewing translation PRs for non-native speakers](/reviewers/reviewing-translations/) and perform some manual checks that ensure a PR is "good enough" to publish. While we always prefer to have a review from a native speaker of the language, merging translations with some language errors is preferable to PRs that sit and get out of date as the docs continue to update. Following our guide for non-native speakers typically ensures that we can get updated, correct *content* in the docs more quickly and we can tolerate spelling mistakes or typos that can be corrected at a later date.
 
-## Merging PRs
+## Merging community-submitted PRs
 
 Every Astro maintainer has the authority to merge PRs in the docs repo. We do have some particular workflows that we ask you to follow to help keep us organized and make sure the appropriate people know what's happening:
 
