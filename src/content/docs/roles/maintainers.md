@@ -40,7 +40,7 @@ As a maintainer, here are some helpful things you can do:
 
 - Mention a particular maintainer or community member whose guidance or inclusion you know would be helpful. Different maintainers work on different parts of Astro, and if you know who the right person to seek extra clarification or approval from is, ping them!
 
-- [Merge a PR yourself](#merging-prs), even without any consultation or discussion, if it's an obvious fix like a typo or broken link.
+- [Merge a PR yourself](#merging-community-submitted-prs), even without any consultation or discussion, if it's an obvious fix like a typo or broken link.
 
 ### Labels
 
