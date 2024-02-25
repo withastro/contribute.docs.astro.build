@@ -11,7 +11,7 @@ Although we always prefer that our translations are reviewed by native speakers 
 
 1. Go into the "Files Changed" section if needed to find which page has been changed. NOTE: If the pages are for part of the tutorial, we need to let Chris/Yan know because the tutorial must be PR'd in one big PR. They will create a branch for that language and help get translators started working on this like a big project.
 
-2. Check the Netlify Deploy preview for a visual inspection:
+2. Check the Vercel Deploy preview for a visual inspection:
     - Scroll through the entire page and make sure all code blocks/notes and other visual elements are rendered properly
     - Check the page both in the translated language (to look for errant English that shouldn't be there) AND in English, to get a sense of the text
 
