@@ -2,10 +2,6 @@
 
 Learn how to contribute to Astro's documentation!
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/withastro/contribute.docs.astro.build)
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/contribute.docs.astro.build)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/contribute.docs.astro.build)
-
 Astro Docs Docs (AD<sup>2</sup>) provides contributors with guidelines and methods they can use to contribute to Astro's Documentation.
 
 This includes:
@@ -14,8 +10,6 @@ This includes:
 - Maintainer and Reviewer Guides 
 - . . . and more!
 
-Start today with [Astro Docs Docs (AD<sup>2</sup>)](https://contribute.docs.astro.build/)
+## Join us on Discord
 
-## Chat with Us
-
-Learn more about Astro, get support for your issues, and meet other developers in our [Discord community](https://astro.build/chat).
+Join Team Docs and get involved with docs contributions in the `#docs` channel of our [Discord community](https://astro.build/chat).
