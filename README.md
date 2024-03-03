@@ -12,7 +12,7 @@ This includes:
 - Writing and Style Guides
 - i18n and Translator guides
 - Maintainer and Reviewer Guides 
-and more...
+- . . . and more!
 
 Start today with [Astro Docs Docs (AD<sup>2</sup>)](https://contribute.docs.astro.build/)
 
