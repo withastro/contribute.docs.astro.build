@@ -3,7 +3,7 @@ title: Using our custom components
 description: A guide to using the custom components available in Astro Docs.
 ---
 
-Astro Docs uses several custom components that are available for use in any `.mdx` files. Note that these components cannot be used for docs that live in the astro core repo. Be sure to always check a preview of your components in the browser to ensure they are rendering properly.
+Astro Docs uses several custom components that are available for use in any `.mdx` files. Note that these components cannot be used for docs that live in the `astro` core repo (e.g. configuration reference, error reference docs). Be sure to always check a preview of your components in the browser to ensure they are rendering properly.
 
 ### Aside Component
 
@@ -214,12 +214,12 @@ import RecipeLinks from "~/components/RecipeLinks.astro";
 
 ### FileTree Component
 
-Import and use the `<FileTree />` component to produce collapsable file trees in docs. Use hyphens (`-`) at different tab depths to show the file structure.
+Import and use the `<FileTree />` Starlight component to produce collapsable file trees in docs. Use hyphens (`-`) at different tab depths to show the file structure.
 
 Please remember to add a `/` at the end of a folder name!
 
 ```mdx
-import FileTree from '~/components/FileTree.astro'
+import { FileTree } from '@astrojs/starlight/components';
 
 ### Example Project Tree
 
