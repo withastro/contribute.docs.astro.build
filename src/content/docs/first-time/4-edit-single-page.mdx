@@ -2,6 +2,8 @@
 title: Edit a single page
 description: How to edit a single page on GitHub.com.
 ---
+import { Steps } from '@astrojs/starlight/components';
+
 Every page on [docs.astro.build](https://docs.astro.build/) has an **Edit this page** link in the sidebar on desktop mode. Click that link to edit the source code for that page in GitHub. This is the way to make a contribution that updates a small section of one single page, such as a typo fix, right in your browser.
 
 If you have never made a pull request (PR) before, this is a great way to make a small change to Astro docs! 
@@ -41,6 +43,8 @@ Translated pages are always edited directly in the docs repo.
 
 ## Edit this Page via GitHub
 
+<Steps>
+
 1. Click the "Edit this page" link to be taken to the file with the source code for that page in **GitHub**.
 
 2. Click on the pencil icon when viewing this file to edit it.
@@ -51,15 +55,21 @@ Translated pages are always edited directly in the docs repo.
 
 5. Once you have committed your edits to your fork, follow the prompts to **create a pull request**.
 
+</Steps>
+
 You can also read an annotated blog post with screenshots [demonstrating the process of editing the docs this way](https://www.rainsberger.ca/posts/contribute-open-source-docs-edit-page-on-github/).
 
 ## Creating a pull request
+
+<Steps>
 
 1. Choose a title that is short, but descriptive of your change. If your change does **not** require translating or a similar update to the other language pages (e.g. fixing an English typo), please include `[i18nIgnore]` in your subject. If you are translating a non-English page, please indicate the language in the subject. For example, to propose an edit to a French page, include `i18n(fr)` in the PR title.
 
 2. Choose and fill out the appropriate template. Be sure to include any useful information or extra content, such as a linked Issue.
 
 3. Submit your changes for review.
+
+</Steps>
 
 Every pull request needs to be [reviewed by our contributors and approved by a maintainer](/first-time/6-pr-review-process/).
 
