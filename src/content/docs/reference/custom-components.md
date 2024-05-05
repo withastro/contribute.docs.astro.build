@@ -3,7 +3,9 @@ title: Using our custom components
 description: A guide to using the custom components available in Astro Docs.
 ---
 
-Astro Docs uses several custom components that are available for use in any `.mdx` files. Note that these components cannot be used for docs that live in the `astro` core repo (e.g. configuration reference, error reference docs). Be sure to always check a preview of your components in the browser to ensure they are rendering properly.
+In addition to [all available Starlight components](https://starlight.astro.build/guides/components/), Astro Docs uses several custom components that are available for use in any `.mdx` files. Note that these components cannot be used for docs that live in the `astro` core repo (e.g. configuration reference, error reference docs). Be sure to always check a preview of your components in the browser to ensure they are rendering properly.
+
+## Custom components
 
 ### Aside Component
 
@@ -106,7 +108,7 @@ Setting a custom package name helps us document integrations and other packages.
 <Since v="2.1.0" pkg="@astrojs/rss" />
 ```
 
-### Version Component
+### Latest version Component
 
 Sometimes it may be useful to display the latest version of a package on a page. For this, you can use the `<Version />` component, which must receive a valid package name from the npm registry as its `pkgName` prop.
 
@@ -120,7 +122,7 @@ The `<Version />` component is currently used in our Integrations pages as a way
 
 ### Tabs Component
 
-Astro Docs uses a `<Tabs>` component to allow readers to choose between different content views.
+Astro Docs uses a `<Tabs>` component to allow readers to choose between different content views. You may also use [Starlight's `<Tabs>` component](https://starlight.astro.build/guides/components/#tabs).
 
 There are also two variants of this component, `<PackageManagerTabs>` and `<UIFrameworkTabs>`, for our most common use cases where readers might be interested in only one of several instructions or code samples: package managers and UI frameworks. Other custom components may be added over time. You can find all existing Tabs variations in `src/components/tabs/`.
 
@@ -212,9 +214,28 @@ import RecipeLinks from "~/components/RecipeLinks.astro";
 <RecipeLinks slugs={["en/recipes/captcha", "en/recipes/build-forms-api"]}/>
 ```
 
+### Read More component
+
+Astro Docs uses a `<ReadMore>` component for displaying internal links to related content with consistent styling. It uses an open book icon to indicate that there is more information somewhere else in docs.
+
+Wrap any text in `<ReadMore></ReadMore>` to display the icon before your text. The component does not add any additional text, so include words like "Read more about..." in your text directly.
+
+Use [meaningful link text](https://wcag.com/blog/writing-meaningful-link-text/) that gives the reader an indication of where the link will take them. For internal links to other Astro concepts, use the concept or page title as your link text instead of text like `[here]` (does not say what information is at the link) or `[Astro Docs]` (you're already *in* Astro Docs!)
+
+
+```mdx
+import ReadMore from "~/components/ReadMore.astro";
+
+<ReadMore>Read more about [dynamic routing in Astro](/en/guides/routing/#dynamic-routes).</ReadMore>
+```
+
+## Starlight components
+
+Please see [Starlights component documentation]() for all available Starlight components. The ones most often used in Astro docs include:
+
 ### FileTree Component
 
-Import and use the `<FileTree />` Starlight component to produce collapsable file trees in docs. Use hyphens (`-`) at different tab depths to show the file structure.
+Import and use the [Starlight `<FileTree />` component](https://starlight.astro.build/guides/components/#file-tree) to produce collapsable file trees in docs. Use hyphens (`-`) at different tab depths to show the file structure.
 
 Please remember to add a `/` at the end of a folder name!
 
@@ -260,3 +281,44 @@ Hightlighting is available by writing an item in bold. Inline comments may also 
   - file.astro With an inline comment too
 </FileTree>
 ```
+
+### Steps Component
+
+Import and use the [Starlight `<Steps>` component](https://starlight.astro.build/guides/components/#steps) to style numbered lists of tasks.
+
+Remember, not every ordered list is a list of steps to follow! Only use this to show a linear sequence of instructions, and be sure to indent paragraphs and code blocks within each list item.
+
+Wrap `<Steps>` around a standard Markdown ordered list.
+All the usual Markdown syntax is applicable inside `<Steps>`.
+
+````mdx title="src/content/docs/example.mdx"
+import { Steps } from '@astrojs/starlight/components';
+
+<Steps>
+
+1. Import the component into your MDX file:
+
+   ```js
+   import { Steps } from '@astrojs/starlight/components';
+   ```
+
+2. Wrap `<Steps>` around your ordered list items.
+
+</Steps>
+````
+
+The code above generates the following on the page:
+
+import { Steps } from '@astrojs/starlight/components';
+
+<Steps>
+
+1. Import the component into your MDX file:
+
+   ```js
+   import { Steps } from '@astrojs/starlight/components';
+   ```
+
+2. Wrap `<Steps>` around your ordered list items.
+
+</Steps>
