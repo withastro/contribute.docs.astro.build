@@ -2,6 +2,7 @@
 title: Larger contributions with a fork
 description: How to make larger contributions to Astro Docs with a fork of the project.
 ---
+import { Steps } from '@astrojs/starlight/components';
 
 [Editing a single page on GitHub.com](/first-time/4-edit-single-page/) is convenient for small text changes, but does not allow you to see a live preview of the site while you are working. It also does not let you easily edit multiple files at once, such as a guide and a reference page or a sidebar entry.
 
@@ -59,19 +60,39 @@ To create your copy, click the <kbd>Fork</kbd> button at the top right of any pa
 When you first create your fork, it will be an exact copy of this repository. Over time, `withastro/docs` will change as the docs are updated, but your fork won’t automatically stay up-to-date. Here are some ways to keep your fork in sync with this repo.
 
 ##### Manually via the GitHub UI
+
+<Steps>
+
 1. Navigate to your fork on GitHub
+
 2. Click <kbd>Sync fork</kbd> and then <kbd>Update branch</kbd>
+
+</Steps>
 
 ##### Manually from the command line
 In the terminal on your computer:
+
+<Steps>
+
 1. Make sure you’re on the main branch: `git checkout main`
+
 2. Fetch and merge updates: `git pull upstream main`
+
 3. Push the updates back to your fork on GitHub: `git push origin main`
 
+</Steps>
+
 ##### Automatically with a GitHub app
+
+<Steps>
+
 1. Go to [the “Pull” GitHub app page](https://github.com/apps/pull)
+
 2. Click <kbd>Install</kbd>
+
 3. Follow the instructions to select your fork
+
+</Steps>
 
 ## Page content source location
 
@@ -106,11 +127,15 @@ Translated pages are always edited directly in the docs repo.
 
 ## Creating a pull request
 
+<Steps>
+
 1. Choose a title that is short, but descriptive of your change. If your change does **not** require translating or a similar update to the other language pages (e.g. fixing an English typo), please include `[i18nIgnore]` in your subject. If you are translating a non-English page, please indicate the language in the subject. For example, to propose an edit to a French page, include `i18n(fr)` in the PR title.
 
 2. Choose and fill out the appropriate template. Be sure to include any useful information or extra content, such as a linked Issue.
 
 3. Submit your changes for review.
+
+</Steps>
 
 Every pull request needs to be [reviewed by our contributors and approved by a maintainer](/first-time/6-pr-review-process/).
 
