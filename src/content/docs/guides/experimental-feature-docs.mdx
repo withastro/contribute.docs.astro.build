@@ -2,12 +2,16 @@
 title: Adding docs for experimental features
 description: A guide to writing docs for your feature released behind an experimental flag.
 ---
+import { Steps, Icon } from '@astrojs/starlight/components';
+import ReadMore from '../../../components/ReadMore.astro'
 
 Features released behind an experimental flag allow our developers to work quickly, respond to feedback, and even change features entirely, with as little disruption to the Astro community as possible. These features are not required to follow our normal [semantic versioning rules](https://docs.astro.build/en/upgrade-astro/#semantic-versioning) and may introduce breaking changes without notice.
 
 ## Documenting experimental features
 
 We keep an experimental feature's official documentation in Astro docs minimal, and scoped to the [experimental flag section of the configuration reference page](https://docs.astro.build/en/reference/configuration-reference/#experimental-flags). Only when a feature is no longer experimental do we add documentation within other pages. This gives us the greatest flexibility for things to change and evolve, as most experimental features do!
+
+<ReadMore>Read more about [why we document experimental features differently](#why-we-document-differently)!</ReadMore>
 
 ### Where to add your documentation
 
@@ -52,22 +56,38 @@ Add a new entry with the following structure:
 
 ### What to include in the description
 
-The description must include
+Follow the steps below to craft your description, adding, in order:
+<Steps>
+1. A short description of **what the feature does** or **allows you to do**. (1 - 4 sentences)
 
-- A short description of what the feature does or allows you to do. (1 - 4 sentences)
-- `To enable this feature, add the experimental flag in your Astro config:` (1 line)
-- A minimal code example showing your experimental feature flag set to `true` (code block)
-- Any **required** configuration that must be set, with code sample showing a possible configuration (if applicable)
-	- (Code block prefaced by description such as "The following configuration sets...")
-- Minimal usage description and examples (aim for 100 lines max)
-	- Think of this as your **traditional documentation** section.
-	- Include the basics of what someone needs to get started/use the feature.
-	- Keep explanations short, and stick to common, basic examples.
+2. `To enable this feature, add the experimental flag in your Astro config:` (1 line)
+
+3. A minimal code example showing your experimental feature flag set to `true` (code block)
+
+4. Any **required** configuration that must be set, with code sample demonstrating a possible configuration (if applicable)
+	- Introduce the code block with a description such as "The following configuration sets [X and Y]."
+
+
+5. Mention **general requirements/limitations** or situations where this feature does not work. (if applicable)
+	- Do not be overly specific, but do let the reader know if there are general requirements.
+	- e.g. "This feature is not available on prerendered pages."
+
+
+6. Minimal usage description and examples (aim for 100 lines max)
+	- Think of this as your traditional documentation section.
+	- Keep explanations short, focused on getting someone started.
+	- If included, stick to showing only common, basic examples.
 	- Do not try to cover every case/example.
-	- No hard maximum length, take the space you truly need.
-	- 
+	- No strict maximum length; take the space you truly need.
 
 
+7. The following two lines to direct readers to the RFC for your feature, replacing the name and link with your own. (2 lines)
+		```js
+		* For a complete overview, and to give feedback on this experimental API,
+    * see the [Feature Name RFC](link to RFC proposal).
+		```
+
+</Steps>
 
 ### Why we document differently
 
@@ -85,15 +105,7 @@ Other reasons for not documenting experimental features in regular docs pages in
 
 - The lack of official documentation sets appropriate expectations surrounding support. Issues and support questions can be pointed to the RFC discussions instead of GitHub or Discord. It is not an "issue" if something isn't working in an experimental feature. It's not necessarily intended to work perfectly yet! But, getting feedback about a feature's performance or behaviour in the discussion thread is very helpful to the developers.
 
-And lastly, there's some benefit to experimental features feeling... experimental! Insider secrets! I have to go into Ben's mind to get the docs! I can participate in a roadmap discussion! We want our community to feel involved in the **process** whenever possible, as part of the team.
-
-
-## Experimental flag brain dump
-
-
-It just 
-
-
+And lastly, there's some benefit to experimental features feeling... experimental! Insider secrets! I have to go into Ben's mind to get the docs! I can participate in a roadmap discussion! We want our community to feel involved in the **process** whenever possible, as part of the team. (And, if *we* have to go ask Ben how this works, then our community "gets to", too!)
 
 
 ## Unflagging an experimental feature 
