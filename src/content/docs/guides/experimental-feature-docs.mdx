@@ -5,11 +5,11 @@ description: A guide to writing docs for your feature released behind an experim
 import { Steps, Icon } from '@astrojs/starlight/components';
 import ReadMore from '../../../components/ReadMore.astro'
 
-Features released behind an experimental flag allow our developers to work quickly, respond to feedback, and even change features entirely, with as little disruption to the Astro community as possible. These features are not required to follow our normal [semantic versioning rules](https://docs.astro.build/en/upgrade-astro/#semantic-versioning) and may introduce breaking changes without notice.
+Features released behind an experimental flag allow our developers to work quickly, respond to feedback, and even change features entirely with as little disruption to the Astro community as possible. These features are not required to follow our normal [semantic versioning rules](https://docs.astro.build/en/upgrade-astro/#semantic-versioning) and may introduce breaking changes without notice.
 
 ## Documenting experimental features
 
-We keep an experimental feature's official documentation in Astro docs minimal, and scoped to the [experimental flag section of the configuration reference page](https://docs.astro.build/en/reference/configuration-reference/#experimental-flags).
+We only include minimal documentation in Astro docs, and keep it scoped to the [experimental flag section of the configuration reference page](https://docs.astro.build/en/reference/configuration-reference/#experimental-flags).
 
 Only when a feature is no longer experimental do we add documentation within other pages. This gives us the greatest flexibility for things to change and evolve, as most experimental features do!
 
@@ -107,39 +107,78 @@ Add the following underneath the `@description` tag, in order:
 
 ## Unflagging an experimental feature 
 
-Key things:
+Congratulations, your feature is ready for release!
 
-- noting when this experimental flag was first introduced (there might be some helpful context for someone just now learning about this in case they wants to look up what we said about this when it was first released, either in the changelog or blog post)
+Now, your documentation will live somewhere else in Astro Docs (Team Docs will guide you!) and the experimental flag will be removed from our Configuration Reference page.
 
-- a description of what it is, because it is now essentially a "new feature" of Astro! (I took from the earlier changelog for an example) and some people ignore experimental features. They might have no idea what this is, and it deserves just as much description/fanfare as when it was released as experimental!
+### Changeset
 
-- "If you were using this feature..." and code showing removing the experimental flag. (Prompt because this may break projects)
+The biggest docs task for this PR will be the changeset `.md` file that describes this PR for the CHANGELOG.
 
-- "If you have been waiting for stabilization before using.... , you can now do so." (Reminding them that maybe they saw this before and thought, "I'll wait!")
+Create a changeset using the following structure:
 
-- link to finding more info in the docs
+``````md wrap=true
+---
+"astro": minor
+---
 
-### Example
+The `myFeature` feature introduced behind a flag in [vx.x.0](https://github.com/withastro/astro/blob/main/packages/astro/CHANGELOG.md#xx0) is no longer experimental and is available for general use.
 
-The `i18nDomains` routing feature introduced behind a flag in [v3.4.0](https://github.com/withastro/astro/blob/main/packages/astro/CHANGELOG.md#430) is no longer experimental and is available for general use.
+// Hype your feature!
+// Use content from the original changeset and docs `@description`
+This [feature description] allows you to ....
 
-This routing option allows you to configure different domains for individual locales in entirely server-rendered projects using the [@astrojs/node](https://docs.astro.build/en/guides/integrations-guide/node/) or [@astrojs/vercel](https://docs.astro.build/en/guides/integrations-guide/vercel/) adapter with a `site` configured.
-
-If you were using this feature, please remove the experimental flag from your Astro config:
+If you were previously using this feature, please remove the experimental flag from your Astro config:
 
 ```diff
 import { defineConfig } from 'astro'
 
 export default defineConfig({
 -  experimental: {
--    i18nDomains: true,
+-    myFeature: true,
 -  }
 })
 ```
 
-If you have been waiting for stabilization before using this routing option, you can now do so. 
+If you have been waiting for stabilization before using this [feature description], you can now do so. 
 
-Please see [the internationalization docs](https://docs.astro.build/en/guides/internationalization/#domains) for more about this feature.
+Please see [the specific page in docs](https://docs.astro.build/en/my-feature/) for more about this feature.
+``````
+
+### What to include in the changeset
+
+Add the following underneath the frontmatter, in order:
+
+<Steps>
+1. `The [feature description] introduced behind a flag in [vx.x.0](https://github.com/withastro/astro/blob/main/packages/astro/CHANGELOG.md#xx0) is no longer experimental and is available for general use.` (1 line)
+2. **Reused content** from the experimental release changeset, as well as the `@description` from your experimental flag's documentation in `astro.ts`. (aim for 100 lines max)
+	- Remember, for some readers this *is* the (only) feature release! Be as descriptive as you were when it was experimental!
+	- This "introduces" your feature for the first time.
+	- This can include basic configuration, usage, and examples.
+	- Be sure to check for accuracy, and update as necessary to reflect the current state of the feature.
+	- No strict maximum length; take the space you truly need.
+
+2. `If you were previously using this feature, please remove the experimental flag from your Astro config:` (1 line)
+
+3. A minimal `diff` code example showing your experimental feature flag removed from Astro config. (code block)
+		```diff
+		import { defineConfig } from 'astro'
+
+		export default defineConfig({
+		-  experimental: {
+		-    myFeature: true,
+		-  }
+		})
+		```
+
+4. The following lines to emphasize stability and direct readers to the documentation for feature, replacing the name and link with your own. (2 lines)
+		```md wrap
+		If you have been waiting for stabilization before using this [feature description], you can now do so.
+
+		Please see [the specific page in docs](https://docs.astro.build/en/my-feature/) for more about this feature.
+		```
+</Steps>
+
 
 ## Why we document differently
 
