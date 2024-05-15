@@ -9,7 +9,9 @@ Features released behind an experimental flag allow our developers to work quick
 
 ## Documenting experimental features
 
-We keep an experimental feature's official documentation in Astro docs minimal, and scoped to the [experimental flag section of the configuration reference page](https://docs.astro.build/en/reference/configuration-reference/#experimental-flags). Only when a feature is no longer experimental do we add documentation within other pages. This gives us the greatest flexibility for things to change and evolve, as most experimental features do!
+We keep an experimental feature's official documentation in Astro docs minimal, and scoped to the [experimental flag section of the configuration reference page](https://docs.astro.build/en/reference/configuration-reference/#experimental-flags).
+
+Only when a feature is no longer experimental do we add documentation within other pages. This gives us the greatest flexibility for things to change and evolve, as most experimental features do!
 
 <ReadMore>Read more about [why we document experimental features differently](#why-we-document-differently)!</ReadMore>
 
@@ -27,7 +29,7 @@ Add a new entry with the following structure:
 		 * @name experimental.feature
 		 * @type {boolean}
 		 * @default `false`
-		 * @version 4.8.0
+		 * @version 4.x.0
 		 * @description
 		 *
 		 * This feature [does/allows you to...]
@@ -37,7 +39,7 @@ Add a new entry with the following structure:
 		 * ```js
 		 * {
 		 *   experimental: {
-		 *     feature: true,
+		 *     featureName: true,
 		 *   },
 		 * }
 		 * ```
@@ -56,24 +58,38 @@ Add a new entry with the following structure:
 
 ### What to include in the description
 
-Follow the steps below to craft your description, adding, in order:
+Add the following underneath the `@description` tag, in order:
 <Steps>
 1. A short description of **what the feature does** or **allows you to do**. (1 - 4 sentences)
 
 2. `To enable this feature, add the experimental flag in your Astro config:` (1 line)
 
-3. A minimal code example showing your experimental feature flag set to `true` (code block)
+3. A minimal code example showing your experimental feature flag set to `true`. (code block)
+		```js
+		{
+		 experimental: {
+		  featureName: true,
+		 },
+		}
+		```
+	- Include any **required** configuration that must be also be set. (if applicable)
+	- For example, if your feature requires on-demand rendering, include the `output` config:
+		```js ins={2}
+		{
+		 output: 'hybrid', // or 'server'
+		 experimental: {
+		  featureName: true,
+		 },
+		}
+		```
 
-4. Any **required** configuration that must be set, with code sample demonstrating a possible configuration (if applicable)
-	- Introduce the code block with a description such as "The following configuration sets [X and Y]."
 
-
-5. Mention **general requirements/limitations** or situations where this feature does not work. (if applicable)
+4. Mention **general requirements/limitations** or situations where this feature does not work. (if applicable)
 	- Do not be overly specific, but do let the reader know if there are general requirements.
-	- e.g. "This feature is not available on prerendered pages."
+	- For example, "This feature is not available on prerendered pages."
 
 
-6. Minimal usage description and examples (aim for 100 lines max)
+5. Minimal usage description and examples (aim for 100 lines max)
 	- Think of this as your traditional documentation section.
 	- Keep explanations short, focused on getting someone started.
 	- If included, stick to showing only common, basic examples.
@@ -81,32 +97,13 @@ Follow the steps below to craft your description, adding, in order:
 	- No strict maximum length; take the space you truly need.
 
 
-7. The following two lines to direct readers to the RFC for your feature, replacing the name and link with your own. (2 lines)
+6. The following two lines to direct readers to the RFC for your feature, replacing the name and link with your own. (2 lines)
 		```js
 		* For a complete overview, and to give feedback on this experimental API,
     * see the [Feature Name RFC](link to RFC proposal).
 		```
 
 </Steps>
-
-### Why we document differently
-
-The development of these features emphasizes responsiveness and experimentation, so it is difficult to keep documentation up to date and translated. In some cases, experimental features behind a flag come with little or no documentation at all because we are not guaranteeing any stability: neither how, nor *that*, it works! We are happy to have people use and test these features, but our goal is *building* and not *delivering* at this stage of development.
-
-In fact, the best resource for experimental features is the RFC (request for consideration) proposal document and discussion thread. This allows a reader to follow the progress of a feature's *intention*, and how its implementation may have changed over time. This also allows engagement from the community, providing a place for questions and feedback before decisions are finalized.
-
-Other reasons for not documenting experimental features in regular docs pages include:
-
-- Removing the burden of the feature developer to write documentation to the standards and conventions of Astro Docs. The RFC proposal documents evolve, and are added to (not revised) as the feature changes. Astro docs must contstantly **update** to only show the most current, accurate information.
-
-- Many people choose to wait until experimental features are stable before trying them. Keeping the docs limited to only the latest stable version of Astro's fully-supported features is less confusing for most people.
-
-- Astro docs regularly receives PRs to update and correct information as they discover errors. Our repository activity is extremely high, and any perceived ommission or imperfection in our docs is noticed by our community adds extra workload to our docs team. While a feature may be experimental, docs itself is expected to be a stable, polished project. We can only achieve this once a feature has stabilized.
-
-- The lack of official documentation sets appropriate expectations surrounding support. Issues and support questions can be pointed to the RFC discussions instead of GitHub or Discord. It is not an "issue" if something isn't working in an experimental feature. It's not necessarily intended to work perfectly yet! But, getting feedback about a feature's performance or behaviour in the discussion thread is very helpful to the developers.
-
-And lastly, there's some benefit to experimental features feeling... experimental! Insider secrets! I have to go into Ben's mind to get the docs! I can participate in a roadmap discussion! We want our community to feel involved in the **process** whenever possible, as part of the team. (And, if *we* have to go ask Ben how this works, then our community "gets to", too!)
-
 
 ## Unflagging an experimental feature 
 
@@ -143,3 +140,21 @@ export default defineConfig({
 If you have been waiting for stabilization before using this routing option, you can now do so. 
 
 Please see [the internationalization docs](https://docs.astro.build/en/guides/internationalization/#domains) for more about this feature.
+
+## Why we document differently
+
+The development of these features emphasizes responsiveness and experimentation, so it is difficult to keep documentation up to date and translated. In some cases, experimental features behind a flag come with little or no documentation at all because we are not guaranteeing any stability: neither how, nor *that*, it works! We are happy to have people use and test these features, but our goal is *building* and not *delivering* at this stage of development.
+
+In fact, the best resource for experimental features is the RFC (request for consideration) proposal document and discussion thread. This allows a reader to follow the progress of a feature's *intention*, and how its implementation may have changed over time. This also allows engagement from the community, providing a place for questions and feedback before decisions are finalized.
+
+Other reasons for not documenting experimental features in regular docs pages include:
+
+- Removing the burden of the feature developer to write documentation to the standards and conventions of Astro Docs. The RFC proposal documents evolve, and are added to (not revised) as the feature changes. Astro docs must contstantly **update** to only show the most current, accurate information.
+
+- Many people choose to wait until experimental features are stable before trying them. Keeping the docs limited to only the latest stable version of Astro's fully-supported features is less confusing for most people.
+
+- Astro docs regularly receives PRs to update and correct information as they discover errors. Our repository activity is extremely high, and any perceived ommission or imperfection in our docs is noticed by our community adds extra workload to our docs team. While a feature may be experimental, docs itself is expected to be a stable, polished project. We can only achieve this once a feature has stabilized.
+
+- The lack of official documentation sets appropriate expectations surrounding support. Issues and support questions can be pointed to the RFC discussions instead of GitHub or Discord. It is not an "issue" if something isn't working in an experimental feature. It's not necessarily intended to work perfectly yet! But, getting feedback about a feature's performance or behaviour in the discussion thread is very helpful to the developers.
+
+And lastly, there's some benefit to experimental features feeling... experimental! Insider secrets! I have to go into Ben's mind to get the docs! I can participate in a roadmap discussion! We want our community to feel involved in the **process** whenever possible, as part of the team. (And, if *we* have to go ask Ben how this works, then our community "gets to", too!)
