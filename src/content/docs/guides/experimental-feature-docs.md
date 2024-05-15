@@ -3,6 +3,99 @@ title: Adding docs for experimental features
 description: A guide to writing docs for your feature released behind an experimental flag.
 ---
 
+Features released behind an experimental flag allow our developers to work quickly, respond to feedback, and even change features entirely, with as little disruption to the Astro community as possible. These features are not required to follow our normal [semantic versioning rules](https://docs.astro.build/en/upgrade-astro/#semantic-versioning) and may introduce breaking changes without notice.
+
+## Documenting experimental features
+
+We keep an experimental feature's official documentation in Astro docs minimal, and scoped to the [experimental flag section of the configuration reference page](https://docs.astro.build/en/reference/configuration-reference/#experimental-flags). Only when a feature is no longer experimental do we add documentation within other pages. This gives us the greatest flexibility for things to change and evolve, as most experimental features do!
+
+### Where to add your documentation
+
+Documentation to the configuration reference page is added **in the main astro repo** to [`astro/packages/astro/src/@types/astro.ts`](https://github.com/withastro/astro/blob/main/packages/astro/src/%40types/astro.ts). You can find the section for experimental flags by searching for this line: `@name Experimental Flags`.
+
+### JSDoc format
+
+Add a new entry with the following structure:
+
+```ts
+/**
+		 * @docs
+		 * @name experimental.feature
+		 * @type {boolean}
+		 * @default `false`
+		 * @version 4.8.0
+		 * @description
+		 *
+		 * This feature [does/allows you to...]
+     * 
+     * To enable this feature, add the experimental flag in your Astro config:
+		 *
+		 * ```js
+		 * {
+		 *   experimental: {
+		 *     feature: true,
+		 *   },
+		 * }
+		 * ```
+		 *
+		 * Describe any required configuration, as well as basic usage here.
+     * It's OK if this is 100 lines or so!
+     * This will be the only documentation in docs!
+     * The RFC will do most of the docs "heavy lifting."
+     * 
+		 * For a complete overview, and to give feedback on this experimental API,
+     * see the [Feature RFC](https://github.com/withastro/roadmap/blob/actions/proposals/00xx-feature.md).
+		 */
+		actions?: boolean;
+
+```
+
+### What to include in the description
+
+The description must include
+
+- A short description of what the feature does or allows you to do. (1 - 4 sentences)
+- `To enable this feature, add the experimental flag in your Astro config:` (1 line)
+- A minimal code example showing your experimental feature flag set to `true` (code block)
+- Any **required** configuration that must be set, with code sample showing a possible configuration (if applicable)
+	- (Code block prefaced by description such as "The following configuration sets...")
+- Minimal usage description and examples (aim for 100 lines max)
+	- Think of this as your **traditional documentation** section.
+	- Include the basics of what someone needs to get started/use the feature.
+	- Keep explanations short, and stick to common, basic examples.
+	- Do not try to cover every case/example.
+	- No hard maximum length, take the space you truly need.
+	- 
+
+
+
+### Why we document differently
+
+The development of these features emphasizes responsiveness and experimentation, so it is difficult to keep documentation up to date and translated. In some cases, experimental features behind a flag come with little or no documentation at all because we are not guaranteeing any stability: neither how, nor *that*, it works! We are happy to have people use and test these features, but our goal is *building* and not *delivering* at this stage of development.
+
+In fact, the best resource for experimental features is the RFC (request for consideration) proposal document and discussion thread. This allows a reader to follow the progress of a feature's *intention*, and how its implementation may have changed over time. This also allows engagement from the community, providing a place for questions and feedback before decisions are finalized.
+
+Other reasons for not documenting experimental features in regular docs pages include:
+
+- Removing the burden of the feature developer to write documentation to the standards and conventions of Astro Docs. The RFC proposal documents evolve, and are added to (not revised) as the feature changes. Astro docs must contstantly **update** to only show the most current, accurate information.
+
+- Many people choose to wait until experimental features are stable before trying them. Keeping the docs limited to only the latest stable version of Astro's fully-supported features is less confusing for most people.
+
+- Astro docs regularly receives PRs to update and correct information as they discover errors. Our repository activity is extremely high, and any perceived ommission or imperfection in our docs is noticed by our community adds extra workload to our docs team. While a feature may be experimental, docs itself is expected to be a stable, polished project. We can only achieve this once a feature has stabilized.
+
+- The lack of official documentation sets appropriate expectations surrounding support. Issues and support questions can be pointed to the RFC discussions instead of GitHub or Discord. It is not an "issue" if something isn't working in an experimental feature. It's not necessarily intended to work perfectly yet! But, getting feedback about a feature's performance or behaviour in the discussion thread is very helpful to the developers.
+
+And lastly, there's some benefit to experimental features feeling... experimental! Insider secrets! I have to go into Ben's mind to get the docs! I can participate in a roadmap discussion! We want our community to feel involved in the **process** whenever possible, as part of the team.
+
+
+## Experimental flag brain dump
+
+
+It just 
+
+
+
+
 ## Unflagging an experimental feature 
 
 Key things:
@@ -17,8 +110,7 @@ Key things:
 
 - link to finding more info in the docs
 
-Example:
-
+### Example
 
 The `i18nDomains` routing feature introduced behind a flag in [v3.4.0](https://github.com/withastro/astro/blob/main/packages/astro/CHANGELOG.md#430) is no longer experimental and is available for general use.
 
