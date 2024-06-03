@@ -159,7 +159,7 @@ Here are some tips and examples to match Astro Docs' style for instructional con
 
   - Do not tell a story around what is happening.
   
-  - If you feel it is needed, you can some provide brief context or clarity in the form of a goal, benefit, or reason.
+  - If you feel it is needed, provide brief context or clarity in the form of a goal, benefit, or reason.
 
 
 **Example Edit:** Instead of "telling a story" to introduce your instructions, start with a "Big Step" (e.g. overall goal) + reason.
