@@ -105,6 +105,25 @@ Add the following underneath the `@description` tag, in order:
 
 </Steps>
 
+## Breaking Changes (while still experimental)
+
+Updates to experimental features are always a `patch` update to `astro`. However, unlike other patch updates, these may contain breaking changes.
+
+It is important to both **alert users of the feature** of this breaking change, but at the same time, **not alarm Astro users who are *not* using the feature**!
+
+Use the following model for your changeset:
+
+```
+---
+"astro": patch
+---
+
+**BREAKING CHANGE to the experimental Container API only** 
+
+// rest of changeset
+```
+
+
 ## Unflagging an experimental feature 
 
 Congratulations, your feature is ready for release!
