@@ -56,11 +56,19 @@ export default defineConfig({
 					autogenerate: { directory: 'first-time' },
 				},
 				{
+					label: 'Documenting Code Changes',
+					items: [
+						{ label: 'About documenting changes', link: '/docs-for-code-changes/about-documenting-code-changes/' },
+						{ label: 'Patch changes', link: '/docs-for-code-changes/patch-changes/' },
+						{ label: 'New or updated features', link: '/docs-for-code-changes/new-feature-docs/' },
+						{ label: 'Experimental features', link: '/docs-for-code-changes/experimental-feature-docs/' },
+						{ label: 'Pull requests', link: '/docs-for-code-changes/pull-requests/' },
+					],
+				},
+				{
 					label: 'Contributing Guides',
 					items: [
 						{ label: 'Writing and Style Guide', link: '/guides/writing-style/' },
-						{ label: 'Adding docs for a new feature', link: '/guides/new-feature-docs/' },
-						{ label: 'Adding docs for an experimental flag', link: '/guides/experimental-feature-docs/' },
 						{ label: 'Adding a new Astro + X Guide', link: '/guides/new-third-party-stub/' },
 						{ label: 'Contributing a Recipe', link: '/guides/recipe-writing/' },
 						{ label: 'Translating Astro docs', link: '/guides/i18n/' },	

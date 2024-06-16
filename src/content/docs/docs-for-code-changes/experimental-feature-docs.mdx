@@ -5,13 +5,15 @@ description: A guide to writing docs for your feature released behind an experim
 import { Steps, Icon } from '@astrojs/starlight/components';
 import ReadMore from '../../../components/ReadMore.astro'
 
-Features released behind an experimental flag allow our developers to work quickly, respond to feedback, and even change features entirely with as little disruption to the Astro community as possible. These features are not required to follow our normal [semantic versioning rules](https://docs.astro.build/en/upgrade-astro/#semantic-versioning) and may introduce breaking changes without notice.
+Features released behind an experimental flag allow our developers to work quickly, respond to feedback, and even change features entirely with as little disruption to the Astro community as possible.
+
+These features are not required to follow our normal [semantic versioning rules](https://docs.astro.build/en/upgrade-astro/#semantic-versioning) and may introduce breaking changes without notice. Therefore, extra care must be taken when documenting.
 
 ## Documenting experimental features
 
-We only include minimal documentation in Astro docs, and keep it scoped to the [experimental flag section of the configuration reference page](https://docs.astro.build/en/reference/configuration-reference/#experimental-flags).
+Since these features may change and even break several times during development, experimental features only documented in their [experimental flag section of the configuration reference page](https://docs.astro.build/en/reference/configuration-reference/#experimental-flags).
 
-Only when a feature is no longer experimental do we add documentation within other pages. This gives us the greatest flexibility for things to change and evolve, as most experimental features do!
+Only when a feature is no longer experimental do we add documentation and reference it within other pages. This gives us the greatest flexibility for things to change and evolve, as most experimental features do!
 
 <ReadMore>Read more about [why we document experimental features differently](#why-we-document-differently)!</ReadMore>
 
