@@ -2,13 +2,10 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightLinksValidator from 'starlight-links-validator';
 
-/* https://vercel.com/docs/projects/environment-variables/system-environment-variables#system-environment-variables */
-const VERCEL_PREVIEW_SITE =
-	process.env.VERCEL_ENV !== 'production' &&
-	process.env.VERCEL_URL &&
-	`https://${process.env.VERCEL_URL}`;
+/* https://docs.netlify.com/configure-builds/environment-variables/#read-only-variables */
+const NETLIFY_PREVIEW_SITE = process.env.CONTEXT !== 'production' && process.env.DEPLOY_PRIME_URL;
 
-const site = VERCEL_PREVIEW_SITE || 'https://contribute.docs.astro.build/';
+const site = NETLIFY_PREVIEW_SITE || 'https://contribute.docs.astro.build/';
 
 // https://astro.build/config
 export default defineConfig({
