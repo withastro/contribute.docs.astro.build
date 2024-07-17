@@ -112,7 +112,7 @@ Every Astro maintainer has the authority to merge PRs in the docs repo. We do ha
 
     Even the smallest change to text can have a big change in meaning, or can have a ripple effect on other sections of the docs! It's important that one of our regular Docs maintainers be aware of these changes.
 
-3. Check the changes in the Vercel deploy preview. This is the easiest way to catch small formatting mistakes that are often overlooked when just viewing the files changed.
+3. Check the changes in the Netlify deploy preview. This is the easiest way to catch small formatting mistakes that are often overlooked when just viewing the files changed.
 
 4. When you are satisfied that a PR can be merged into docs, add the label `Merge Queue`.
 
@@ -120,7 +120,7 @@ Every Astro maintainer has the authority to merge PRs in the docs repo. We do ha
 
 5. Always `update branch` before merging a PR and wait for all checks to pass. 
 
-    The Vercel deploy build will probably take the longest, and if you are confident that this PR will not cause a build failure and the previous deploy preview looked fine, you do not have to wait for the new deploy build to finish before merging.
+    The Netlify deploy build will probably take the longest, and if you are confident that this PR will not cause a build failure and the previous deploy preview looked fine, you do not have to wait for the new deploy build to finish before merging.
 
 6. If there have been participants active in the comments who have not made their own commit and you would like them to receive credit for helping, visit [Kevin's Co-author Message Generator](https://coauthor.kevinzunigacuellar.com/) and paste in the GitHub link to the PR. Or, use the GitHub action and leave a comment directly in the PR with only the message `!coauthor` and "Kevin" (the GitHub-actions bot) will respond with another comment.
 
