@@ -3,9 +3,37 @@ title: Tips for Support Squad
 description: How support squad can get involved in Astro Docs.
 ---
 
+> If someone asks a question, answer with documentation. If the documentation doesn’t exist, write the documentation, then answer the question with documentation.
+>
+> [Jen Luker - @knitcodemonkey](https://twitter.com/knitcodemonkey/status/1486214423190519811)
+
+
 Hello, Support Squad!
 
 You are in a special position to contribute to Docs, with your first-hand experience helping community members with their issues. Here are some ways you can help use the knowledge gained there to improve the Docs!
+
+## User Research
+
+Every time you interact with someone who needs help, you have an opportunity to get feedback about the quality of our documentation!
+
+In addition to helping one person get unstuck or achieve their personal goal, you can help *the entire project and community* going forward if you can use a support question as an opportunity for user research.
+
+For **support that scales, and eventually becomes self-support**, which reduces the support burden for everyone, it is helpful if feedback gets back to docs improvements when necessary.
+
+**Please always try to include a link to the docs when starting to help someone**. It can be really tempting to answer questions yourself, or jump right in, but it is most helpful to us if you can prompt people to visit the docs:
+
+> "Hi! Yes, you will also need to install an adapter after configuring `output: 'hybrid'`. Here is where this is covered in the docs." (drop a link) 
+
+Be very clear that you are not giving off RTFM vibes! You *can* give a short, yes/no or confirm/deny, or "ugh, sorry that's not immediately working for you. We intend for it to work, yes!" message while dropping a docs link! You can make it clear you'd be happy to look at the issue further with them! But, we always want to figure out whether someone is here because of a failure of the docs to serve them.
+
+No one wants to be put through a 12 minute feedback survey, or feel like they are "user research" material, but if you're helping them then you have already established a bit of a relationship and they know you are interested in seeing their problem sovled. Please do consider (nicely! respectfully!) getting the following kinds of feeback in a support thread where/when it feels appropriate (either during, or after a resolution):
+
+
+- Did you look in the docs before asking here? 
+  - If yes, did you have trouble finding this section or did you find it, but it was not helpful?  (e.g. poorly written, didn't cover this situation, outdated code sample, not where you expected it to be)
+  - If no, does this page have what you need(ed)? If you had seen this in docs first, would you have still needed to ask a support question? (And if so, would it have been a different question?)
+- Is there anything that docs could have provided or done differently so that you wouldn't have needed to come ask here? (e.g. have a section / example about this; have better navigation to this location; have this page ranked higher in Algolia search results)
+- "Would you be wiling to leave feedback about this page using the Feedback widget, or would you like me to leave feedback on your behalf based on our conversation?" (Note: the feedback widget allows someone to choose leaving feedback directly in the widget OR filing a GitHub issue, so sending them there works for either situation.)
 
 ## Encourage Contributions
 
@@ -32,7 +60,3 @@ As a more regular, established member of the community, (and a busier one, perha
 - pinging `@team-docs` in a support thread with a specific comment or question about to the existing documentation that relates to the support thread.
 
 - Discord events such as Docs Triage in #live-chat where you are welcome to join and provide feedback as we tackle existing Issues and PRs.
-
-> If someone asks a question, answer with documentation. If the documentation doesn’t exist, write the documentation, then answer the question with documentation.
->
-> [Jen Luker - @knitcodemonkey](https://twitter.com/knitcodemonkey/status/1486214423190519811)

@@ -2,13 +2,10 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightLinksValidator from 'starlight-links-validator';
 
-/* https://vercel.com/docs/projects/environment-variables/system-environment-variables#system-environment-variables */
-const VERCEL_PREVIEW_SITE =
-	process.env.VERCEL_ENV !== 'production' &&
-	process.env.VERCEL_URL &&
-	`https://${process.env.VERCEL_URL}`;
+/* https://docs.netlify.com/configure-builds/environment-variables/#read-only-variables */
+const NETLIFY_PREVIEW_SITE = process.env.CONTEXT !== 'production' && process.env.DEPLOY_PRIME_URL;
 
-const site = VERCEL_PREVIEW_SITE || 'https://contribute.docs.astro.build/';
+const site = NETLIFY_PREVIEW_SITE || 'https://contribute.docs.astro.build/';
 
 // https://astro.build/config
 export default defineConfig({
@@ -56,11 +53,19 @@ export default defineConfig({
 					autogenerate: { directory: 'first-time' },
 				},
 				{
+					label: 'Documenting Code Changes',
+					items: [
+						{ label: 'About documenting changes', link: '/docs-for-code-changes/about-documenting-code-changes/' },
+						{ label: 'Patch changes', link: '/docs-for-code-changes/patch-changes/' },
+						{ label: 'New or updated features', link: '/docs-for-code-changes/new-feature-docs/' },
+						{ label: 'Experimental features', link: '/docs-for-code-changes/experimental-feature-docs/' },
+						{ label: 'Pull requests', link: '/docs-for-code-changes/pull-requests/' },
+					],
+				},
+				{
 					label: 'Contributing Guides',
 					items: [
 						{ label: 'Writing and Style Guide', link: '/guides/writing-style/' },
-						{ label: 'Adding docs for a new feature', link: '/guides/new-feature-docs/' },
-						{ label: 'Adding docs for an experimental flag', link: '/guides/experimental-feature-docs/' },
 						{ label: 'Adding a new Astro + X Guide', link: '/guides/new-third-party-stub/' },
 						{ label: 'Contributing a Recipe', link: '/guides/recipe-writing/' },
 						{ label: 'Translating Astro docs', link: '/guides/i18n/' },	

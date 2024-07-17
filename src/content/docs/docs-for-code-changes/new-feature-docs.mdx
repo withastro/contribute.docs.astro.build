@@ -1,0 +1,69 @@
+---
+title: Adding docs for new features
+description: A guide to writing docs for your new Astro feature.
+---
+
+Use the following guidance to understand how we think about documenting a new Astro core or integration feature, including updates (e.g. new options, helper functions) for existing features.
+
+Then, learn about [Astro's pull request process](/docs-for-code-changes/pull-requests/) including where to find the source content to update, and how to ask for a review.
+
+If you'd like to see what will go into reviewing your submission, you can see what our reviewers will be looking for in our [PR reviewing guide](/reviewers/0-reviewing-prs/).
+
+## What should be documented
+
+You must document any new **option**, **configuration**, or **method** that someone building a project with Astro might use.
+
+Include a definition and/or short explanation, and a basic usage example, following our [guide to including code samples](/reference/code-samples/).
+
+The documentation should first **define** and then primarily answer questions about **using** a new feature:
+- What is this?
+- What is it used for?
+- Why would I use it?
+- In which situations can it (not) be used?
+- How do I use it?
+
+## What should NOT be documented
+
+### Implementation details
+
+Generally, you do not need to document implementation details. These do not often affect how someone **uses** the feature.
+
+However, you may choose to include some of these details if they will help people **understand and make decisions as they build their own projects**:
+
+- choose when to set a value other than a default
+- avoid conflicting settings that do not produce the desired result
+- understand the pros and cons or caveats of certain design decisions
+
+But, implementation details should never be provided **instead** of usage details and real-world examples.
+
+For example, if a reader must choose between setting a value to `include` or `exclude`, describe different situations or goals for which each option is best. Do not instead explain the underlying code logic that powers each option. 
+
+Ultimately, our goal is to document **how to build with Astro** and not **how Astro is built**.
+
+### Non-traditional or unsupported use
+
+Additionally, you do not need to document all possible use of your feature. You may include a common advanced case, but you should not document usage that is unsupported or "off the happy path."
+
+You are not required to demonstrate all things possible, and in fact too many options can overwhelm someone trying to learn how to use your feature. 
+
+"You can do this, but I wouldn't recommend it..." is **not** something for docs! Don't lead your reader down a dangerous path. They are free to explore themselves, and seek support for advanced or atypical use cases.
+
+## When to involve docs maintainers?
+
+Whenever you are thinking about how the user will use the feature!
+
+It can be useful to get docs involved when you're considering the **user experience** of the feature. For example, if you are creating a new configuration option, docs maintainers can help you look at look at things from a (new) user perspective: Does the name accurately describe the user intention and what they are trying to achieve (and not what the underlying code or logic is doing, which might be quite different)?
+
+In this way, docs can get involved earlier than you think... As soon as you know what the user story is!
+
+Docs maintainers can also help you by being an early "user" of the process and surface unmet user expectations, friction, or even possible errors while using the feature.
+
+For example, if your code's logic *filters out* results in order to provide a list of items, but the user sees this as a way to *include* items on the page, there can be the potential for confusing naming. Even accurate names can still be problematic if they are prone to misspelling, easily mistyped, or too close to other similar names.
+
+Docs maintainers can help identify a user's thinking based on **using the feature** instead of caring about the **underlying implementation of the feature**.
+
+## When is it too early to get docs involved?
+
+When you can't yet picture how a user will use your feature! 
+
+It's perhaps too early if you can't envision a user path or aren't ultimately clear exactly what a reader would do to use this feature or set this configuration. For example, "I want to make it possible to enable view transitions" is potentially too early if you haven't yet explored whether this will be a sitewide configuration or a per page import... unless you want to ask docs maintainers what we think the user would prefer or find easier to do to help shape your feature development!
