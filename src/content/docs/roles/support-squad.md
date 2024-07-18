@@ -36,7 +36,7 @@ No one wants to be put through a 12 minute feedback survey, or feel like they ar
 
 ### Reporting Feedback to Docs
 
-If your support interaction reveals that docs information is incorrect, outdated, or confusing then we consider this an issue to be fixed. File a GitHub issue directly, or through the feedback widget on the docs site.
+If your support interaction reveals that docs information is incorrect, outdated, or confusing then we consider this an issue to be fixed. [File a GitHub issue directly](https://github.com/withastro/docs/issues/new/choose), or through the feedback widget on the docs site.
 
 If your support interaction results in an idea for an example or recipe, then please add it to the [pinned "Recipe ideas" GitHub Discussion](https://github.com/withastro/docs/discussions/2894).
 
