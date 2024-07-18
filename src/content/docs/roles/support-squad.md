@@ -28,12 +28,19 @@ Be very clear that you are not giving off RTFM vibes! You *can* give a short, ye
 
 No one wants to be put through a 12 minute feedback survey, or feel like they are "user research" material, but if you're helping them then you have already established a bit of a relationship and they know you are interested in seeing their problem sovled. Please do consider (nicely! respectfully!) getting the following kinds of feeback in a support thread where/when it feels appropriate (either during, or after a resolution):
 
-
 - Did you look in the docs before asking here? 
   - If yes, did you have trouble finding this section or did you find it, but it was not helpful?  (e.g. poorly written, didn't cover this situation, outdated code sample, not where you expected it to be)
   - If no, does this page have what you need(ed)? If you had seen this in docs first, would you have still needed to ask a support question? (And if so, would it have been a different question?)
 - Is there anything that docs could have provided or done differently so that you wouldn't have needed to come ask here? (e.g. have a section / example about this; have better navigation to this location; have this page ranked higher in Algolia search results)
 - "Would you be wiling to leave feedback about this page using the Feedback widget, or would you like me to leave feedback on your behalf based on our conversation?" (Note: the feedback widget allows someone to choose leaving feedback directly in the widget OR filing a GitHub issue, so sending them there works for either situation.)
+
+### Reporting Feedback to Docs
+
+If your support interaction reveals that docs information is incorrect, outdated, or confusing then we consider this an issue to be fixed. [File a GitHub issue directly](https://github.com/withastro/docs/issues/new/choose), or through the feedback widget on the docs site.
+
+If your support interaction results in an idea for an example or recipe, then please add it to the [pinned "Recipe ideas" GitHub Discussion](https://github.com/withastro/docs/discussions/2894).
+
+For other feedback that you feel docs should have, use the feedback widget on the docs site to leave "other" feedback.
 
 ## Encourage Contributions
 
