@@ -67,7 +67,7 @@ Please use the following conventions when contributing to the docs:
   - Do not use *we*, *we'll*, *us*, *let's* etc. (You are not with the reader.)
   - **Never use I**. Astro docs is not about what you can do!  
 
-✏️ It's OK to use exclamation points every now and then, but please try to do so only when emphasizing something that is truly exciting, surprising, or encouraging and reassuring. If you are not sure, use a period instead. 
+✏️ It's OK to use exclamation points every now and then, but please try to do so only when emphasizing something that is truly exciting, surprising, or to be encouraging and reassuring. If you are not sure, use a period instead. 
 
   - Exclamation points can send "positive vibes" to the reader. But, if a reader is frustrated, confused, or in a serious state of mind, then exclamation points can seem insensitive or childish. Do not use too many.
 
@@ -157,7 +157,7 @@ Here are some tips and examples to match Astro Docs' style for instructional con
 
 🗣️ Recipes are a set of instructions to follow, stated as concisely and directly as possible.
 
-  - Do not tell a story about what is happening.
+  - Do not tell a story around what is happening.
   
   - If you feel it is needed, provide brief context or clarity in the form of a goal, benefit, or reason.
 
@@ -186,7 +186,7 @@ When an instruction can be completed in a variety of ways (e.g. install the UI f
   1. Give the action to take with the reason, goal or criteria. 
   2. State the opinionated choice that your example uses. 
   
-Your reader will be able to first process what you are doing and then will see the choice you have made. They can still follow your instructions, making a choice that works for their own project.
+Your reader will be able to first process what you are doing and then will see the choice you have made. They can still follow your instruction, making a choice that works for their own project.
 
 This can be easier for a reader to follow than a statement that gives multiple options and forces them to consider several possibilities. This is also easier for you to write because it allows you to proceed with certain assumptions that, even if not true in the reader's project, have been made clear for the purposes of the example.
 
