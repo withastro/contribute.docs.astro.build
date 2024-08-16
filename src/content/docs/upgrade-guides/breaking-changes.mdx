@@ -1,0 +1,103 @@
+---
+title: Breaking Changes
+description: A guide to documenting breaking changes in Astro Docs.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+Most of the upgrade guide will be breaking changes of some kind.
+
+## Format
+
+Each breaking changes entry will describe the change, and also include actionable advice:
+
+```md
+### [changed/removed/added/deprecated]: feature/name/title/description
+In Astro v4.x, [ a statement in the past tense about what Astro did/used to do. 
+e.g.  bundled all assets into several different folders....]
+
+Astro v5.0 [ a statement in the present tense about how Astro works now.
+e.g. now bundles all assets into one single folder located in... ]
+
+#### What should I do?
+// Active sentences in the imperative (command) tense
+// include diff code examples whenever appropriate
+
+e.g. Update... / Remove... / Replace... / Create..
+```
+
+### Example
+
+``````md
+### Changed: `app.render()` signature in Integrations API
+
+In Astro v3.0, the `app.render()` method accepted `routeData` and `locals` as separate, optional arguments.
+
+Astro v4.0 changes the `app.render()` signature. These two properties are now available in a single object. Both the object and these two properties are still optional.
+
+#### What should I do?
+If you are maintaining an adapter, the current signature will continue to work until the next major version.
+
+To migrate to the new signature, pass `routeData` and `locals` as properties of an object instead of as two independent arguments.
+
+```astro del={1} ins={2} "{ routeData, locals }"
+app.render(request, routeData, locals)
+app.render(request, { routeData, locals })
+```
+``````
+
+:::note[Code block formatting]
+Astro Docs uses [Expressive Code](https://expressive-code.com/) for richer diff syntax highlighting. Please consult [our instructions on including code blocks](/reference/code-samples/) or Expressive Code's own docs for formatting instructions.
+:::
+
+### Issue title
+
+Begin with an active verb in the past tense describing the *nature* of the change. You will probably use "changed" most of the time, but more specific words such as "renamed," "removed," and "added" are great when appropriate.
+
+Choose a word that describes the change with respect to **how the user will feel the impact.**
+
+For example, you may have "added" a third setting option that is now the new default value. In this situation, "[Changed: default value for `build.output`]" is more helpful to the reader than knowing that a new option is available. If their default value has been switched on them, they need to know that!
+
+### Advice
+
+The "What should I do?" section is important, and we have received much love for this feature in our upgrade guides. Do not skimp on this!
+
+A breaking change is one that might **require changes to someone's project code**: if left untouched, their project will not work anymore. A working project is ultimately what your user cares most about, and they need to know *how* to adapt their code to deal with the changes you made.
+
+For example, it is not enough to say "The minimum supported version of Node.js is now 832.59.12" That is not an action. Appropriate guidance is, "Check your version of Node.js using the following command, and if necessary, upgrade to a supported version." 
+
+Helpful advice often includes a "diff" code sample: a (-) line of code to be changed and a (+) line of the corresponding version that will now work in the updated version.
+
+For more examples and inspiration, please see [past versions of the Astro upgrade guide](https://docs.astro.build/en/upgrade-astro/#upgrade-guides). There may be a similar entry that you can use as a model for your docs.
+
+## Updating the draft guide
+
+If you are an Astro maintainer, you can commit to the draft guide directly.
+
+<Steps>
+
+1. Get core PR changesets reviewed by docs. This will help with adding the to the guide later because docs will help craft most of the documentation in the PR.
+
+2. In the appropriate branch of the docs repo (`5.0.0-beta` for v5 beta), open the file `src/content/docs/en/guides/upgrade-to/v*.mdx` (e.g. `v5`)
+
+3. Look for an existing `###` entry under `## Breaking Changes` for your breaking change. (The docs lead may have created one in advance based on tickets in the Linear project.)
+
+        Describe your breaking change here following the format above.
+
+        You may edit the title if you have a better one, but please **leave the Linear issue number**. This will be removed when the item is considered polished and publishable.
+
+4. If an entry does not already exist:
+    - add a new section under `## Breaking Changes`, and describe the breaking change. Include the corresponding Linear issue number in the title.
+    - Remove your Linear issue under `## LINEAR ISSUES MARKED AS NON-BREAKING` (if exists)
+
+</Steps>
+
+## Final Review
+
+Docs will review and edit all entries as necessary for consistency, formatting, and style. You will be asked to perform a final review to make sure the entries are still accurate and representative of your code changes.
+
+After both you and docs are satisfied with the entry, the Linear issue number will be removed from the title. Congratulations, you are now finished with your part!
+
+:::note
+Your code changes may require corresponding updates to docs, outside of the upgrade guide. These should be added in a PR, following the [normal process for documenting code changes](/docs-for-code-changes/about-documenting-code-changes/).
+:::

@@ -53,13 +53,26 @@ export default defineConfig({
 					autogenerate: { directory: 'first-time' },
 				},
 				{
+					label: 'Docs Syntax',
+					autogenerate: { directory: 'reference' },
+				},
+				{
 					label: 'Documenting Code Changes',
 					items: [
 						{ label: 'About documenting changes', link: '/docs-for-code-changes/about-documenting-code-changes/' },
 						{ label: 'Patch changes', link: '/docs-for-code-changes/patch-changes/' },
 						{ label: 'New or updated features', link: '/docs-for-code-changes/new-feature-docs/' },
 						{ label: 'Experimental features', link: '/docs-for-code-changes/experimental-feature-docs/' },
+						{ label: 'Error messages', link: '/docs-for-code-changes/error-reference/' },
 						{ label: 'Pull requests', link: '/docs-for-code-changes/pull-requests/' },
+					],
+				},
+				{
+					label: 'Upgrade guides',
+					items: [
+						{ label: 'About Astro upgrade guides', link: '/upgrade-guides/about/' },
+						{ label: 'Breaking changes', link: '/upgrade-guides/breaking-changes/' },
+						{ label: 'Deprecations and removals', link: '/upgrade-guides/deprecations-removals/' },
 					],
 				},
 				{
@@ -79,10 +92,7 @@ export default defineConfig({
 					label: 'Reviewers',
 					autogenerate: { directory: 'reviewers' },
 				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
-				},
+
 			],
 		}),
 	],
