@@ -100,7 +100,7 @@ Both lists and headings are used in our docs for readability.
 
 ## Examples (e.g. examples)
 
-🫴 Use the words "for example" in full when writing a clause to to indroduce a single example situation or hypothetical.
+🫴 Use the words "for example" in full when writing a clause to introduce a single example situation or hypothetical.
 
   > For example, when passing props . . .
 
