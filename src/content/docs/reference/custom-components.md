@@ -3,7 +3,7 @@ title: Using our custom components
 description: A guide to using the custom components available in Astro Docs.
 ---
 
-In addition to [all available Starlight components](https://starlight.astro.build/guides/components/), Astro Docs uses several custom components that are available for use in any `.mdx` files. Note that these components cannot be used for docs that live in the `astro` core repo (e.g. configuration reference, error reference docs). Be sure to always check a preview of your components in the browser to ensure they are rendering properly.
+In addition to [all available Starlight components](https://starlight.astro.build/components/using-components/), Astro Docs uses several custom components that are available for use in any `.mdx` files. Note that these components cannot be used for docs that live in the `astro` core repo (e.g. configuration reference, error reference docs). Be sure to always check a preview of your components in the browser to ensure they are rendering properly.
 
 ## Custom components
 
@@ -122,7 +122,7 @@ The `<Version />` component is currently used in our Integrations pages as a way
 
 ### Tabs Component
 
-Astro Docs uses a `<Tabs>` component to allow readers to choose between different content views. You may also use [Starlight's `<Tabs>` component](https://starlight.astro.build/guides/components/#tabs).
+Astro Docs uses a `<Tabs>` component to allow readers to choose between different content views. You may also use [Starlight's `<Tabs>` component](https://starlight.astro.build/components/tabs/).
 
 There are also two variants of this component, `<PackageManagerTabs>` and `<UIFrameworkTabs>`, for our most common use cases where readers might be interested in only one of several instructions or code samples: package managers and UI frameworks. Other custom components may be added over time. You can find all existing Tabs variations in `src/components/tabs/`.
 
@@ -235,7 +235,7 @@ Please see [Starlights component documentation]() for all available Starlight co
 
 ### FileTree Component
 
-Import and use the [Starlight `<FileTree />` component](https://starlight.astro.build/guides/components/#file-tree) to produce collapsable file trees in docs. Use hyphens (`-`) at different tab depths to show the file structure.
+Import and use the [Starlight `<FileTree />` component](https://starlight.astro.build/components/file-tree/) to produce collapsable file trees in docs. Use hyphens (`-`) at different tab depths to show the file structure.
 
 Please remember to add a `/` at the end of a folder name!
 
@@ -284,7 +284,7 @@ Hightlighting is available by writing an item in bold. Inline comments may also 
 
 ### Steps Component
 
-Import and use the [Starlight `<Steps>` component](https://starlight.astro.build/guides/components/#steps) to style numbered lists of tasks.
+Import and use the [Starlight `<Steps>` component](https://starlight.astro.build/components/steps/) to style numbered lists of tasks.
 
 Remember, not every ordered list is a list of steps to follow! Only use this to show a linear sequence of instructions, and be sure to indent paragraphs and code blocks within each list item.
 
