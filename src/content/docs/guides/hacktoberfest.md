@@ -37,9 +37,9 @@ Small fixes such as correcting typos are welcome and appreciated! Larger contrib
 We will be closing PRs that do not meet our quality standards. Spam submissions will not be tolerated, and may result in being banned from the repo.
 
 :::caution
-**AI contributions will not be accepted.** Hacktoberfest exists to motivate and reward human contribution to open-source projects, and therefore, we cannot accept contributions that have been made by automated tools.
+**AI contributions will not be accepted.** Hacktoberfest exists to motivate and reward human contributions to open-source projects, and therefore, we cannot accept contributions that have been made by automated tools.
 
-AI assistance tools, such as GitHub Copilot or Cursor, may be used to help you draft your contribution, but must be checked and edited for accuracy. If your submission contains obviously AI-generated errors, your PR will be rejected and you may be banned from further Hacktoberfest participation at our discretion.
+AI assistance tools, such as GitHub Copilot or Cursor, may be used to help you draft your contribution but must be checked and edited for accuracy. If your submission contains obviously AI-generated errors, your PR will be rejected and you may be banned from further Hacktoberfest participation at our discretion.
 :::
 
 ## Participating repositories
