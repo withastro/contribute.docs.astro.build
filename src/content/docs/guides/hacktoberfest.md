@@ -46,7 +46,7 @@ AI assistance tools, such as GitHub Copilot or Cursor, may be used to help you d
 
 ### Astro Docs
 
-The [`withastro/docs` repository](https://github.com/withastro/docs) contains the complete source code and content for the [Astro documentation](https://docs.astro.build/) website in all the available languages.
+[`withastro/docs`](https://github.com/withastro/docs) contains the complete source code and content for the [Astro documentation](https://docs.astro.build/) website in all the available languages.
 
 Here are some of the main ways you can contribute to it:
 
