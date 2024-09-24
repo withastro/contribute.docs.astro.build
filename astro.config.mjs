@@ -82,6 +82,7 @@ export default defineConfig({
 						{ label: 'Adding a new Astro + X Guide', link: '/guides/new-third-party-stub/' },
 						{ label: 'Contributing a Recipe', link: '/guides/recipe-writing/' },
 						{ label: 'Translating Astro docs', link: '/guides/i18n/' },	
+						{ label: 'Contributing for Hacktoberfest', link: '/guides/hacktoberfest/' },
 					],
 				},
 				{
