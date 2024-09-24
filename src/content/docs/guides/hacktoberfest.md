@@ -15,7 +15,7 @@ To take part in Hacktoberfest, here's all you need to do:
 
 1. Register for the event on [Hacktoberfest's official website](https://hacktoberfest.com/).
 2. Make any [valid contributions](#allowed-contributions) following [Hacktoberfest's rules](https://hacktoberfest.com/participation/#pr-mr-details) during October.
-3. Let us know you're participating by requesting your PRs to be labeled as `hacktoberfest-accepted`.
+3. Let us know you're participating by requesting the PRs label `hacktoberfest-accepted`.
 
 ## How to contribute to open-source
 
