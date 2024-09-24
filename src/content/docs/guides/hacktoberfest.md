@@ -52,15 +52,21 @@ Here are some of the main ways you can contribute to it:
 
 - Reading the current or [5.0 beta docs](https://5-0-0-beta.docs.astro.build/) and fixing any typos, grammar issues, or missing information.
 - Helping [translate the documentation](http://contribute.docs.astro.build/guides/i18n/) in your language.
-- Tackling [open "good first issues"](https://github.com/withastro/docs/issues?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) in the repository.
+- Tackling open [ "good first issues"](https://github.com/withastro/docs/issues?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) (or if you're more familiar with Astro, ["help wanted"](https://github.com/withastro/docs/issues?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) issues) in the repository.
 
 ### Astro Adapters
 
-[/withastro/adapters](https://github.com/withastro/adapters) is the repository for Astro's official adapter integrations: Node.js, Netlify, Vercel, and Cloudflare.
+[`withastro/adapters`](https://github.com/withastro/adapters) is the repository for Astro's official adapter integrations: Node.js, Netlify, Vercel, and Cloudflare.
 
 ### Houston Discord Bot
 
-[/withastro/houston-discord](https://github.com/withastro/houston-discord) is Astro's own Houston, a bot made to make the life of everyone within the Astro community easier.
+[`withastro/houston-discord`](https://github.com/withastro/houston-discord) is Astro's own Houston, a bot made to make the life of everyone within the Astro community easier.
+
+### Starlight
+
+[`withastro/starlight`](https://github.com/withastro/docs) is a full-featured documentation theme built on top of the Astro framework.
+
+You can contribute to the Starlight theme by improving the [documentation](https://starlight.astro.build/) by fixing typos, grammar issues, missing information or by helping [translate](https://github.com/withastro/starlight/blob/main/CONTRIBUTING.md#translations) Starlight’s UI or documentation in your language.
 
 :::note[Other repositories]
 Other Astro repositories may agree to add the `hacktoberfest-accepted` tag on a case-by-case basis.
