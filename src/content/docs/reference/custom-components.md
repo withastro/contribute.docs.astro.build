@@ -1,5 +1,5 @@
 ---
-title: Using our custom components
+title: Custom components
 description: A guide to using the custom components available in Astro Docs.
 ---
 
