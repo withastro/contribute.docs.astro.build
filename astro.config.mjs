@@ -74,7 +74,7 @@ export default defineConfig({
 						{ label: 'New or updated features', link: '/docs-for-code-changes/new-feature-docs/' },
 						{ label: 'Experimental features', link: '/docs-for-code-changes/experimental-feature-docs/' },
 						{ label: 'Error messages', link: '/docs-for-code-changes/error-reference/' },
-						{ label: 'Pull requests', link: '/docs-for-code-changes/pull-requests/' },
+						{ label: 'Changesets', link: '/docs-for-code-changes/changesets/' },
 					],
 				},
 				{

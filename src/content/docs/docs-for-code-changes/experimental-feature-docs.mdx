@@ -11,7 +11,7 @@ These features are not required to follow our normal [semantic versioning rules]
 
 ## Documenting experimental features
 
-Since these features may change and even break several times during development, experimental features only documented in their [experimental flag section of the configuration reference page](https://docs.astro.build/en/reference/configuration-reference/#experimental-flags).
+Since these features may change and even break several times during development, experimental features are only documented in their [experimental flag section of the configuration reference page](https://docs.astro.build/en/reference/configuration-reference/#experimental-flags).
 
 Only when a feature is no longer experimental do we add documentation and reference it within other pages. This gives us the greatest flexibility for things to change and evolve, as most experimental features do!
 
@@ -19,7 +19,7 @@ Only when a feature is no longer experimental do we add documentation and refere
 
 ### Where to add your documentation
 
-Documentation to the configuration reference page is added **in the main astro repo** to [`astro/packages/astro/src/@types/astro.ts`](https://github.com/withastro/astro/blob/main/packages/astro/src/%40types/astro.ts). You can find the section for experimental flags by searching for this line: `@name Experimental Flags`.
+In addition to providing a [changeset message for your implementation PR](/docs-for-code-changes/changesets/), you will add documentation for your experimental feature directly in your implementation PR. [See how to write configuration reference entries using JSDoc tags](/reference/jsdoc-config-ref/). You can find the section for experimental flags by searching for this line: `@name Experimental Flags`.
 
 ### JSDoc format
 
