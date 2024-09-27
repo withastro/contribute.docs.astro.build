@@ -40,6 +40,13 @@ and lines 2 and 3 will be marked as "diff" line (no need to type `+` or `-` your
 ```
 ``````
 
+```js title="example.js" ins={3} del={2}
+  function thisIsJavaScript() {
+    console.log('Old code to be removed')
+    console.log('New and shiny code!')
+  }
+```
+
 ### Example - Astro core repo
 
 The following code block will be highlighted as JavaScript,
@@ -58,13 +65,23 @@ and the line range 2-4 will be marked:
 ```
 ``````
 
+```diff lang="js"
+// example.js
+  function thisIsJavaScript() {
+    // This entire block gets highlighted as JavaScript,
+    // and we can still add diff markers to it!
+-   console.log('Old code to be removed')
++   console.log('New and shiny code!')
+  }
+```
+
 ## Commmon Annotations
 
 Following are the annotations you'll use most frequently in Astro docs. For a complete reference, please see [the Expressive Code documentation](https://github.com/expressive-code/expressive-code/blob/main/packages/astro-expressive-code/README.md).
 
 ### File Name as Title
 
-Most code should include a sample file name so that we give the reader not only copy-pastable code, but also provide the file into which that code should be pasted.
+Most code should include a sample file name. This gives the reader not only copy-pastable code, but also tells them where that code should be pasted.
 
 For code in the Astro docs repo, include a title attribute with quotation marks around the filename:
 
@@ -117,13 +134,13 @@ The text explaining your code sample is just as important as the code itself! By
 
 We always strive to:
 
-- Include a sample file name, so that it's obvious to the reader where they will add this code. Readers may be scanning for code snippets only, and your helpful explanation of what this code is for and where it should be used is may go unnoticed.
+- **Include a sample file name**, so that it's obvious to the reader where they will add this code. Readers may be scanning for code snippets only, and your helpful explanation of what this code is for and where it should be used is may go unnoticed.
 
 
-- Demonstrate a real, actual use case with correct, working code. No `foo`/ `bar`. No showing all possible values for a config setting. (Your reader will always only have one option configured!) Pick a real, working code example that matches something they might have in their own project.
+- **Demonstrate a real, actual use case with correct, working code**. No `foo`/ `bar`. No showing all possible values for a config setting. (Your reader will always only have one option configured!) Pick a real, working code example that matches something they might have in their own project.
 
 
-- Introduce code samples with a full, standalone sentence on a new line starting with a phrase such as, "The following example shows..." ([Docs does not use the phrase "like so"](#topic--like-so) at the end of a sentence.)
+- **Introduce code samples with a full, standalone sentence on a new line** starting with a phrase such as, "The following example shows..." ([Docs does not use the phrase "like so"](#topic--like-so) at the end of a sentence.)
 
     The following examples show introducing a code sample with a sentence that starts with the phrase, "The following example..."
     
@@ -133,23 +150,51 @@ We always strive to:
 
 This helps us
     
-- ensure that the code samples in fact illustrate something someone might actually do.
+- ensure that the code samples show something someone might actually do.
 - reduce the chances that you are relying on the reader to interpret what you mean by "do it like this."
 - prep the reader so that they already know what the code *does* and only need to figure out *how* that result is achieved.
 
-### Topic: "... like so:"
+### Avoid "like so:"
 
-When we clearly say, "Add the following line to your config file" with a code sample showing diff notation for the added line, "like so" isn't necessary.
+> Build a rocket, like so:
+>
+> &mdash; *Most devs, introducing a code block*
 
-In slightly more complicated examples, "like so" is often a substitue for explaining what to do. It leaves too much to the reader's interpretation, and forces them to guess the pattern you intend to show.
+**"Like so" is a (poor) substitute for explaining what to do.** The response to "like so" is "like *how*?"
 
-"The following example shows a slide animation attribute added to a header component" is very explicit about what you intend the code snippet to illustrate. Compare this with "Add slide animation, like so:" The more explicit instruction primes the reader for what to look for, instead of forcing them to find and interpret the relevant code. At the same time, this kind of instruction introduces vocabulary and phrases that will help reinforce how to talk about and describe building with Astro.
+Tell your reader what is happening, what to do, and how you're doing it. Don't make them guess which parts are important, or what pattern you're trying to show.
 
-By spelling out exactly what the code in the snippet is doing, you can better create a "MadLibs" type fill-in-the-blank pattern for someone who doesn't want to add a slide animation to a header... but instead wants to add a fade animation to a footer! They now have a very concrete way of describing what they are doing in a way that matches what they'll read (or search for) in docs, or ask for help with in support.
+> ❌ Add slide animation, like so:
+>
+> ✅ The following example shows a `slide` animation attribute added to a `header` component
+
+Explicit instructions prime the reader for what they should be looking at, instead of forcing them to find and interpret the relevant code. At the same time, this kind of instruction introduces vocabulary and phrases that will help reinforce how to talk about and describe building with Astro.
+
+By spelling out exactly what the code in the snippet is doing, you can create a fill-in-the-blank pattern for someone who doesn't want to add a slide animation to a header... but instead wants to add a fade animation to a footer! They now have a very concrete way of describing what they are doing in a way that matches what they'll read (or search for) in docs, or ask for help with in support.
+
+When your instructions are explicit, the phrase "like so" isn't necessary.
+
+``````markdown wrap
+To deploy your project at a path instead of the root of your domain, set a value for `base` in your Astro config that includes the leading `/`.
+
+The following example configures a project to deploy at `www.example.com/docs`:
+
+```
+{
+  base: '/docs'
+}
+```
+``````
+
 
 ### Multiple code samples
 
-**Telling a story with multiple files can be tricky.** If you just drop multiple code samples together on your reader with an introduction such as, "Say you have these files..." and then after you write a single explanation of the way in which they work together, people have to scroll back up to the code samples again (that they probably skipped the first time) in order to see what you mean. It's very un-flowy!
+> That was how you build a rocket. We started by...
+>
+> &mdash; *Most devs, after multiple code blocks in a row*
+
+
+**Telling a story with multiple files can be tricky.** When you write a single explanation of the way in which multiple files work together, people have to scroll back up to the code samples again (that they probably skipped the first time because they didn't know what they were looking at) in order to see what you mean. It's very un-flowy!
 
 Our "The following code sample shows..." pattern before each individual code block helps you write clearly, especially when multiple code samples are involved. **It forces you to call out what's important in each snippet** as you go. Then, when you have pointed out the important part of each individual code sample, you can connect some dots and create meaning for the reader.
 
