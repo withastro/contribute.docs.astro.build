@@ -30,4 +30,4 @@ See the [Astro v4 upgrade guide](https://docs.astro.build/en/guides/upgrade-to/v
 
 ### Submitting docs
 
-If you are [contributing a breaking change](/upgrade-guides/breaking-changes/) to Astro, including [deprecating/removing a feature](/upgrade-guides/deprecations-removals/), then please consult the appropriate instructions for adding documentation to the upgrade guide.
+If you are [contributing a breaking change](/upgrade-guides/breaking-changes/) to Astro, then please consult the appropriate instructions for adding documentation to the upgrade guide.

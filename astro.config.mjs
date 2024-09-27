@@ -92,7 +92,6 @@ export default defineConfig({
 					items: [
 						{ label: 'About Astro upgrade guides', link: '/upgrade-guides/about/' },
 						{ label: 'Breaking changes', link: '/upgrade-guides/breaking-changes/' },
-						{ label: 'Deprecations and removals', link: '/upgrade-guides/deprecations-removals/' },
 					],
 				},
 				{
