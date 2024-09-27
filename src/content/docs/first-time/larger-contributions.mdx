@@ -1,0 +1,116 @@
+---
+title: Larger contributions with a fork
+description: How to make larger contributions to Astro Docs with a fork of the project.
+---
+import { Steps, Tabs, TabItem } from '@astrojs/starlight/components';
+
+[Editing a single page on GitHub.com](/first-time/edit-single-page/) is convenient for small text changes, but does not allow you to see a live preview of the site while you are working. It also does not let you easily edit multiple files at once, such as a guide and a reference page or a sidebar entry.
+
+## Contribute PRs using an online code editor 
+
+(e.g. StackBlitz, CodeSpaces CodeSandbox, Gitpod, IDX)
+
+You can also have a full coding experience editing your own personal copy of the docs repository (a "fork") in an online IDE (integrated development environment). This will give you a code editor in the browser and a live preview of your site while you work without needing to set up any local development environment.
+
+Each online IDE has its own shortcut URL for opening an existing repository, and will allow you to create pull requests after you have made changes. Many also have browser extensions you can install that will add a "open with" button to the page whenever you are visiting a repository in your browser.
+
+<Tabs>
+  <TabItem label="StackBlitz">
+  ```
+  https://stackblitz.com/~/github.com/withastro/docs
+  ```
+  </TabItem>
+  <TabItem label="Gitpod">
+  ```
+  https://gitpod.io/#https://github.com/withastro/docs
+  ```
+  </TabItem>
+  <TabItem label="IDX">
+  ```
+  https://idx.google.com/import?url=https://github.com/withastro/docs
+  ```
+  </TabItem>
+</Tabs>
+
+See specific instructions for opening an existing repository in [IDX](https://developers.google.com/idx/guides/open-in-idx), [StackBlitz](https://developer.stackblitz.com/docs/platform/importing-projects/#import-from-github), and [Gitpod](https://www.gitpod.io/docs/getting-started#start-your-first-workspace) on their respective websites.
+
+Note that CodeSandbox and StackBlitz provide Astro syntax highlighting in their custom code editors, while Gitpod supports the full [Astro VSCode extension](https://docs.astro.build/en/editor-setup/#vs-code).
+
+## Contribute PRs by Developing Locally
+
+To begin developing locally, checkout this project from your machine.
+
+```shell
+git clone git@github.com:withastro/docs.git
+```
+
+You can install and run the project locally using [pnpm](https://pnpm.io/). Head to [the pnpm installation guide](https://pnpm.io/installation) to get that set up. Then, run the following from your terminal:
+
+```shell
+pnpm install
+
+pnpm start
+```
+
+If you’re copying these instructions, remember to [configure this project as a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/configuring-a-remote-repository-for-a-fork).
+
+```shell
+git remote add upstream git@github.com:withastro/docs.git
+```
+
+At any point, create a branch for your contribution.
+We are not strict about branch names.
+
+```shell
+git checkout -b add/partial-hydration-typo-fix
+```
+
+### Helpful information about Forks
+
+On GitHub you’ll need a “fork” of this repository to work on. This is your own copy where you can make changes. [Read more about forks in GitHub’s docs](https://guides.github.com/activities/forking/).
+
+Not sure how to get started with GitHub, forks, pull requests, or want a quick refresher? You might want to check out this free video series:
+
+[How to Contribute to an Open Source Project on GitHub](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
+
+#### Creating a fork
+To create your copy, click the <kbd>Fork</kbd> button at the top right of any page in this repository.
+
+#### Maintaining a fork
+When you first create your fork, it will be an exact copy of this repository. Over time, `withastro/docs` will change as the docs are updated, but your fork won’t automatically stay up-to-date. Here are some ways to keep your fork in sync with this repo.
+
+##### Manually via the GitHub UI
+
+<Steps>
+
+1. Navigate to your fork on GitHub
+
+2. Click <kbd>Sync fork</kbd> and then <kbd>Update branch</kbd>
+
+</Steps>
+
+##### Manually from the command line
+In the terminal on your computer:
+
+<Steps>
+
+1. Make sure you’re on the main branch: `git checkout main`
+
+2. Fetch and merge updates: `git pull upstream main`
+
+3. Push the updates back to your fork on GitHub: `git push origin main`
+
+</Steps>
+
+##### Automatically with a GitHub app
+
+<Steps>
+
+1. Go to [the “Pull” GitHub app page](https://github.com/apps/pull)
+
+2. Click <kbd>Install</kbd>
+
+3. Follow the instructions to select your fork
+
+</Steps>
+

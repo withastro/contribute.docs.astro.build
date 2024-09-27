@@ -82,7 +82,7 @@ If you don't have a full guide yet, you can expand a stub, even if it's an incre
 
 ### Add new links
 
-The CMS, Deploy, and Migrate guides all have sections for external links. You can add a new link by [editing the page](/first-time/4-edit-single-page/) and making a PR.
+The CMS, Deploy, and Migrate guides all have sections for external links. You can add a new link by [editing the page](/first-time/edit-single-page/) and making a PR.
 
 ## Add a new official recipe
 

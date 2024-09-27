@@ -50,7 +50,17 @@ export default defineConfig({
 				},
 				{
 					label: 'First-time Contributors',
-					autogenerate: { directory: 'first-time' },
+					items: [ 
+						'first-time/about',
+						'first-time/good-first-contributions',
+						'first-time/file-an-issue',
+						'first-time/edit-single-page',
+						'first-time/larger-contributions',
+						'first-time/source-content',
+						'first-time/creating-pull-requests',
+						'first-time/pr-review-process',
+
+					],
 				},
 				{
 					label: 'Docs Syntax',

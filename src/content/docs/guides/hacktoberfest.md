@@ -21,7 +21,7 @@ To take part in Hacktoberfest, here's all you need to do:
 
 Especially for first-time contributors, open-source can be quite frightening -- but don't worry, we're here to help you succeed! 
 
-In addition to [our own resources for first-time contributors](/first-time/1-about/), here are a few reliable resources to help you prepare for your first Hacktoberfest contributions:
+In addition to [our own resources for first-time contributors](/first-time/about/), here are a few reliable resources to help you prepare for your first Hacktoberfest contributions:
 
 - [What is open-source](https://www.digitalocean.com/community/tutorials/what-is-open-source)
 - [How to contribute to open-source](https://opensource.guide/how-to-contribute/)

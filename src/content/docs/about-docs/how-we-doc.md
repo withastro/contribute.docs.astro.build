@@ -27,7 +27,7 @@ The Docs Lead:
 
 Astro docs relies on its community for contributions, but not every contribution supports the team's plans or fills an important need for the project.
 
-If you are new to contributing to Astro, please take a moment to read the section for first-time contributors, especially about what are [helpful first-time contributions to make](/first-time/2-good-first-contributions/). Here, you will learn about how our project works and how you can help!
+If you are new to contributing to Astro, please take a moment to read the section for first-time contributors, especially about what are [helpful first-time contributions to make](/first-time/about-first-contributions/). Here, you will learn about how our project works and how you can help!
 
 ## Docs-as-code
 

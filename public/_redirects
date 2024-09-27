@@ -1,0 +1,8 @@
+# Moved content
+# When moving a page, usually you’ll want to add a redirect to the bottom of this block.
+/first-time/1-about/                                  /first-time/about/
+/first-time/2-good-first-contributions/               /first-time/good-first-contributions/
+/first-time/3-file-an-issue/                          /first-time/file-an-issue/
+/first-time/4-edit-single-page/                       /first-time/edit-single-page/
+/first-time/5-larger-contributions/                   /first-time/larger-contributions/
+/first-time/6-pr-review-process/                      /first-time/pr-review-process/
