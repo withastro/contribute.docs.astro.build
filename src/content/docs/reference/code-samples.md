@@ -140,7 +140,7 @@ We always strive to:
 - **Demonstrate a real, actual use case with correct, working code**. No `foo`/ `bar`. No showing all possible values for a config setting. (Your reader will always only have one option configured!) Pick a real, working code example that matches something they might have in their own project.
 
 
-- **Introduce code samples with a full, standalone sentence on a new line** starting with a phrase such as, "The following example shows..." ([Docs does not use the phrase "like so"](#topic--like-so) at the end of a sentence.)
+- **Introduce code samples with a full, standalone sentence on a new line** starting with a phrase such as, "The following example shows..." ([Docs does not use the phrase "like so"](#avoid-like-so) at the end of a sentence.)
 
     The following examples show introducing a code sample with a sentence that starts with the phrase, "The following example..."
     
