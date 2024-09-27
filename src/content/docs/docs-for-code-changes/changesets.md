@@ -137,7 +137,7 @@ export default defineConfig({
 ```
 ``````
 
-If your contribution changes a default value, then it is helpful to describe how to revert back to the previous behavior. Readers may also appreciate being informed that they can remove unnecessary configuration that is no longer needed.
+If your contribution changes a default value, then it is helpful to describe how to revert back to the previous behavior. Readers may also appreciate being informed that they can remove configuration that is no longer needed.
 
 ``````md title="my-major-changeset.md" wrap
 ---

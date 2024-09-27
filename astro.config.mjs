@@ -78,21 +78,21 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'Upgrade guides',
+					label: 'Contributing Guides',
+					items: [
+						{ label: 'Writing and Style Guide', link: '/guides/writing-style/' },
+						{ label: 'Adding a new Astro + X Guide', link: '/guides/new-third-party-guide/' },
+						{ label: 'Contributing a Recipe', link: '/guides/recipe-writing/' },
+						{ label: 'Translating Astro docs', link: '/guides/i18n/' },	
+						{ label: 'Contributing for Hacktoberfest', link: '/guides/hacktoberfest/' },
+					],
+				},
+				{
+					label: 'Major Upgrade guides',
 					items: [
 						{ label: 'About Astro upgrade guides', link: '/upgrade-guides/about/' },
 						{ label: 'Breaking changes', link: '/upgrade-guides/breaking-changes/' },
 						{ label: 'Deprecations and removals', link: '/upgrade-guides/deprecations-removals/' },
-					],
-				},
-				{
-					label: 'Contributing Guides',
-					items: [
-						{ label: 'Writing and Style Guide', link: '/guides/writing-style/' },
-						{ label: 'Adding a new Astro + X Guide', link: '/guides/new-third-party-stub/' },
-						{ label: 'Contributing a Recipe', link: '/guides/recipe-writing/' },
-						{ label: 'Translating Astro docs', link: '/guides/i18n/' },	
-						{ label: 'Contributing for Hacktoberfest', link: '/guides/hacktoberfest/' },
 					],
 				},
 				{

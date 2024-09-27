@@ -1,0 +1,90 @@
+---
+title: Adding an Astro + X guide
+description: Guide to contributing a new third-party guide (CMS, backend, deploy).
+---
+import { Steps } from '@astrojs/starlight/components';
+
+The `src/content/docs/en/guides/` directory in the docs has subdirectories for established guide categories for connecting to or integrating with third-party services:
+
+- `cms/`
+- `backend/`
+- `deploy/`
+- `migrate-to-astro/`
+- `media/`
+
+If you'd like to add a new guide to using Astro with a third-party CMS, backend service, deploy host, etc., the first step is to create a new "stub" page. 
+
+Creating a stub page involves adding a logo and creating a short page of content using a template. New stubs do not require much editing effort and can often be merged into docs quickly. 
+
+We recommend first creating a stub and linking to other guides (official guides, starter templates and tutorials, as well as community blog posts or videos) so that the new page will be available as soon as possible.
+
+Then, additional content can be added incrementally until you are ready to [write a full guide](#writing-a-new-guide) that requires testing and editing from our Docs team.
+
+Submissions for full guides without first creating a stub page may be refused.
+
+## Creating a Stub page
+
+The following example will walk through the process of creating a stub page for Keystatic CMS.
+
+<Steps>
+1. Upload an SVG logo optimized with [SVGOMG](https://jakearchibald.github.io/svgomg/) to [the `public/logos/` folder](https://github.com/withastro/docs/tree/main/public/logos) named for your service
+    -  `keystatic.svg`
+2. Add an entry for your service in [the `src/data/logos.ts` data file](https://github.com/withastro/docs/blob/main/src/data/logos.ts) of the form:
+    - `keystatic: { file: 'keystatic.svg', padding: '0' },`
+3. Create a new MDX page named for your service in [the CMS guides content folder](https://github.com/withastro/docs/tree/main/src/content/docs/en/guides/cms)
+    - `src/content/docs/en/guides/cms/keystatic.mdx`
+4. Use an existing guide as a reference, and the following frontmatter values in your `.mdx` file:
+    ```astro
+    ---
+    title: Keystatic & Astro
+    description: Add content to your Astro project using Keystatic as a CMS
+    type: cms
+    service: Keystatic
+    i18nReady: true
+    stub: true
+    ---
+    ```
+5. Write a single line description of your service including a link to your main page. This should be factual, and not marketing-speak:
+
+    ```md wrap
+    [Keystatic](https://keystatic.com/) is an open source, headless content-management system that allows you to structure your content and sync it with GitHub.
+    ```
+6. Use only the following `##` (`<h2>`) headings in the body of the file as needed, and add any appropriate content.
+    ```md wrap
+    ## Official Resources
+
+    - Check out [the official Keystatic guide](https://keystatic.com/docs/installation-astro)
+    - [Keystatic starter template](https://github.com/Thinkmill/keystatic/tree/main/templates/astro)
+
+    ## Community Resources
+    ```
+
+</Steps>
+ You can use this past PR for CaisyCMS as a model: https://github.com/withastro/docs/pull/3749/files
+
+Please wait until your page has been published before [extending your stub into a full-guide](#writing-a-new-guide).
+
+## Adding content to an existing stub
+
+If you don't have a full guide yet, you can expand a stub, even if it's only an incremental addition.
+
+### Add new links
+
+The third-party guides all have sections for external links. You can add a new official or community link by [editing the page](/first-time/edit-single-page/) and making a PR.
+
+### Writing a new guide
+
+The best way to start writing a new guide for these sections is to choose an existing one as an example.
+
+<Steps>
+1. Find a comparable guide in one of the subdirectories. Choose a guide whose service is similar to yours.
+
+2. Copy the frontmatter contents of an existing file, and be sure the `title` and `description` in the frontmatter are accurate and follow the established pattern.
+
+3. Copy the headings of the body content as appropriate. This should match the structure of other guides of that type. For example, a deployment guide should have a step-by-step “How to Deploy” section. A migration guide should have “Key Similarities” and “Key Differences” sections.
+
+4. Add your own content and instructions, following the style  of existing guides. Please consult our [writing and style guide](/guides/writing-style/) for more guidance.
+
+</Steps>
+
+
