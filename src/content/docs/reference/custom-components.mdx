@@ -2,36 +2,13 @@
 title: Custom components
 description: A guide to using the custom components available in Astro Docs.
 ---
+import { FileTree } from '@astrojs/starlight/components';
 
 In addition to [all available Starlight components](https://starlight.astro.build/components/using-components/), Astro Docs uses several custom components that are available for use in any `.mdx` files. Note that these components cannot be used for docs that live in the `astro` core repo (e.g. configuration reference, error reference docs). Be sure to always check a preview of your components in the browser to ensure they are rendering properly.
 
 ## Custom components
 
-### Aside Component
-
-Sometimes in documentation you want to provide information that is complementary but not strictly part of the current text or call out something that is particularly important. For example, maybe you want to include a tip that isn’t essential but could be helpful or warn a reader about a potential pitfall.
-
-For these use cases you can use our aside component. This is an accessible component, based on the [recommended markup from the BBC’s GEL design system](https://bbc.github.io/gel/components/breakout-boxes/#recommended-markup).
-
-The component has **note**, **tip**, **caution** and **danger** variants with colour, iconography, and default labelling distinct for each.
-
-You can use a simple custom syntax to use the component in Markdown and also avoid needing to import it in the frontmatter all the time.
-
-```
-:::tip
-It’s best to avoid using `<blockquote>` for things that aren’t quotes.
-:::
-```
-
-The syntax also supports custom titles for the asides:
-
-```
-:::caution[Deprecated]
-Using `<blockquote>` for notes is deprecated.
-:::
-```
-
-You can see all three currently-used styles (we don't have any "danger" yet!) in action on the [Astro Components Page](https://docs.astro.build/en/core-concepts/astro-components/).
+These components must be imported at the top of the page from `'~/components/'` unless specified otherwise. They are built locally inside of Astro and are not available as standard Starlight components.
 
 ### Badge Component
 
@@ -58,14 +35,14 @@ By default, the badge uses a muted colour scheme to blend in. It also has an acc
 
 ### Since Component
 
-As features are added to Astro, it can be helpful to document *when* they were added. This allows users to easily see if the version of Astro (or other packages) they are running supports a specific feature as described in the docs.
+As features are added to Astro, we document *when* they were added. This allows users to easily see if the version of Astro (or other packages) they are running supports a specific feature as described in the docs.
 
-You can use the `<Since />` component to display this information in a standardized way.
+Use the `<Since />` component to display this information in a standardized way.
 
 This component takes two props:
 
 - A `v` prop, which indicates the version of the package in which the feature was added.
-- A `pkg` prop, which indicates which package is being documented. This is optional and will default to `'astro'` so is only required when using `<Since />` for other packages.
+- A `pkg` prop, which indicates which package is being documented. This is optional and will default to `'astro'`. It is only required when using `<Since />` for other packages.
 
 ```mdx
 import Since from '~/components/Since.astro';
@@ -102,7 +79,7 @@ Default: `false`
 <Since v="0.24.0" />
 ```
 
-Setting a custom package name helps us document integrations and other packages. For example:
+Set a custom package name for integrations and other packages. These will begin with `@astrojs/`:
 
 ```mdx
 <Since v="2.1.0" pkg="@astrojs/rss" />
@@ -110,7 +87,7 @@ Setting a custom package name helps us document integrations and other packages.
 
 ### Latest version Component
 
-Sometimes it may be useful to display the latest version of a package on a page. For this, you can use the `<Version />` component, which must receive a valid package name from the npm registry as its `pkgName` prop.
+Use the `<Version />` component to automatically fetch and display the latest version of Astro or one of its packages. This component must receive a valid package name from the npm registry as its `pkgName` prop.
 
 ```md
 Astro's latest version:  <Version pkgName="astro" />
@@ -118,22 +95,21 @@ Astro's latest version:  <Version pkgName="astro" />
 
 This will render **Astro's latest version: v1.2.1**.
 
-The `<Version />` component is currently used in our Integrations pages as a way to keep each integration’s version up-to-date without having to merge changes to these pages directly. It's worth noting that this component is only updated at build-time, thus a package's version will not change until the site is rebuilt, be it manually or because a new PR was merged into main.
+You can see the `<Version />` component used at the top of the page in our integration guides. This component is only updated when the docs site is rebuilt, so there may be a slight delay if a new version of the docs site has not been published since a package release.
 
-### Tabs Component
+### Custom Tabs Components
 
-Astro Docs uses a `<Tabs>` component to allow readers to choose between different content views. You may also use [Starlight's `<Tabs>` component](https://starlight.astro.build/components/tabs/).
-
-There are also two variants of this component, `<PackageManagerTabs>` and `<UIFrameworkTabs>`, for our most common use cases where readers might be interested in only one of several instructions or code samples: package managers and UI frameworks. Other custom components may be added over time. You can find all existing Tabs variations in `src/components/tabs/`.
+Astro Docs uses two custom variants that pre-date [Starlight's `<Tabs>` component](https://starlight.astro.build/components/tabs/): `<PackageManagerTabs>` and `<UIFrameworkTabs>`. Other custom components may be added over time. You can find all existing Tabs variations in `src/components/tabs/`.
 
 Note that these components share state, so if a reader changes the active tab of one `<PackageManagerTabs>` or `<UIFrameworkTabs>` component, then all other instances of this component on the same page will also change. This allows the reader to see the same content choice by default while reading through the entire page.
 
+These custom components were built for Astro Docs before this feature was available in Starlight. They are still in use throughout the docs, but may be updated in the future. We suggest using Starlight's `<Tabs>` directly for all other situations.
+
 #### Examples
 
-To use an existing Tabs component (e.g. `<PackageManagerTabs>` , `<UIFrameworkTabs>`), import it in the `.mdx` file:
+Import the component at the top of the `.mdx` file:
 
 ```mdx
-import InstallGuideTabGroup from '~/components/TabGroup/InstallGuideTabGroup.astro';
 import PackageManagerTabs from '~/components/tabs/PackageManagerTabs.astro'
 ```
 
@@ -164,44 +140,6 @@ Here is an example of `<PackageManagerTabs>` showing the `create astro` commands
 </PackageManagerTabs>
 ````
 
-#### Creating your own custom Tabs component variation
-
-If necessary, you can also create your own custom Tabs component using the base `Tabs.tsx` component. To do this, create a new Astro component in the [`src/components/tabs`](https://github.com/withastro/docs/blob/main/src/components/tabs/) directory, e.g. `MyCustomTabs.astro`. (Do not use `<Tabs>` directly in a Markdown page. Create your own component instead.)
-
-Inside `MyCustomTabs.jsx`, import the Tabs component and create one `<Tabs>` component. Be sure to include the `client:visible` directive and give a unique name to the `sharedStore`. Each created Tabs component should have its own `sharedStore` to avoid unrelated tabs changing one another accidentally.
-
-```astro
----
-import Tabs from './Tabs';
----
-<Tabs client:idle sharedStore="my-shared-store">
-</Tabs>
-```
-
-To create your custom tab component, follow the pattern below using a `<Fragment>` with a named slot for each tab and panel to be created. Note that you must define your tab names here (e.g. Preact, React, Solid, Svelte, Vue), but the content for each panel will be written when your custom component is imported and used in a Markdown page, as in the previous `<PackageManagerTabs>` example.
-
-```jsx
----
-import Tabs from './Tabs';
----
-
-<Tabs client:idle sharedStore="ui-frameworks">
- <Fragment slot="tab.preact">Preact</Fragment>
- <Fragment slot="tab.react">React</Fragment>
- <Fragment slot="tab.solid">Solid</Fragment>
- <Fragment slot="tab.svelte">Svelte</Fragment>
- <Fragment slot="tab.vue">Vue</Fragment>
-
- <Fragment slot="panel.preact"><slot name="preact" /></Fragment>
- <Fragment slot="panel.react"><slot name="react" /></Fragment>
- <Fragment slot="panel.solid"><slot name="solid" /></Fragment>
- <Fragment slot="panel.svelte"><slot name="svelte" /></Fragment>
- <Fragment slot="panel.vue"><slot name="vue" /></Fragment>
-</Tabs>
-```
-
-The tabs will be displayed in alphabetical order, according to the slot name (e.g. `tab.*` and `panel.*`). For custom ordering, you can prefix your slot names with numbers (e.g. `tab.1.react`, `tab.2.preact`).
-
 ### Related recipe links
 
 Astro Docs uses a `<RecipeLink>` component for displaying links to recipes with consistent styling. This is helpful when some page content has one or more relevant recipes you want to link to.
@@ -231,13 +169,59 @@ import ReadMore from "~/components/ReadMore.astro";
 
 ## Starlight components
 
-Please see [Starlights component documentation]() for all available Starlight components. The ones most often used in Astro docs include:
+Please see [Starlight's component documentation](https://starlight.astro.build/components/using-components/) for all available Starlight components. The ones most often used in Astro docs include:
+
+### Aside Component
+
+Use only for information that is **complementary but not necessary**. This can also be used to **call out something important that has not already been said**. 
+
+Astro Docs uses the following variants:
+- **note**: to provide complementary or tangential information that does not belong in the regular paragraph text
+ 
+- **tip**: to suggest an action that may help, but is not essential
+
+- **caution**: to warn of dangerous conditions such as security issues, or data loss
+
+This syntax is automatically recognized by Starlight and no import is required:
+
+```
+:::tip
+It’s best to avoid using `<blockquote>` for things that aren’t quotes.
+:::
+```
+
+:::tip
+It’s best to avoid using `<blockquote>` for things that aren’t quotes.
+:::
+
+The syntax also supports custom titles for the asides:
+
+```
+:::caution[Deprecated]
+Using `<blockquote>` for notes is deprecated.
+:::
+```
+
+:::caution[Deprecated]
+Using `<blockquote>` for notes is deprecated.
+:::
+
+**Use asides sparingly.** Asides create visual clutter and distract the reader. If everything is important, then nothing is important! **Most contributions that include asides are rewritten or rejected.**
+
+Use the following guidelines to decide when (not to!) use an aside:
+
+- Do not use a note to "add a new piece of information" to docs. Essential information belongs in paragraph text.
+- Do not prompt the reader to "remember" (to do) earlier content or steps. There is no need to duplicate information.
+- Do not use a "tip" when an action is necessary. That is not a tip; that is a requirement.
+- Do not use a "caution" unless there is a risk of danger. 
+
+You can see all three currently-used styles (we don't have any "danger" yet!) in action on the [Astro Components Page](https://docs.astro.build/en/core-concepts/astro-components/).
 
 ### FileTree Component
 
 Import and use the [Starlight `<FileTree />` component](https://starlight.astro.build/components/file-tree/) to produce collapsable file trees in docs. Use hyphens (`-`) at different tab depths to show the file structure.
 
-Please remember to add a `/` at the end of a folder name!
+Please add a `/` at the end of a folder name, and file extensions after file names.
 
 ```mdx
 import { FileTree } from '@astrojs/starlight/components';
@@ -281,6 +265,14 @@ Hightlighting is available by writing an item in bold. Inline comments may also 
   - file.astro With an inline comment too
 </FileTree>
 ```
+
+<FileTree>
+- folder/
+  - file.js
+  - **highlighted-file.ts**
+  - file.astro With an inline comment too
+</FileTree>
+
 
 ### Steps Component
 

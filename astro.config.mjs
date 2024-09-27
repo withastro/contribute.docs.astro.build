@@ -63,7 +63,7 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'Docs Syntax',
+					label: 'Docs Syntax Reference',
 					autogenerate: { directory: 'reference' },
 				},
 				{
