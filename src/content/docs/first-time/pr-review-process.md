@@ -24,7 +24,7 @@ Some automated checks will need to run to verify your code (check for broken lin
 
       - [ ] Does every component you are documenting (e.g. `<ViewTransitions />`) have code backticks around the component? Components must be written as inline code or else Astro will treat it as an actual component.
       - [ ] Do all [custom components](/reference/custom-components/), including [code samples](/reference/code-samples/), have proper syntax, both opening and closing? 
-      - [ ] Have you imported any components at the top of the file that you are using in the content? (e.g. `<Since />` or `<PackageManagerTab>`)
+      - [ ] Have you imported any components at the top of the file that you are using in the content? (e.g. `<Meta />` or `<PackageManagerTab>`)
 
 If you are able to identify and make the fix for a failing check yourself, please do! If you are unsure what is causing a check to fail, then you can wait for a maintainer's help to fix the problem.
 

@@ -33,7 +33,88 @@ By default, the badge uses a muted colour scheme to blend in. It also has an acc
 - The [Editor Setup](https://docs.astro.build/en/editor-setup/#other-code-editors) page uses `<Badge />` to distinguish community and official editor support.
 - The [Deployment guides navigation component](https://docs.astro.build/en/guides/deploy/) uses `<Badge />` internally to label the deployment types each service supports.
 
+### Meta Component
+
+As features are added to Astro, we document their *type*, their *default* value, their *cli* equivalent and *when* they were added. This allows users to easily see if the version of Astro (or other packages) they are running supports a specific feature as described in the docs.
+
+Use the `<Meta />` component to display this information in a standardized way.
+
+This component takes an optional child and four optional props. The child is used to describe the type of your feature. The props are the following:
+
+- an `availableFor` prop, which indicates under what circumstances the feature is available,
+- a `cli` prop, which indicates the corresponding CLI option for this feature,
+- A `pkg` prop, which indicates which package is being documented. This will default to `'astro'` and is only required when using `<Meta />` for other packages while specifying a version.
+- A `version` prop, which indicates the version of the package in which the feature was added.
+
+```mdx
+import Meta from '~/components/Meta.astro';
+
+<Meta>`boolean`</Meta>
+```
+
+This will render the text “**Type:** `boolean`”.
+
+The advantages of using the component include:
+
+- “Available for“, “Type“, “Default“, “CLI“ and “Added in” are automatically translated on pages in other languages.
+- You only need one component to document your feature and you don't need to worry about formatting.
+- The passed version is checked against the current package version and “NEW” or “BETA” badges will be added automatically based on data from npm.
+
+#### Examples
+
+The standard usage of this component is on its own line, immediately following the feature's heading, for example:
+
+```mdx
+## `Astro.clientAddress`
+
+<Meta version="1.0.0-rc" />
+
+Specifies the IP address of the request. This property is only available when building for SSR (server-side rendering) and should not be used for static sites.
+```
+
+Set a custom package name for integrations and other packages. These will begin with `@astrojs/`:
+
+```mdx
+<Meta pkg="@astrojs/rss" version="2.1.0" />
+```
+
+A more advanced usage might look like:
+
+```mdx
+### `devImageService`
+
+<Meta
+  availableFor="Serverless, Static"
+  default="`'sharp'`"
+  pkg="@astrojs/vercel"
+  version="3.8.0"
+>
+`'sharp' | 'squoosh' | string`
+</Meta>
+```
+
+Once rendered, the component will display the information like this:
+
+```
+Type: 'sharp' | 'squoosh' | string
+Default: 'sharp'
+Available for: Serverless, Static
+Added in: @astrojs/vercel@3.8.0
+```
+
+You can also use links in your type to refer to another section within the page:
+
+```
+#### `schema`
+
+<Meta>
+<code>ZodType | (context: <a href="#schemacontext">SchemaContext</a>) => ZodType</code>
+</Meta>
+```
+
 ### Since Component
+
+**Deprecated**: Instead, use the `<Meta />` component to document your feature.
 
 As features are added to Astro, we document *when* they were added. This allows users to easily see if the version of Astro (or other packages) they are running supports a specific feature as described in the docs.
 

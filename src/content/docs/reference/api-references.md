@@ -9,18 +9,14 @@ When adding or editing a reference entry, please start your entry with the follo
 ```astro
 ##### `page.url.first`
 
-<p>
-
-**Type:** `string | undefined`<br />
-<Since v="4.12.0" />
-</p>
+<Meta version="4.12.0">`string | undefined`</Meta>
 ```
 
 ## Things to check
 
 - The entry has a heading so that it can be directly linked to.
 - The heading text is the name of the property/item, formatted as inline code. (e.g. `getStaticPaths()`, `width`)
-- There is a wrapping `<p></p>` that includes an initial blank line, and then the type, default (if applicable), and version number added each on individual lines.
+- There is a `<Meta />` component that includes information about the type, default (if applicable), and version number.
 - The text entry starts with a **definition** of what the property **is** or **does**.
 
 ## Full API reference example
@@ -28,11 +24,7 @@ When adding or editing a reference entry, please start your entry with the follo
 ```astro wrap
 ### `navigate()`
 
-<p>
-
-**Type:** `(href: string, options?: Options) => void`<br />
-<Since v="3.2.0" />
-</p>
+<Meta version="3.2.0">`(href: string, options?: Options) => void`</Meta>
 
 A function that executes a navigation to the given `href` using the View Transitions API.
 
@@ -40,12 +32,9 @@ This function signature is based on the [`navigate` function from the browser Na
 
 #### `history`
 
-<p>
-
-**Type:** `'auto' | 'push' | 'replace'`<br />
-**Default:** `'auto'`<br />
-<Since v="3.2.0" />
-</p>
+<Meta default="`'auto'`" version="3.2.0">
+`'auto' | 'push' | 'replace'`
+</Meta>
 
 Defines how this navigation should be added to the browser history.
 
