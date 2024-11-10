@@ -85,11 +85,13 @@ import { FileTree } from '@astrojs/starlight/components';
 
 #### Docs pages
 
-Each documentation page lives in the `src/content/docs/` directory of the docs <abbr title="repository">repo</abbr>. There you’ll find a directory for each currently translated language. Each page is a MDX file to support rich text formatting. For example, the English language “Getting Started” page is at `src/content/docs/en/getting-started.mdx` and the same page in French is at `src/content/docs/fr/getting-started.mdx`.
+Each documentation page lives in the `src/content/docs/` directory of the docs <abbr title="repository">repo</abbr>. There you’ll find a directory for each currently supported language. Each page is an MDX file to support rich text formatting and Astro components.
+
+For example, the English language “Getting Started” page is at `src/content/docs/en/getting-started.mdx` and the same page in French is at `src/content/docs/fr/getting-started.mdx`.
 
 #### Reusable UI strings
 
-We also have UI text, generally consisting of relatively short bits of text used to label or structure components of the documentation UI. For example, we display sponsor logos accompanied by the text “Sponsored by” on English pages and on French pages display the translation “Sponsorisé par” instead.
+We also have translations for UI text strings. These are short bits of text used to label or structure components of the documentation UI. For example, the text “Sponsored by” before our sponsor logos on the English pages is translated so we can show “Sponsorisé par” on the French pages instead.
 
 UI strings are stored in the `src/content/i18n/` folder, with a dedicated YAML file for each language. Unlike pages, these translations look more like a dictionary, mapping standard keys to translated strings. Comments can be included on a line starting with a `#`.
 
@@ -104,7 +106,7 @@ leftSidebar.sponsoredBy: Sponsored by
 # ...
 ```
 
-Keys are not translated, so the example above would be translated into French like this:
+Keys are not translated, so the example above is translated into French by changing only the English text:
 
 ```yml title="src/content/i18n/fr.yml"
 a11y.sectionLink: Titre de la section
