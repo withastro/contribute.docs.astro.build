@@ -18,6 +18,7 @@ editUrl: false
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
+import { ContributorList } from "starlight-contributor-list";
 
 ## Next steps
 
@@ -61,3 +62,6 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
   </Card>
 
 </CardGrid>
+
+  Brought to you by these amazing contributors:
+  <ContributorList githubRepo="withastro/contribute.docs.astro.build" />
