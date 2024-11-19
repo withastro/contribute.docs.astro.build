@@ -56,17 +56,68 @@ You can also visit GitHub directly and go through your language's [open Pull Req
 
 ### Structure of Astro Docs
 
-Each documentation page lives in the `src/content/docs/` directory of this <abbr title="repository">repo</abbr>. There you’ll find directories for all of the languages currently translated. Each page is a MDX file to support rich text formatting. For example, the English language “Getting Started” page is at `src/content/docs/en/getting-started.mdx` and the same page in French is at `src/content/docs/fr/getting-started.mdx`.
+The docs repository contains two different kinds of translatable content: docs pages and UI strings. The following file tree shows where to find these in the repository.
 
-We also have UI text, generally consisting of relatively short bits of text used to label or structure components of the documentation UI. For example, our auto-generated table of contents has a heading that in English reads “On this page.” Those texts are stored separately from the page content itself, which means we have to translate them separately.
+import { FileTree } from '@astrojs/starlight/components';
 
-These labels live in the `src/i18n` folder, with a directory for each language similar to how pages work. Unlike pages, these translations look more like a dictionary, mapping standard keys to translated strings. Each language should provide the following files:
+<FileTree>
 
-- `nav.ts` — translates the labels for the navigation menu
-- `ui.ts` — translates miscellaneous bits of text found around the docs
-- `docsearch.ts` — translates the search component
+- ...
+- src/
+  - ...
+  - content/
+    - docs/ MDX page content, one directory per language
+      - ar/
+      - de/
+      - en/
+      - ...
+    - i18n/ UI string translations, one file per language
+      - ar.yml
+      - de.yml
+      - en.yml
+      - ...
+  - ...
+- astro.config.ts
+- package.json
+- ...
 
-See [`src/i18n/es`](https://github.com/withastro/docs/tree/main/src/i18n/es) as an example of these three files.
+</FileTree>
+
+#### Docs pages
+
+Each documentation page lives in the `src/content/docs/` directory of the docs <abbr title="repository">repo</abbr>. There you’ll find a directory for each currently supported language. Each page is an MDX file to support rich text formatting and Astro components.
+
+For example, the English language “Getting Started” page is at `src/content/docs/en/getting-started.mdx` and the same page in French is at `src/content/docs/fr/getting-started.mdx`.
+
+#### Reusable UI strings
+
+We also have translations for UI text strings. These are short bits of text used to label or structure components of the documentation UI. For example, the text “Sponsored by” before our sponsor logos on the English pages is translated so we can show “Sponsorisé par” on the French pages instead.
+
+UI strings are stored in the `src/content/i18n/` folder, with a dedicated YAML file for each language. Unlike pages, these translations look more like a dictionary, mapping standard keys to translated strings. Comments can be included on a line starting with a `#`.
+
+The following example shows an abbreviated version of the English UI strings:
+
+```yml title="src/content/i18n/en.yml"
+a11y.sectionLink: Section titled
+# Site settings
+site.title: Astro Documentation
+# Left Sidebar
+leftSidebar.sponsoredBy: Sponsored by
+# ...
+```
+
+Keys are not translated, so the example above is translated into French as:
+
+```yml title="src/content/i18n/fr.yml"
+a11y.sectionLink: Titre de la section
+# Site settings
+site.title: Documentation Astro
+# Left Sidebar
+leftSidebar.sponsoredBy: Sponsorisé par
+# ...
+```
+
+See the [English](https://github.com/withastro/docs/tree/main/src/content/i18n/em.yml) or [French](https://github.com/withastro/docs/tree/main/src/content/i18n/fr.yml) files in the docs repo as examples of a what a full file looks like.
 
 ## Translation Process
 
@@ -76,15 +127,11 @@ To start working on translating a part of [docs.astro.build](https://docs.astro.
 
    ➤ Go to `src/i18n/{language}/nav.ts`
 
-2. Is the text in the search box or modal?
+2. Is the text reused on several pages (e.g. search modal, right sidebar, article navigation, tutorial, etc.)
 
-   ➤ Go to `src/i18n/{language}/docsearch.ts`
+   ➤ Go to `src/content/i18n/{language}.yml`
 
-3. Is the text reused on several pages (e.g. right sidebar, article navigation, tutorial, etc.)
-
-   ➤ Go to `src/i18n/{language}/ui.ts`
-
-4. Is the text specific to one page (page title, main content, etc.)?
+3. Is the text specific to one page (page title, main content, etc.)?
 
    ➤ Go to `src/content/docs/{language}/{page-slug}.mdx`
 
@@ -429,15 +476,14 @@ Astro allows us to import and include custom components in our pages using MDX. 
 
 ```jsx
 <IslandsDiagram>
-  <Fragment slot="headerApp">Header (interactive island)</Fragment>
-  <Fragment slot="sidebarApp">Sidebar (static HTML)</Fragment>
-  <Fragment slot="main">Static content like text, images, etc.</Fragment>
-  <Fragment slot="carouselApp">Image carousel (interactive island)</Fragment>
-  <Fragment slot="footer">Footer (static HTML)</Fragment>
-  <Fragment slot="source">
-    Source: [Islands Architecture: Jason
-    Miller](https://jasonformat.com/islands-architecture/)
-  </Fragment>
+	<Fragment slot="headerApp">Header (interactive island)</Fragment>
+	<Fragment slot="sidebarApp">Sidebar (static HTML)</Fragment>
+	<Fragment slot="main">Static content like text, images, etc.</Fragment>
+	<Fragment slot="carouselApp">Image carousel (interactive island)</Fragment>
+	<Fragment slot="footer">Footer (static HTML)</Fragment>
+	<Fragment slot="source">
+		Source: [Islands Architecture: Jason Miller](https://jasonformat.com/islands-architecture/)
+	</Fragment>
 </IslandsDiagram>
 ```
 
@@ -449,15 +495,14 @@ Here is the above example correctly translated:
 
 ```jsx
 <IslandsDiagram>
-  <Fragment slot="headerApp">Cabeçalho (ilha interativa)</Fragment>
-  <Fragment slot="sidebarApp">Barra lateral (HTML estático)</Fragment>
-  <Fragment slot="main">Conteúdo estático como texto, imagens, etc.</Fragment>
-  <Fragment slot="carouselApp">Carrossel de imagens (ilha interativa)</Fragment>
-  <Fragment slot="footer">Rodapé (HTML estático)</Fragment>
-  <Fragment slot="source">
-    Fonte: [Arquitetura em Ilhas: Jason
-    Miller](https://jasonformat.com/islands-architecture/)
-  </Fragment>
+	<Fragment slot="headerApp">Cabeçalho (ilha interativa)</Fragment>
+	<Fragment slot="sidebarApp">Barra lateral (HTML estático)</Fragment>
+	<Fragment slot="main">Conteúdo estático como texto, imagens, etc.</Fragment>
+	<Fragment slot="carouselApp">Carrossel de imagens (ilha interativa)</Fragment>
+	<Fragment slot="footer">Rodapé (HTML estático)</Fragment>
+	<Fragment slot="source">
+		Fonte: [Arquitetura em Ilhas: Jason Miller](https://jasonformat.com/islands-architecture/)
+	</Fragment>
 </IslandsDiagram>
 ```
 
@@ -500,15 +545,3 @@ To get started adding a language, you’ll need:
    Examples: `English` / `Português do Brasil` / `العربية`
 
    This will be used to label this language in the site’s language switcher and potentially elsewhere. The best way to get this is probably to ask the person leading translation work for this language.
-
-#### Scaffold files for a new language
-
-To scaffold the basic files for a new language, use the `add-language` script from your terminal:
-
-```bash
-pnpm run add-language
-```
-
-The CLI will prompt you for a tag and name for the new language as described above. Follow the instructions and the wizard will create a basic set of files to get started translating that language.
-
-Update the placeholder content in the newly created files, commit them, and away you go!
