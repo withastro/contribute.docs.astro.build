@@ -126,9 +126,11 @@ See the [English](https://github.com/withastro/docs/tree/main/src/content/i18n/e
 
 #### Sidebar navigation labels
 
-Similar to reusable UI strings, we have labels for the groups displayed in the docs sidebar. For example, the labels for the sidebar tabs are stored in these files.
+Similar to reusable UI strings, labels for the groups displayed in the docs sidebar are translated in their own file.
 
-Navigation labels are stored in the `src/content/nav/` folder, with a TypeScript file for each language. The non-English files should contain a default export using the `navDictionary()` helper method. Just like for UI strings, keys are not translated, only the values in the object passed to `navDictionary()`.
+Navigation labels are stored in the `src/content/nav/` folder, with a TypeScript file for each language. The `en.ts` file in this folder contains the English text displayed in the sidebar for each key.
+
+The non-English files must contain a default export using the `navDictionary()` helper method. Just like for UI strings, keys are not translated, only the values in the object passed to `navDictionary()`.
 
 The following example shows an abbreviated version of the Simplified Chinese translation of the sidebar navigation labels:
 
