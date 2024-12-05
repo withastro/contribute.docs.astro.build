@@ -56,7 +56,7 @@ You can also visit GitHub directly and go through your language's [open Pull Req
 
 ### Structure of Astro Docs
 
-The docs repository contains two different kinds of translatable content: docs pages and UI strings. The following file tree shows where to find these in the repository.
+The docs repository contains three different kinds of translatable content: docs pages, UI strings, and navigation labels. The following file tree shows where to find these in the repository.
 
 import { FileTree } from '@astrojs/starlight/components';
 
@@ -75,6 +75,11 @@ import { FileTree } from '@astrojs/starlight/components';
       - ar.yml
       - de.yml
       - en.yml
+      - ...
+    - nav/ Sidebar navigation label translations, one file per language
+      - ar.ts
+      - de.ts
+      - en.ts
       - ...
   - ...
 - astro.config.ts
@@ -118,6 +123,27 @@ leftSidebar.sponsoredBy: Sponsorisé par
 ```
 
 See the [English](https://github.com/withastro/docs/tree/main/src/content/i18n/en.yml) or [French](https://github.com/withastro/docs/tree/main/src/content/i18n/fr.yml) files in the docs repo as examples of a what a full file looks like.
+
+#### Sidebar navigation labels
+
+Similar to reusable UI strings, we have labels for the groups displayed in the docs sidebar. For example, the labels for the sidebar tabs are stored in these files.
+
+Navigation labels are stored in the `src/content/nav/` folder, with a TypeScript file for each language. The non-English files should contain a default export using the `navDictionary()` helper method. Just like for UI strings, keys are not translated, only the values in the object passed to `navDictionary()`.
+
+The following example shows an abbreviated version of the Simplified Chinese translation of the sidebar navigation labels:
+
+```ts title="src/content/nav/zh-CN.ts"
+import { navDictionary } from '../../util/navDictionary';
+
+export default navDictionary({
+	start: '开始',
+	'start.welcome': '欢迎，世界！',
+	'start.newProject': '开始新项目',
+	// ...
+});
+```
+
+See the [English](https://github.com/withastro/docs/blob/main/src/content/nav/en.ts) file in the docs repo for all the label keys currently in use and the [Simplified Chinese](https://github.com/withastro/docs/blob/main/src/content/nav/zh-CN.ts) file as an example of what a fully translated file looks like.
 
 ## Translation Process
 
