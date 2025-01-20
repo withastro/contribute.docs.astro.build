@@ -45,7 +45,7 @@ Once a translation PR has a clear "LGTM" comment and you are preparing to merge:
 
 3. FOR HACKTOBERFEST ONLY - add the `hacktoberfest-accepted` label.
 
-4. Enter the PRs GitHub URL into https://coauthor.kevinzunigacuellar.com/ to ensure that every reviewer and commenter will receive coauthor credit on this PR.
+4. Enter the PRs GitHub URL into https://coauthor.kevinzc.com/ to ensure that every reviewer and commenter will receive coauthor credit on this PR.
 
 5. Check to see whether this is a first-time contributor, because you know that means... 
 
