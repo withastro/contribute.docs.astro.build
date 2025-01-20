@@ -122,7 +122,7 @@ Every Astro maintainer has the authority to merge PRs in the docs repo. We do ha
 
     The Netlify deploy build will probably take the longest, and if you are confident that this PR will not cause a build failure and the previous deploy preview looked fine, you do not have to wait for the new deploy build to finish before merging.
 
-6. If there have been participants active in the comments who have not made their own commit and you would like them to receive credit for helping, visit [Kevin's Co-author Message Generator](https://coauthor.kevinzunigacuellar.com/) and paste in the GitHub link to the PR. Or, use the GitHub action and leave a comment directly in the PR with only the message `!coauthor` and "Kevin" (the GitHub-actions bot) will respond with another comment.
+6. If there have been participants active in the comments who have not made their own commit and you would like them to receive credit for helping, visit [Kevin's Co-author Message Generator](https://coauthor.kevinzc.com/) and paste in the GitHub link to the PR. Or, use the GitHub action and leave a comment directly in the PR with only the message `!coauthor` and "Kevin" (the GitHub-actions bot) will respond with another comment.
 
     This will provide a message you can copy directly into (overwrite) the squash and merge commit and will give co-author credit to every account involved with this PR. We encourage this! Participants do not need to have a commit to have been helpful!
 
