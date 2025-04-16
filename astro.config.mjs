@@ -14,16 +14,14 @@ export default defineConfig({
 		starlight({
 			plugins: [starlightLinksValidator()],
 			title: 'Astro Docs Docs (AD²)',
-			social: {
-				github: 'https://github.com/withastro/contribute.docs.astro.build'
-			},
+			social: [
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/contribute.docs.astro.build' },
+			],
 			editLink: {
 				baseUrl: 'https://github.com/withastro/contribute.docs.astro.build/edit/main/'
 			},
 			customCss: ["./src/styles/theme.css"],
-			components: {
-				Head: './src/starlight-overrides/Head.astro',
-			},
+			routeMiddleware: './src/routeData.ts',
 			logo: {
 				dark: './src/assets/logo-dark.svg',
 				light: './src/assets/logo-light.svg',
