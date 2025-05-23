@@ -65,7 +65,7 @@ Use the following template for your changeset:
 	- No strict maximum length; take the space you truly need.
 
 7. The following line to direct readers to the RFC for your feature, replacing the name and link with your own. (2 lines)
-		```js
+		```markdown wrap
 		For a complete overview, and to give feedback on this experimental API, see the [Feature Name RFC](link to RFC proposal).
 		```
 
@@ -77,7 +77,7 @@ Use the following template for your changeset:
 
 Write your documentation assuming that people know what the general feature area (e.g. fonts, Content Security Policy) is and how it works. (They may not, but the docs team can help identify and fill in gaps to match the level of the rest of our docs re: how much of third-party or non-Astro specific topics we do/don't explain.) Provide a link to a reputable source (e.g. [MDN web docs](https://developer.mozilla.org/en-US/)) instead of explaining general web development ideas in detail.
 
-```markdown
+```markdown wrap
 This experimental feature allows you to use fonts from your filesystem and various font providers (eg. Google, Fontsource, Bunny) through a unified, fully customizable, and type-safe API.
 
 Web fonts can impact page performance at both load time and rendering time. This API helps you keep your site performant with automatic [web font optimizations](https://web.dev/learn/performance/optimize-web-fonts) including preload links, optimized fallbacks, and opinionated defaults.
