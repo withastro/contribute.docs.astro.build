@@ -11,7 +11,7 @@ These features are not required to follow our normal [semantic versioning rules]
 
 ## Documenting experimental features
 
-Since these features may change and even break several times during development, experimental features are only documented in their [experimental flag section of the configuration reference page](https://docs.astro.build/en/reference/configuration-reference/#experimental-flags).
+Since these features may change and even break several times during development, experimental features are only documented in the [Experimental Features section of the reference page](https://deploy-preview-11736--astro-docs-2.netlify.app/en/reference/experimental-flags/).
 
 Only when a feature is no longer experimental do we add documentation and reference it within other pages. This gives us the greatest flexibility for things to change and evolve, as most experimental features do!
 
@@ -19,54 +19,22 @@ Only when a feature is no longer experimental do we add documentation and refere
 
 ### Where to add your documentation
 
-In addition to providing a [changeset message for your implementation PR](/docs-for-code-changes/changesets/), you will add documentation for your experimental feature directly in your implementation PR. [See how to write configuration reference entries using JSDoc tags](/reference/jsdoc-config-ref/). You can find the section for experimental flags by searching for this line: `@name Experimental Flags`.
+In addition to providing a [changeset message for your implementation PR](/docs-for-code-changes/changesets/) in your implementation PR, you will add documentation for your experimental feature in a new page located in the following directory: `src/content/docs/en/reference/experimental-flags/`.
 
-### JSDoc format
+### What to include in the changeset
 
-Add a new entry with the following structure:
+The changeset is for introducing your new feature to Astro users for the first time. It's purpose is to **let them know that the feature exists** and provide them with enough information to **decide whether they would like to try it**... and we hope they *will* try it! We release experimental features so we can more easily **respond to feedback while developing the feature**, including making breaking changes when necessary. This means that some hype or marketing speak is allowed because we want to encourage users who have a genuine need or interest in this feature to try it.
 
-```ts
-/**
-		 * @docs
-		 * @name experimental.feature
-		 * @type {boolean}
-		 * @default `false`
-		 * @version 4.x.0
-		 * @description
-		 *
-		 * This feature [does/allows you to...]
-     * 
-     * To enable this feature, add the experimental flag in your Astro config:
-		 *
-		 * ```js
-		 * {
-		 *   experimental: {
-		 *     featureName: true,
-		 *   },
-		 * }
-		 * ```
-		 *
-		 * Describe any required configuration, as well as basic usage here.
-     * It's OK if this is 100 lines or so!
-     * This will be the only documentation in docs!
-     * The RFC will do most of the docs "heavy lifting."
-     * 
-		 * For a complete overview, and to give feedback on this experimental API,
-     * see the [Feature RFC](https://github.com/withastro/roadmap/blob/actions/proposals/00xx-feature.md).
-		 */
-		actions?: boolean;
+Use the following template for your changeset:
 
-```
-
-### What to include in the description
-
-Add the following underneath the `@description` tag, in order:
 <Steps>
-1. A short description of **what the feature does** or **allows you to do**. (1 - 4 sentences)
+1. "Adds support for experimental {feature}"
 
-2. `To enable this feature, add the experimental flag in your Astro config:` (1 line)
+2. A short description of **what the feature does** or **allows you to do**. (1 - 4 sentences)
 
-3. A minimal code example showing your experimental feature flag set to `true`. (code block)
+3. `To enable this feature, add the experimental flag in your Astro config:` (1 line)
+
+4. A minimal code example showing your experimental feature flag set to `true`. (code block)
 		```js
 		{
 		 experimental: {
@@ -75,37 +43,66 @@ Add the following underneath the `@description` tag, in order:
 		}
 		```
 	- Include any **required** configuration that must be also be set. (if applicable)
-	- For example, if your feature requires on-demand rendering, include the `output` config:
+	- For example, if your feature requires on-demand rendering, include the `adapter` config:
 		```js ins={2}
 		{
-		 output: 'hybrid', // or 'server'
+		 adapter: 'netlify', // the adapter of your choice
 		 experimental: {
 		  featureName: true,
 		 },
 		}
 		```
 
-
-4. Mention **general requirements/limitations** or situations where this feature does not work. (if applicable)
+5. Mention **general requirements/limitations** or situations where this feature does not work. (if applicable)
 	- Do not be overly specific, but do let the reader know if there are general requirements.
 	- For example, "This feature is not available on prerendered pages."
 
-
-5. Minimal usage description and examples (aim for 100 lines max)
+6. Minimal usage description and examples (aim for 100 lines max)
 	- Think of this as your traditional documentation section.
 	- Keep explanations short, focused on getting someone started.
 	- If included, stick to showing only common, basic examples.
 	- Do not try to cover every case/example.
 	- No strict maximum length; take the space you truly need.
 
-
-6. The following two lines to direct readers to the RFC for your feature, replacing the name and link with your own. (2 lines)
+7. The following line to direct readers to the RFC for your feature, replacing the name and link with your own. (2 lines)
 		```js
-		* For a complete overview, and to give feedback on this experimental API,
-    * see the [Feature Name RFC](link to RFC proposal).
+		For a complete overview, and to give feedback on this experimental API, see the [Feature Name RFC](link to RFC proposal).
 		```
 
 </Steps>
+
+### What to include in the experimental feature page docs
+
+#### Introduction
+
+Write your documentation assuming that people know what the general feature area (e.g. fonts, Content Security Policy) is and how it works. (They may not, but the docs team can help identify and fill in gaps to match the level of the rest of our docs re: how much of third-party or non-Astro specific topics we do/don't explain.) Provide a link to a reputable source (e.g. [MDN web docs](https://developer.mozilla.org/en-US/)) instead of explaining general web development ideas in detail.
+
+```markdown
+This experimental feature allows you to use fonts from your filesystem and various font providers (eg. Google, Fontsource, Bunny) through a unified, fully customizable, and type-safe API.
+
+Web fonts can impact page performance at both load time and rendering time. This API helps you keep your site performant with automatic [web font optimizations](https://web.dev/learn/performance/optimize-web-fonts) including preload links, optimized fallbacks, and opinionated defaults.
+```
+
+#### Configuring the experimental flag
+
+Follow the [format used for the changeset](#what-to-include-in-the-changeset) to show readers how to enable your experimental feature. Be sure to include a realistic configuration example, especially if your feature requires a configuration object with multiple properties, or requires other changes to a project's configuration to work.
+
+#### Astro-specific explanations
+
+Focus on "things only we could / would write" about this feature and topic area. In other words, it is not your responsibility to document the general web development concept, but rather **what someone needs to know about enabling, configuring, and using your specific new feature in their Astro project**. This can include:
+
+- How it's configured and used *in your Astro project*, and how to make any additional configuration decisions.
+- What it does (or doesn't yet) do for your Astro project. (e.g. your feature may only focus on one particular aspect of a common web feature)
+- How you add/incorporate it with an existing project, and when you would/wouldn't. 
+- Any tradeoffs or things to check for in your Astro project that enabling this might affect.
+
+#### Common usage examples
+
+Provide examples of your feature configured and used, and show common, realistic use whenever possible. Someone may make different choices in their own project, but seeing a complete, correct example can let them know that their use "seems similar."
+
+#### Full API reference
+
+Any value that can be configured, prop that can be passed, or helpful function that can be used must be fully documented with a brief example. You can use existing API reference / configuration docs as an example for format. Do not worry that these are subject to change. Document them as they exist at the time of release, and always come back and update these docs as your feature develops.
 
 ## Breaking Changes (while still experimental)
 
@@ -129,8 +126,6 @@ Use the following model for your changeset:
 ## Unflagging an experimental feature 
 
 Congratulations, your feature is ready for release!
-
-Now, your documentation will live somewhere else in Astro Docs (Team Docs will guide you through a separate docs PR!) and the experimental flag will be removed from our Configuration Reference page.
 
 ### Changeset
 
