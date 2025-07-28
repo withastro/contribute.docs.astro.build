@@ -2,7 +2,7 @@
 title: GitHub Issues
 description: How to file an issue or work on existing issues in the Astro Docs repository.
 ---
-You can [**file an new issue**](https://github.com/withastro/docs/issues/new/choose) to let us know of outdated, confusing, or incorrect documentation without attempting to fix anything. You can also let us know of any problems you encounter on the site itself.
+You can [**file a new issue**](https://github.com/withastro/docs/issues/new/choose) to let us know of outdated, confusing, or incorrect documentation without attempting to fix anything. You can also let us know of any problems you encounter on the site itself.
 
 You can also choose to [**work on an existing issue that has been triaged and has the "help wanted" label**](https://github.com/withastro/docs/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22help+wanted%22).
 
