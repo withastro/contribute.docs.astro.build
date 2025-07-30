@@ -12,12 +12,13 @@ You will be responsible for writing a **changeset** for your Astro PR. This is a
 - the kind of change according to [Astro's semantic versioning](https://docs.astro.build/en/upgrade-astro/#semantic-versioning)
 - a message describing the change that will be publicly displayed on the repo's CHANGELOG
 
-```md title="my-super-cool-changeset.md" wrap
+```md title=".changeset/my-super-cool-changeset.md" wrap
 ---
 'astro': patch
 ---
 Fixes unexpected `undefined` value when calling an action from the client without a return value
 ```
+You can generate a changeset using the `pnpm changeset` command, which will prompt you for the necessary information and create a randomly-named file in the `.changeset` folder. You can then edit the generated file to add more detail, or write your changeset from scratch. 
 
 ## Format
 
