@@ -8,7 +8,7 @@ You can also choose to [**work on an existing issue that has been triaged and ha
 
 These issues are separate from Astro core issues and are only read and managed by Docs Maintainers. Issues must be about problems or suggestions **for the documentation site only** and not feature requests, feedback about Astro itself, or requests for support.
 
-We decide to add new content and rework existing content in response to [GitHub Discussions](#starting-with-GitHub-Discussions), so participating in a discussion is usually the first step to having an Issue created by maintainers and making a change. After a discussion topic has been considered by the community, maintainers may choose to create a GitHub issue and add the `help wanted` label to indicate that community contributions are welcome.
+We decide to add new content and rework existing content in response to [GitHub Discussions](#starting-with-gitHub-discussions), so participating in a discussion is usually the first step to having an Issue created by maintainers and making a change. After a discussion topic has been considered by the community, maintainers may choose to create a GitHub issue and add the `help wanted` label to indicate that community contributions are welcome.
 
 Maintainers will often reach out directly to community members who were involved in the discussion to encourage them to submit PRs, so participating in these discussions is a great way to be visible to the project and the community!
 
