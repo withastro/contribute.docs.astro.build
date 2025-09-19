@@ -34,7 +34,7 @@ Begin your changeset message with **a present tense verb** that completes a sent
 
 Finish the introductory sentence with a message focusing on what has changed **about the codebase** (not what your feature itself does) that is meaningful to a **user** of Astro. It is usually more helpful to describe the change **as someone building an Astro site will experience it**, instead of describing **how you fixed it** or **what the code in the PR does**:
 
-```markdown title="changeset.md" del={1,2} ins={4,5,6,8} wrap
+```markdown title="changeset.md" del={2} ins={6,8} wrap
 // What the code now does
 Logs helpful errors if content is invalid
 
