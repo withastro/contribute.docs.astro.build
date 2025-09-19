@@ -32,7 +32,12 @@ Begin your changeset message with **a present tense verb** that completes a sent
 - Improves
 - Deprecates
 
-Finish the introductory sentence with a message focusing on what has changed that is meaningful to a **user** of Astro. It is usually more helpful to describe the change **as someone building an Astro site will experience it**, instead of describing **how you fixed it**.
+Finish the introductory sentence with a message focusing on what has changed **about the codebase** (not what your feature itself does) that is meaningful to a **user** of Astro. It is usually more helpful to describe the change **as someone building an Astro site will experience it**, instead of describing **how you fixed it** or **what the code in the PR does**:
+
+```markdown title="changeset.md" del={1} ins={2)
+Logs helpful errors if content is invalid
+Improves error reporting for content collections by adding logging for configuration errors that had previously been silently ignored.
+```
 
 You may then include additional paragraphs if necessary to describe the change in more detail. This may not be needed for a small bug fix, but is often helpful if the reader must make a change to their own code, or needs to understand how the change might affect them.
 
