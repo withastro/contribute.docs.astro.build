@@ -45,7 +45,7 @@ Once a translation PR has a clear "LGTM" comment and you are preparing to merge:
 
 3. FOR HACKTOBERFEST ONLY - add the `hacktoberfest-accepted` label.
 
-4. Enter the PRs GitHub URL into https://coauthor.kevinzunigacuellar.com/ to ensure that every reviewer and commenter will receive coauthor credit on this PR.
+4. Enter the PR's GitHub URL into https://coauthor.kevinzc.com/ to ensure that every reviewer and commenter will receive coauthor credit on this PR. Alternatively, you can install the "Better GitHub Co-Authors" browser extension from the [Chrome Web Store](https://chromewebstore.google.com/detail/better-github-co-authors/nkemoipciaomkemfjbhfbcokpacdofnb) or [Firefox Add-ons](https://addons.mozilla.org/en-GB/firefox/addon/better-github-co-authors/). This will add an "Add co-authors" button to GitHub's UI which will directly enter participants' names into the merge commit.
 
 5. Check to see whether this is a first-time contributor, because you know that means... 
 
