@@ -1,6 +1,6 @@
 ---
 title: Adding an Astro + X guide
-description: Guide to contributing a new third-party guide (CMS, backend, deploy).
+description: Guide to contributing a new third-party guide (CMS, backend, deploy, media).
 ---
 import { Steps } from '@astrojs/starlight/components';
 
@@ -9,83 +9,111 @@ The `src/content/docs/en/guides/` directory in the docs has subdirectories for e
 - `cms/`
 - `backend/`
 - `deploy/`
-- `migrate-to-astro/`
 - `media/`
 
-If you'd like to add a new guide to using Astro with a third-party CMS, backend service, deploy host, etc., the first step is to create a new "stub" page. 
+If you'd like to add a new guide to using Astro with a third-party CMS, backend service, deploy host, etc., the first step is to [create a new, minimal "stub" page](#creating-a-stub-page) in English that links to other existing content (official guides, starter templates and tutorials, as well as community blog posts or videos).
 
-Creating a stub page involves adding a logo and creating a short page of content using a template. New stubs do not require much editing effort and can often be merged into docs quickly. 
+This allows the third-party service to immediately have a presence in Astro docs with minimal reviewing, testing, and editing required from our docs team. It helps others learn about the service, and provides helpful resources for those looking to integrate the service with Astro.
 
-We recommend first creating a stub and linking to other guides (official guides, starter templates and tutorials, as well as community blog posts or videos) so that the new page will be available as soon as possible.
+After a stub page exists, you may choose to [write some guide content](#writing-a-guide) which will be reviewed by our docs team. These guides require more significant resources and are subject to our regular docs standards. We will try to work with you to help you create something that fits with the style and conventions of Astro Docs. However, not all guides will necessarily be accepted.
 
-Then, additional content can be added incrementally until you are ready to [write a full guide](#writing-a-new-guide) that requires testing and editing from our Docs team.
+PRs adding full guides to the docs without first creating a stub page may be refused.
 
-Submissions for full guides without first creating a stub page may be refused.
+## Creating a stub page
 
-## Creating a Stub page
+Creating a stub page involves adding a logo and creating a short page of English content using a template. New stubs do not require much editing effort and can often be merged into docs quickly. 
 
-The following example will walk through the process of creating a stub page for Keystatic CMS.
+The following example shows the process of creating a stub page for Keystatic CMS:
 
 <Steps>
-1. Upload an SVG logo optimized with [SVGOMG](https://jakearchibald.github.io/svgomg/) to [the `public/logos/` folder](https://github.com/withastro/docs/tree/main/public/logos) named for your service
-    -  `keystatic.svg`
-2. Add an entry for your service in [the `src/data/logos.ts` data file](https://github.com/withastro/docs/blob/main/src/data/logos.ts) of the form:
-    - `keystatic: { file: 'keystatic.svg', padding: '0' },`
-3. Create a new MDX page named for your service in [the CMS guides content folder](https://github.com/withastro/docs/tree/main/src/content/docs/en/guides/cms)
-    - `src/content/docs/en/guides/cms/keystatic.mdx`
-4. Use an existing guide as a reference, and the following frontmatter values in your `.mdx` file:
-    ```astro
+1. Upload an SVG logo named for your service that has been optimized with [SVGOMG](https://jakearchibald.github.io/svgomg/) to the [`public/logos/` folder of the docs repo](https://github.com/withastro/docs/tree/main/public/logos).
+    -  Example filename: `keystatic.svg`
+2. Add an entry for your service in [the `src/data/logos.ts` data file](https://github.com/withastro/docs/blob/main/src/data/logos.ts) in alphabetical order, copying the existing form of the entries there. (You may need to adjust your logo's padding after checking your logo in the navigation grid.)
+    - Example entry: `keystatic: { file: 'keystatic.svg', padding: '0' },`
+3. Create a new MDX page named for your service in the appropriate `/en/guides/` content folder.
+    - Example new file: `src/content/docs/en/guides/cms/keystatic.mdx`
+4. Add the following frontmatter values in your `.mdx` file:
+    ```astro title="src/content/docs/en/guides/cms/keystatic.mdx"
     ---
     title: Keystatic & Astro
     description: Add content to your Astro project using Keystatic as a CMS
+    sidebar:
+      label: Keystatic
     type: cms
-    service: Keystatic
+    logo: keystatic // must match the key in the logos.ts file
     i18nReady: true
-    stub: true
     ---
     ```
-5. Write a single line description of your service including a link to your main page. This should be factual, and not marketing-speak:
+5. Write a single line description of your service including a link to its main page. This should be factual, and not marketing-speak:
 
-    ```md wrap
+    ```md wrap title="src/content/docs/en/guides/cms/keystatic.mdx"
     [Keystatic](https://keystatic.com/) is an open source, headless content-management system that allows you to structure your content and sync it with GitHub.
     ```
-6. Use only the following `##` (`<h2>`) headings in the body of the file as needed, and add any appropriate content. Do not add more than one resource from any single domain. For example, if choosing to link to official documentation, or to a series of multiple blog posts, please include only the most relevant page (e.g. Part 1 of a series):
-    ```md wrap
+6. Use only the following `##` (`<h2>`) headings in the body of the file as needed, and [follow the process for adding links](#add-new-links) to add initial content. Two or three links is enough for an initial stub page:
+    ```md wrap title="src/content/docs/en/guides/cms/keystatic.mdx"
     ## Official Resources
 
-    - Check out [the official Keystatic guide](https://keystatic.com/docs/installation-astro)
+    - [Official Keystatic Astro guide](https://keystatic.com/docs/installation-astro)
     - [Keystatic starter template](https://github.com/Thinkmill/keystatic/tree/main/templates/astro)
 
     ## Community Resources
     - [Keystatic x Astro](https://maciekpalmowski.dev/blog/keystatic-x-astro/)
     ```
-
+7. Check the browser preview of your stub page to ensure it looks correct. Also check that the service name displays in the sidebar navigation when expanded, and that your icon and logo appear in the navigation grid at the bottom of the page.
 </Steps>
- You can use this past PR for Craft CMS as a model: https://docs.astro.build/en/guides/cms/craft-cms/
 
-Please wait until your page has been published before [extending your stub into a full-guide](#writing-a-new-guide).
+Please wait until your page has been published before [extending your stub into a full guide](#writing-a-new-guide).
 
-## Adding content to an existing stub
+## Adding new links
 
-If you don't have a full guide yet, you can expand a stub, even if it's only an incremental addition.
+The third-party guides include sections for external links. Some older guides created before our stub template may not have these sections. You are welcome to add these two headings if they do not exist so that you can add your link.
 
-### Add new links
+You can add a new official or community link by [editing the page](/first-time/edit-single-page/) and making a PR adding the link in the appropriate section.
 
-The third-party guides all have sections for external links. You can add a new official or community link by [editing the page](/first-time/edit-single-page/) and making a PR.
+Please adhere to the following guidelines when adding links:
 
-### Writing a new guide
+- **Official links must link to a domain owned by the third-party service, or to an official account.** For example, the video `[Keystatic with Astro's Content Collections](https://www.youtube.com/watch?v=6l2YWCyPsWk)` hosted on its parent company Thinkmill's YouTube channel is an official Keystatic link.
 
-The best way to start writing a new guide for these sections is to choose an existing one as an example.
+- **Do not add more than one resource from any single domain.** For example, if choosing to link to official documentation, or to a series of multiple blog posts, please include only the most relevant page (e.g. the "Getting Started" page, "Part 1" of a series, or an "Astro" tag/category page).
+
+    One notable exception may be if different types of content exist on the same domain, such as a `/templates/astro-starter` resource for 1-click deploy templates and a `/guides/astro-get-started-guide` introductory guide as these two resources serve different purposes.
+
+- **The text for a link must include the service name.** It should describe what the reader will find at the link, and does not have to match the referenced page's title exactly. This helps readers understand the content of the linked page, especially when using search, assistive technology, or coding assistants.
+
+    :::tip
+    Use link text such as `[Official Keystatic guide for Astro]`, `[Astro + Keystatic Starter template]`, or `[Connecting Keystatic to Astro]` instead of `[Astro guide]`, `[Get Started]`, or `[Part 3: Connecting the CMS]`.
+    :::
+
+## Writing a guide
+
+Astro Docs accepts guide content in the form of "How-to" instructions to help readers connect a third-party service with Astro. This guide content can be added to an existing stub page that only contains external links. If one does not already exist, then please [create a stub page first](#creating-a-stub-page) and wait for it to be published before adding guide material.
+
+Astro third-party guides should focus on instructions needed to connect the service to Astro, such as any configuration needed and methods for fetching data for use in an Astro project. These guides should not focus on how the third party service works (which is the responsibility of the third-party docs), nor on how Astro works (which is covered elsewhere in Astro docs).
+
+The purpose of these guides is to minimally demonstrate the process of adding and using this service in an Astro project so that people can see how the pieces fit together and decide whether they want to further explore the other service in more detail. These guides are typically not a substitute for a third-party's Astro guide, which often show more details and options and require more knowledge of the service that these guides can provide.
+
+The best way to start writing a new guide for these sections is to review several guides in your category, then choose an existing one or two as an example.
+
+:::note
+Our existing guides have been submitted by different community members over several years. There is not currently a standard template to follow, and some older guides may not always conform to our current standards.
+
+Please follow the current guidance in our contributing docs when adding new content, even if you are modelling your guide after an older guide that may not be fully updated.
+:::
 
 <Steps>
 1. Find a comparable guide in one of the subdirectories. Choose a guide whose service is similar to yours.
 
-2. Copy the frontmatter contents of an existing file, and be sure the `title` and `description` in the frontmatter are accurate and follow the established pattern.
+    For example, if you are writing a guide for a Git-based CMS, or a deploy host that only deploys static sites, then a guide for a similar service may be the most helpful to use as a model.
 
-3. Copy the headings of the body content as appropriate. This should match the structure of other guides of that type. For example, a deployment guide should have a step-by-step “How to Deploy” section. A migration guide should have “Key Similarities” and “Key Differences” sections.
+2. Copy the headings of the body content as appropriate. This should match the structure of other guides of that type. For example, a deployment guide should have a step-by-step “How to Deploy” section.
 
-4. Add your own content and instructions, following the style  of existing guides. Please consult our [writing and style guide](/guides/writing-style/) for more guidance.
+    Most newer guides contain a `## Prerequisites` section for stating requirements so that you do not need to describe these additional steps in your guide. Use this section for tasks that are beyond the scope of your guide and should already be completed such as:
+
+    - `An Astro project with [an adapter configured for on-demand rendering](en/guides/on-demand-rendering/#server-adapters)`
+    - `A server on your VPS provider using Cleavr`
+    - `An existing ApostropheCMS project configured with an environment variable called APOS_EXTERNAL_FRONT_KEY` 
+   
+
+3. Add your own content and instructions, following the style of existing guides. Please consult our [writing and style guide](/guides/writing-style/) for more guidance and see our [custom component reference](/reference/custom-components/) for help using common guide components such as `<Steps>`, `<PackageManagerTabs>`, and `<FileTree>`.
 
 </Steps>
-
-
