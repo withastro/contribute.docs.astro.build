@@ -45,7 +45,7 @@ Helpful issues usually include:
 
 ## How to help with existing issues
 
-Docs issues will be triaged by a maintainer who will add one or more labels to an issue. These labels will indicate the type of issue (e.g. new content, site infrastructure) and may also include labels to describe the issue in other ways (e.g. priority, difficulty, community invovlement wanted).
+Docs issues will be triaged by a maintainer who will add one or more labels to an issue. These labels will indicate the type of issue (e.g. new content, site infrastructure) and may also include labels to describe the issue in other ways (e.g. priority, difficulty, community involvement wanted).
 
 ### Triaged issues with the "help wanted" label
 
@@ -63,7 +63,7 @@ If an issue has been triaged and a maintainer has added the ["help wanted" label
 
 These have not yet been approved by a maintainer. Our maintainers may have not yet decided whether this is a valid issue. Or, maintainers may already know that an issue will be fixed by some upcoming planned work. It is not appropriate to start working on a solution to this issue. But it **is helpful to comment** on this issue, letting maintainers know if this is an issue you also have or agree with.
 
-If you see an issue that interests you and that you could fix, but it is not labeled "help wanted", then you are welcome to commment in the issue! Tell us that you think you have a way to address it, and that you'd be willing to work on it! The maintainers will provide feedback in the issue, and will let you know whether they'd like you to work on a solution.
+If you see an issue that interests you and that you could fix, but it is not labeled "help wanted", then you are welcome to comment in the issue! Tell us that you think you have a way to address it, and that you'd be willing to work on it! The maintainers will provide feedback in the issue, and will let you know whether they'd like you to work on a solution.
 
 You are always welcome and encouraged to comment on any existing issue to help the maintainers evaluate it, and provide any extra context or information you have!
 

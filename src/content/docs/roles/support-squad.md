@@ -26,7 +26,7 @@ For **support that scales, and eventually becomes self-support**, which reduces 
 
 Be very clear that you are not giving off RTFM vibes! You *can* give a short, yes/no or confirm/deny, or "ugh, sorry that's not immediately working for you. We intend for it to work, yes!" message while dropping a docs link! You can make it clear you'd be happy to look at the issue further with them! But, we always want to figure out whether someone is here because of a failure of the docs to serve them.
 
-No one wants to be put through a 12 minute feedback survey, or feel like they are "user research" material, but if you're helping them then you have already established a bit of a relationship and they know you are interested in seeing their problem sovled. Please do consider (nicely! respectfully!) getting the following kinds of feeback in a support thread where/when it feels appropriate (either during, or after a resolution):
+No one wants to be put through a 12 minute feedback survey, or feel like they are "user research" material, but if you're helping them then you have already established a bit of a relationship and they know you are interested in seeing their problem solved. Please do consider (nicely! respectfully!) getting the following kinds of feedback in a support thread where/when it feels appropriate (either during, or after a resolution):
 
 - Did you look in the docs before asking here? 
   - If yes, did you have trouble finding this section or did you find it, but it was not helpful?  (e.g. poorly written, didn't cover this situation, outdated code sample, not where you expected it to be)
