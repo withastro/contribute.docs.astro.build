@@ -12,7 +12,7 @@ const paths = await getCollection('docs');
 /** An object mapping file paths to file metadata. */
 const pages = Object.fromEntries(paths.map(({ id, slug, data }) => [id, { data, slug }]));
 
-export const { getStaticPaths, GET } = OGImageRoute({
+export const { getStaticPaths, GET } = await OGImageRoute({
   param: 'path',
 
   pages,
