@@ -12,7 +12,7 @@ Here is an example of what our code snippets look like written in Markdown/MDX, 
 
 - Use the file name as a title
 - highlight rows 9 and 10
-- apply "+ diff" styling (green backround) to any occurrence of `<Button />`
+- apply "+ diff" styling (green background) to any occurrence of `<Button />`
 
 ``````markdown
 ```astro title="src/pages/nested-components.astro" {9-10} ins="<Button />"
@@ -75,7 +75,7 @@ and the line range 2-4 will be marked:
   }
 ```
 
-## Commmon Annotations
+## Common Annotations
 
 Following are the annotations you'll use most frequently in Astro docs. For a complete reference, please see [the Expressive Code documentation](https://github.com/expressive-code/expressive-code/blob/main/packages/astro-expressive-code/README.md).
 

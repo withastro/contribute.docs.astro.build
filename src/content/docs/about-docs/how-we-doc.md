@@ -14,7 +14,7 @@ You are welcome, and you are a part of the team.
 
 ## Maintainer-Led
 
-We have an offical team of Astro Docs Maintainers and a Docs Lead who is ulimately responsible for leading and managing the entire project. 
+We have an official team of Astro Docs Maintainers and a Docs Lead who is ultimately responsible for leading and managing the entire project. 
 
 The Docs Lead:
 

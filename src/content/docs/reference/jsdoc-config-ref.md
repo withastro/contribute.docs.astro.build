@@ -25,7 +25,7 @@ Instead of Markdown heading indicators (e.g. `##`), this file relies on the `@ki
 
 	(e.g. `markdown.syntaxHighlight.excludeLangs`)
 
-To add a new entery, you will need to:
+To add a new entry, you will need to:
 
 - Find or create the heading for your entry (e.g. Top Level Options, Markdown Options, Build Options).
 - Add a JSDoc entry in the same location as you want it to appear on the docs page, at the appropriate heading level.

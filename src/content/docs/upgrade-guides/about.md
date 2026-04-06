@@ -17,7 +17,7 @@ These guides follow a standard structure:
 
 - Upgrade instructions (using `@astrojs/upgrade` and manual instructions)
 - A note that after upgrading, things might "just work"! But if they don't, check below
-- A link to the CHANGELOG for full rease notes
+- A link to the CHANGELOG for full release notes
 - Experimental flags removed
 - Astro dependencies upgraded (e.g. Node.js, Vite etc.) in case these affect a project
 - Breaking changes
@@ -26,7 +26,7 @@ These guides follow a standard structure:
 - Community resources
 - Known issues
 
-See the [Astro v4 upgrade guide](https://docs.astro.build/en/guides/upgrade-to/v4/) for an example.
+See the [Astro v6 upgrade guide](https://docs.astro.build/en/guides/upgrade-to/v6/) for an example.
 
 ### Submitting docs
 
