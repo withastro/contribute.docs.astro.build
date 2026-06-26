@@ -15,7 +15,7 @@ We welcome guides on using Astro with a third-party CMS, backend service, deploy
 
 If your service is new or not yet widely adopted, we recommend that you write and maintain a guide in your own documentation. You can suggest adding a link to your guide in the "Community Resources" section of a relevant page. You can also [open a discussion in the docs repo](https://github.com/withastro/docs/discussions) so we can assess whether there is sufficient interest in the service among the Astro community.
 
-If your service is popular and actively maintained, or has been approved by the Astro team, you are welcome to [create a new, minimal "stub" page](#creating-a-stub-page) in English that links to other existing content (official guides, starter templates and tutorials, as well as community blog posts or videos).
+If your service is popular and actively maintained, or has been approved by the Astro team, you are welcome to [create a new, minimal "stub" page](#creating-a-stub-page) in English only that links to other existing content (official guides, starter templates and tutorials, as well as community blog posts or videos).
 
 This allows the third-party service to immediately have a presence in Astro docs with minimal reviewing, testing, and editing required from our docs team. It helps others learn about the service, and provides helpful resources for those looking to integrate the service with Astro.
 
@@ -53,7 +53,10 @@ The following example shows the process of creating a stub page for Keystatic CM
     ```md wrap title="src/content/docs/en/guides/cms/keystatic.mdx"
     [Keystatic](https://keystatic.com/) is an open source, headless content-management system that allows you to structure your content and sync it with GitHub.
     ```
-6. Use only the following `##` (`<h2>`) headings in the body of the file as needed, and [follow the process for adding links](#adding-new-links) to add initial content. Two or three links is enough for an initial stub page:
+6. Use only the following two `##` (`<h2>`) headings in the body of the file as needed, and [follow the process for adding links](#adding-new-links) to add initial content.
+
+    Two or three links is enough for an initial stub page, and you must not duplicate pages from the same domain. Choose the most relevant entry page for each domain, such as an Astro guide in your documentation, or your most general blog post. If you do not follow the [link requirements](#adding-new-links), your guide will not be accepted:
+
     ```md wrap title="src/content/docs/en/guides/cms/keystatic.mdx"
     ## Official Resources
 
