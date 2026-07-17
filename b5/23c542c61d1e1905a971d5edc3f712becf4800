@@ -1,0 +1,29 @@
+.github/workflows/deploy-preview.yml
+  s_edbbd486dffc00::t_5a75054472ebfc 1-18
+.github/workflows/deploy.yml
+  s_edbbd486dffc00::t_36e74ee3f2b463 1-25
+.gitignore
+  s_edbbd486dffc00::t_f9b9007b6139c9 5-6
+astro.config.mjs
+  s_edbbd486dffc00::t_f8c69498202df5 5-10
+package-lock.json
+  s_edbbd486dffc00::t_0596608eb6fa29 2,8,16-18,277-400,1450-1459,1466-1476,1590-1618,2072-2091,2458-2464,2932-2941,3859-3868,4974-4994,5243-5256,6167-6176,6183-6192,6607-7169,7211-7235
+package.json
+  s_edbbd486dffc00::t_aecd19602210f1 2,10-11,19-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "b523c542c61d1e1905a971d5edc3f712becf4800",
+  "prompts": {},
+  "sessions": {
+    "s_edbbd486dffc00": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_094431850ffexlgvELkeF5Iacw",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Matthew Phillips <matthewphillips@cloudflare.com>"
+    }
+  }
+}
