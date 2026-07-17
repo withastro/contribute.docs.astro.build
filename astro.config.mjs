@@ -2,10 +2,15 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightLinksValidator from 'starlight-links-validator';
 
-/* https://docs.netlify.com/configure-builds/environment-variables/#read-only-variables */
-const NETLIFY_PREVIEW_SITE = process.env.CONTEXT !== 'production' && process.env.DEPLOY_PRIME_URL;
+// In CI, only the `main` branch is production. Any other build (a PR, or a
+// push to some other branch) is deployed as a Cloudflare Worker preview at
+// "<branch>.previews.contribute.docs.astro.build" (see .github/workflows/deploy.yml).
+const branch = process.env.GITHUB_HEAD_REF || process.env.GITHUB_REF_NAME;
+const isMain = branch === 'main';
 
-const site = NETLIFY_PREVIEW_SITE || 'https://contribute.docs.astro.build/';
+const site = !isMain && branch
+	? `https://${branch}.previews.contribute.docs.astro.build/`
+	: 'https://contribute.docs.astro.build/';
 
 // https://astro.build/config
 export default defineConfig({

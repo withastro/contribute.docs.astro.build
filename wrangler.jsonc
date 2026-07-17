@@ -1,0 +1,18 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "contribute-docs",
+	"compatibility_date": "2026-07-17",
+	// Pure static site: no Worker script needed. Requests are served directly
+	// from `dist/`, including the `_redirects` file Astro copies from `public/`.
+	"assets": {
+		"directory": "./dist",
+		// Starlight generates a styled `404.html`, so use it for unmatched routes
+		// instead of the default blank 404 response.
+		"not_found_handling": "404-page"
+	},
+	"preview_urls": true,
+	"workers_dev": false,
+	"observability": {
+		"enabled": true
+	}
+}
