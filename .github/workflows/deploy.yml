@@ -16,7 +16,7 @@ jobs:
       artifact-paths: |
         dist/
         wrangler.jsonc
-      install-command: pnpm install --frozen-lockfile
+      install-command: pnpm install
       build-command: pnpm run build
       node-version: "24.14.1"
       package-manager: pnpm
