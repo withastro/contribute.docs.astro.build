@@ -13,8 +13,5 @@ jobs:
     uses: withastro/automation/.github/workflows/cloudflare-deploy-preview.yml@fc0f1c3adade217eeaa4257defedb23bc5f4dd87 # v1.1.1
     with:
       worker-name: contribute-docs
-      # No wrangler-version: this job only downloads the built dist/
-      # artifact, not node_modules, so wrangler-action installs its own
-      # default (the latest wrangler 4.x release) to run the deploy.
     secrets:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
