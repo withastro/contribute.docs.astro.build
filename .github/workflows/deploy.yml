@@ -20,8 +20,5 @@ jobs:
       build-command: pnpm run build
       node-version: "24.14.1"
       package-manager: pnpm
-      # No wrangler-version: wrangler-action uses whatever `wrangler` is
-      # already installed in node_modules (from `pnpm install` above), which
-      # is the version pinned in this repo's package.json devDependencies.
     secrets:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
