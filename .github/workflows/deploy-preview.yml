@@ -1,0 +1,17 @@
+name: Deploy Preview
+
+on:
+  workflow_run:
+    workflows: ["Deploy"]
+    types: [completed]
+
+jobs:
+  deploy-preview:
+    if: github.repository_owner == 'withastro'
+    permissions:
+      pull-requests: write
+    uses: withastro/automation/.github/workflows/cloudflare-deploy-preview.yml@fc0f1c3adade217eeaa4257defedb23bc5f4dd87 # v1.1.1
+    with:
+      worker-name: contribute-docs
+    secrets:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
