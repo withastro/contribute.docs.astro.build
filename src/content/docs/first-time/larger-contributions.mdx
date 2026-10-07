@@ -2,32 +2,25 @@
 title: Larger contributions with a fork
 description: How to make larger contributions to Astro Docs with a fork of the project.
 ---
-import { Steps, Tabs, TabItem } from '@astrojs/starlight/components';
+import { Steps } from '@astrojs/starlight/components';
 
 [Editing a single page on GitHub.com](/first-time/edit-single-page/) is convenient for small text changes, but does not allow you to see a live preview of the site while you are working. It also does not let you easily edit multiple files at once, such as a guide and a reference page or a sidebar entry.
 
 ## Contribute PRs using an online code editor 
 
-(e.g. StackBlitz, CodeSpaces, CodeSandbox, IDX)
+(e.g. StackBlitz, CodeSpaces, CodeSandbox)
 
 You can also have a full coding experience editing your own personal copy of the docs repository (a "fork") in an online IDE (integrated development environment). This will give you a code editor in the browser and a live preview of your site while you work without needing to set up any local development environment.
 
 Each online IDE has its own shortcut URL for opening an existing repository, and will allow you to create pull requests after you have made changes. Many also have browser extensions you can install that will add a "open with" button to the page whenever you are visiting a repository in your browser.
 
-<Tabs>
-  <TabItem label="StackBlitz">
-  ```
-  https://stackblitz.com/~/github.com/withastro/docs
-  ```
-  </TabItem>
-  <TabItem label="IDX">
-  ```
-  https://idx.google.com/import?url=https://github.com/withastro/docs
-  ```
-  </TabItem>
-</Tabs>
+The following example opens the Astro Docs repository in StackBlitz:
 
-See specific instructions for opening an existing repository in [IDX](https://developers.google.com/idx/guides/open-in-idx) and [StackBlitz](https://developer.stackblitz.com/docs/platform/importing-projects/#import-from-github) on their respective websites.
+```
+https://stackblitz.com/~/github.com/withastro/docs
+```
+
+See specific instructions for opening an existing repository in [StackBlitz](https://developer.stackblitz.com/docs/platform/importing-projects/#import-from-github) on their respective websites.
 
 Note that CodeSandbox and StackBlitz provide Astro syntax highlighting in their custom code editors but do not support the full [Astro VSCode extension](https://docs.astro.build/en/editor-setup/#vs-code).
 
