@@ -20,9 +20,9 @@ Some automated checks will need to run to verify your code (check for broken lin
     - [ ] Does your link use the translated heading if you are linking to a translated page? (e.g. Because `/de/guides/endpoints.mdx` is translated into German, you must link to the translated headings, such as `/de/guides/endpoints/#http-methoden` instead of `#http-methods` from the English page.)
 
 
-- If a **Netlify check fails**, then it is usually a syntax error that is preventing the site from being built. (Or, it's a fluke! 😅) Here are some things you can check:
+- If a **Deploy check fails**, then it is usually a syntax error that is preventing the site from being built. (Or, it's a fluke! 😅) Here are some things you can check:
 
-      - [ ] Does every component you are documenting (e.g. `<ViewTransitions />`) have code backticks around the component? Components must be written as inline code or else Astro will treat it as an actual component.
+      - [ ] Does every component you are documenting (e.g. `<Picture />`) have code backticks around the component? Components must be written as inline code or else Astro will treat it as an actual component.
       - [ ] Do all [custom components](/reference/custom-components/), including [code samples](/reference/code-samples/), have proper syntax, both opening and closing? 
       - [ ] Have you imported any components at the top of the file that you are using in the content? (e.g. `<Since />` or `<PackageManagerTab>`)
 

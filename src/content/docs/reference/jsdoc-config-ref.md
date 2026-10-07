@@ -3,7 +3,7 @@ title: JSDoc Config Reference entries
 description: How to format API reference entries.
 ---
 
-The source documentation for the [configuration reference page](https://docs.astro.build/en/reference/configuration-reference/) is located in the main `withastro/astro` repository at: https://github.com/withastro/astro/blob/next/packages/astro/src/types/public/config.ts
+The source documentation for the [configuration reference page](https://docs.astro.build/en/reference/configuration-reference/) is located in the main `withastro/astro` repository at: https://github.com/withastro/astro/blob/main/packages/astro/src/types/public/config.ts
 
 Each entry is written in [JSDoc](https://jsdoc.app/), an API documentation generator for JavaScript. It is then converted to MDX for the docs repo, with entries displayed in the same order the entries are written in the source file.
 

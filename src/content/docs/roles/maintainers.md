@@ -58,7 +58,7 @@ When you see PRs that have not yet been labelled, you can help by adding one or 
 
 - `site improvement` is a broad category, but is used to label site issues and maintenance tasks as opposed to content and writing tasks. This distinction is helpful to allow community members and maintainers to easily filter tasks to either focus on or ignore content writing Issues and PRs. This allows community members (and maintainers!) to more easily contribute according to their own skills and interests.
 
-- `merge on release` is used for PRs with accompanying Astro feature PRs that should **not** be merged until the feature has been released (even if the PR also has the `Merge Queue` label). These PRs should link to an implementation PR from another repo in their description (e.g. `withastro/astro/`, `withastro/adapters`). Hovering on this link should visually indicate whether that PR has been merged. Checking the #announcements channel in Discord, or the respository's changelog to know whether that merged feature has actually been released.
+- `merge on release` is used for PRs with accompanying Astro feature PRs that should **not** be merged until the feature has been released (even if the PR also has the `Merge Queue` label). These PRs should link to an implementation PR from another repo in their description (e.g. `withastro/astro`, `withastro/compiler-rs`). Hovering on this link should visually indicate whether that PR has been merged. Checking the #announcements channel in Discord, or the respository's changelog to know whether that merged feature has actually been released.
 
 - `Merge Queue` is used when a PR has been approved and is ready to be merged by any maintainer who is "merging" at any appropriate time. **Note: `merge on release` PRs must still always wait for the feature to be released.** If you see both `Merge Queue` and `merge on release`, that means the PR is approved and ready to be merged as soon as the feature is released. 
 
@@ -112,7 +112,7 @@ Every Astro maintainer has the authority to merge PRs in the docs repo. We do ha
 
     Even the smallest change to text can have a big change in meaning, or can have a ripple effect on other sections of the docs! It's important that one of our regular Docs maintainers be aware of these changes.
 
-3. Check the changes in the Netlify deploy preview. This is the easiest way to catch small formatting mistakes that are often overlooked when just viewing the files changed.
+3. Check the changes in the Cloudflare deploy preview. This is the easiest way to catch small formatting mistakes that are often overlooked when just viewing the files changed.
 
 4. When you are satisfied that a PR can be merged into docs, add the label `Merge Queue`.
 
@@ -120,7 +120,7 @@ Every Astro maintainer has the authority to merge PRs in the docs repo. We do ha
 
 5. Always `update branch` before merging a PR and wait for all checks to pass. 
 
-    The Netlify deploy build will probably take the longest, and if you are confident that this PR will not cause a build failure and the previous deploy preview looked fine, you do not have to wait for the new deploy build to finish before merging.
+    The Cloudflare deploy build will probably take the longest, and if you are confident that this PR will not cause a build failure and the previous deploy preview looked fine, you do not have to wait for the new deploy build to finish before merging.
 
 6. If there have been participants active in the comments who have not made their own commit and you would like them to receive credit for helping, visit [Kevin's Co-author Message Generator](https://coauthor.kevinzc.com/) and paste in the GitHub link to the PR. Or, use the GitHub action and leave a comment directly in the PR with only the message `!coauthor` and "Kevin" (the GitHub-actions bot) will respond with another comment. This will provide a message you can copy directly into (overwrite) the squash and merge commit and will give co-author credit to every account involved with this PR.
 
@@ -155,7 +155,7 @@ If your PR includes content for the Docs site to be translated and reflected in 
 
 If your PR includes content changes that should *not* be reflected in other languages (e.g. an English typo fix), please add the phrase `[i18nIgnore]` to the title, and our system will *not* flag this page as needing a translation update. (This can alternatively be added in the "Squash and Merge" text field.)
 
-Use the `/ptal` command in the `#docs-ptal` channel to ask for a review.
+Use the `/ptal` command in the `#ptal` channel to ask for a review.
 
 Maintainers who submit PRs that can be merged live into docs immediately are expected to **merge their own PRs**, but only **after receiving an LGTM**. Typically, this will be an approval from another maintainer, often the Docs Lead or Docs Infrastructure Lead. But, in the case of minor PRs (e.g. typo fixes, broken links, etc.), any second LGTM is acceptable.
 

@@ -62,7 +62,7 @@ Docs maintainers can help identify a user's thinking based on **using the featur
 
 Team Docs reviews all text changes to the Astro documentation. Some exceptions include obvious typos and link fixes where no actual content changed. However, even a tiny change in wording of our documentation is reason to wait for a review from one of our Docs Maintainers.
 
-Use the `/ptal` command in Discord in the `#docs-ptal` channel if you have access (Astro maintainers) or the regular `#docs` channel otherwise. We encourage posting requests for reviews publicly so that any interested community member can comment and provide helpful feedback!
+Use the `/ptal` command in Discord in the `#ptal` channel or the regular `#docs` channel. We encourage posting requests for reviews publicly so that any interested community member can comment and provide helpful feedback!
 
 For PRs not in the docs repo that require approval from a docs maintainer before merging, you can also mention the role `@withastro/maintainers-docs` in your PR. This will notify all Astro maintainers with the docs role.
 
@@ -94,4 +94,3 @@ Unlike PRs to the astro repo, **PRs to the docs repo are published live immediat
 Minor releases happen every other Thursday for the astro core package itself and **the Docs Lead prepares and merges these docs** on that regular schedule. Even as a maintainer, you will not merge these PRs yourself.
 
 Other packages, such as integrations, only release when necessary. These `merge on release` docs are released alongside the package as appropriate and may be merged by any maintainer after they are approved and the feature has been released.
-
