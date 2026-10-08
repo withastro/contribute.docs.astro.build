@@ -50,7 +50,7 @@ AI assistance tools, such as GitHub Copilot or Cursor, may be used to help you d
 
 Here are some of the main ways you can contribute to it:
 
-- Reading the current or [5.0 beta docs](https://5-0-0-beta.docs.astro.build/) and fixing any typos, grammar issues, or missing information.
+- Reading the current docs and fixing any typos, grammar issues, or missing information.
 - Helping [translate the documentation](http://contribute.docs.astro.build/guides/i18n/) in your language.
 - Tackling open [ "good first issues"](https://github.com/withastro/docs/issues?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) (or if you're more familiar with Astro, ["help wanted"](https://github.com/withastro/docs/issues?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) issues) in the repository.
 
@@ -60,7 +60,7 @@ Here are some of the main ways you can contribute to it:
 
 ### Starlight
 
-[`withastro/starlight`](https://github.com/withastro/docs) is a full-featured documentation theme built on top of the Astro framework.
+[`withastro/starlight`](https://github.com/withastro/starlight) is a full-featured documentation theme built on top of the Astro framework.
 
 You can contribute to the Starlight theme by improving the [documentation](https://starlight.astro.build/) by fixing typos, grammar issues, missing information or by helping [translate](https://github.com/withastro/starlight/blob/main/CONTRIBUTING.md#translations) Starlight’s UI or documentation in your language.
 
