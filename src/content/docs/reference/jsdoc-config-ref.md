@@ -3,7 +3,7 @@ title: JSDoc Config Reference entries
 description: How to format API reference entries.
 ---
 
-The source documentation for the [configuration reference page](https://docs.astro.build/en/reference/configuration-reference/) is located in the main `withastro/astro` repository at: https://github.com/withastro/astro/blob/main/packages/astro/src/types/public/config.ts
+The source documentation for the [configuration reference page](https://docs.astro.build/en/reference/configuration-reference/) and the [legacy flags page](https://docs.astro.build/en/reference/legacy-flags/) is located in the main `withastro/astro` repository at: https://github.com/withastro/astro/blob/main/packages/astro/src/types/public/config.ts
 
 Each entry is written in [JSDoc](https://jsdoc.app/), an API documentation generator for JavaScript. It is then converted to MDX for the docs repo, with entries displayed in the same order the entries are written in the source file.
 
@@ -11,17 +11,17 @@ Each entry is written in [JSDoc](https://jsdoc.app/), an API documentation gener
 
 The `config.ts` file is long, and can be difficult to navigate when you are used to Markdown files!
 
-Instead of Markdown heading indicators (e.g. `##`), this file relies on the `@kind` tag of each item to describe the heading level that will be created on the configuration reference page:
+Instead of Markdown heading indicators (e.g. `##`), this file relies on the `@kind` tag of each item to describe the heading level that will be created on the generated page:
 
 - `@kind: heading` creates `<h2>` headings for the page.
 
 	(e.g. Markdown Options)
 
-- when the tag is not used, defaults to an `<h3>` main entry for the page.
+- when the tag is not used, defaults to an `<h3>` main entry on the configuration reference page, or an `<h2>` on the [legacy flags page](#legacy-flags).
 
-	(e.g. `markdown.syntaxHighlight`)
+	(e.g. `markdown.syntaxHighlight`, `legacy.collectionsBackwardsCompat`)
 
-- `@kind: h4` is used when you have subproperties to define.
+- `@kind: h4` (or `@kind: h3` on the legacy flags page) is used when you have subproperties to define.
 
 	(e.g. `markdown.syntaxHighlight.excludeLangs`)
 
@@ -30,7 +30,7 @@ To add a new entry, you will need to:
 - Find or create the heading for your entry (e.g. Top Level Options, Markdown Options, Build Options).
 - Add a JSDoc entry in the same location as you want it to appear on the docs page, at the appropriate heading level.
 
-The following sections on this page describe the [basic JSDoc syntax](#jsdoc-syntax), the [common JSDoc tags](#common-jsdoc-tags) we use, and the various heading level entries you may need to create: [categories](#categories-h2), [main entries](#main-entries-h3), and [subproperties](#subproperties-h4). Some [tips for writing your entry](#description-writing-tips) are also included!
+The following sections on this page describe the [basic JSDoc syntax](#jsdoc-syntax), the [common JSDoc tags](#common-jsdoc-tags) we use, and the various heading level entries you may need to create: [categories](#categories-h2), [main entries](#main-entries-h3), and [subproperties](#subproperties-h4). Entries for [legacy flags](#legacy-flags) have additional rules. Some [tips for writing your entry](#description-writing-tips) are also included!
 
 ## Example entry
 
@@ -73,9 +73,11 @@ Astro uses the following JSDoc tags to produce entries on the configuration refe
 
 - `@name`: the heading text to display (i.e. the category name or the entry name)
 
-- `@kind`: specifies the heading level of the entry; defaults to `h3`
+- `@kind`: specifies the heading level of the entry (see [File Structure](#file-structure) for the default levels)
 
 - `@type`: the type of the entry (e.g. `{string}`, `{('static' | 'server')}`)
+
+- `@typeraw`: the type of the entry, displayed exactly as written. Use it instead of `@type` when JSDoc would rewrite the type. For example, JSDoc displays every object type (e.g. `{{route: string}}`) as `Object`.
 
 - `@default`: the default value or option
 
@@ -168,6 +170,55 @@ trailingSlash?: 'always' | 'never' | 'ignore';
 
 For subproperties, for example to document a main entry's options, you must use `@kind` to specify their heading level (usually `<h4>`). Otherwise, the entry is written the same as a main entry.
 
+## Legacy flags
+
+Entries written for the [Legacy flags page](https://docs.astro.build/en/reference/legacy-flags/) are nested under the `legacy` object. This object must include `@name legacy` and a `@description` to serve as the page introduction.
+
+When you add new legacy flags, prepend `legacy.` to their `@name` to indicate that they belong to that page. The heading will be displayed without the prefix (e.g. `legacy.collectionsBackwardsCompat` becomes `collectionsBackwardsCompat`).
+
+```ts
+export interface AstroUserConfig {
+  /**
+   * @docs
+   * @kind heading
+   * @name legacy
+   * @description
+   * To help some users migrate between versions of Astro, we occasionally introduce `legacy` flags.
+   * // ... //
+   */
+  legacy?: {
+    /**
+     * @docs
+     * @name legacy.collectionsBackwardsCompat
+     * @type {boolean}
+     * @default `false`
+     * @version 6.0.0
+     * @description
+     * Provides temporary backwards compatibility for projects unable to migrate to the Content Layer API introduced in v5.0.
+     * // ... //
+     */
+    collectionsBackwardsCompat?: boolean;
+  };
+}
+```
+
+When no legacy flags are available, replace the `legacy` object type and update its `@description`. This allows us to display on the page that there are currently no legacy flags, rather than including an empty list.
+
+```ts {10,12}
+export interface AstroUserConfig {
+  /**
+   * @docs
+   * @kind heading
+   * @name legacy
+   * @description
+   * To help some users migrate between versions of Astro, we occasionally introduce `legacy` flags.
+   * // ... //
+   *
+   * Currently, no legacy flags are available.
+   */
+  legacy?: Record<string, never>;
+}
+```
 
 ## Things to check
 
