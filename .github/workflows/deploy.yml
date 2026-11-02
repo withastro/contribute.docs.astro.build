@@ -18,7 +18,7 @@ jobs:
         wrangler.jsonc
       install-command: pnpm install
       build-command: pnpm run build
-      node-version: "24.14.1"
+      node-version: "24.22.1"
       package-manager: pnpm
     secrets:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
