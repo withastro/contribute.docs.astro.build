@@ -58,9 +58,13 @@ When you see PRs that have not yet been labelled, you can help by adding one or 
 
 - `site improvement` is a broad category, but is used to label site issues and maintenance tasks as opposed to content and writing tasks. This distinction is helpful to allow community members and maintainers to easily filter tasks to either focus on or ignore content writing Issues and PRs. This allows community members (and maintainers!) to more easily contribute according to their own skills and interests.
 
-- `merge on release` is used for PRs with accompanying Astro feature PRs that should **not** be merged until the feature has been released (even if the PR also has the `Merge Queue` label). These PRs should link to an implementation PR from another repo in their description (e.g. `withastro/astro`, `withastro/compiler-rs`). Hovering on this link should visually indicate whether that PR has been merged. Checking the #announcements channel in Discord, or the respository's changelog to know whether that merged feature has actually been released.
+- `patch-release`, `minor-release`, and `major-release` are used for PRs that should **not** be merged until the associated implementation has been released. These PRs should link to an implementation PR from another repo in their description (e.g. `withastro/astro`, `withastro/compiler-rs`). Hovering on this link should visually indicate whether that PR has been merged, and so whether `accepted` can be added. Choose the label from the next `astro` release, even for another package: `major-release` for PRs based on a version branch (e.g. `v7`), `patch-release` or `minor-release` otherwise.
 
-- `Merge Queue` is used when a PR has been approved and is ready to be merged by any maintainer who is "merging" at any appropriate time. **Note: `merge on release` PRs must still always wait for the feature to be released.** If you see both `Merge Queue` and `merge on release`, that means the PR is approved and ready to be merged as soon as the feature is released. 
+- `accepted` is used when a PR with a release label is approved and ready for its release. A GitHub action then merges it into the umbrella PR for that release, which is merged when the release is out.
+
+- `merge-on-release` is added by the release assistant to umbrella PRs, so they are easy to filter in the PRs list. This label can also be used, without a release label, for the PRs that wait for a release outside of `withastro/astro` (e.g. in `withastro/compiler-rs`). These PRs are merged by hand once that release is out. Check the `#announcements` channel in Discord, or the repository's changelog, to know whether that merged feature has actually been released.
+
+- `Merge Queue` is used when a PR has been approved and is ready to be merged by any maintainer who is "merging" at any appropriate time.
 
 ### Types of PRs
 
@@ -149,7 +153,7 @@ Welcome to Team Docs, [name]! {pun mentioning some word in the PR title} [emoji]
 
 This section is much shorter now that we are protecting the `main` branch of the Astro repos! 😅
 
-If your PR depends on a core PR being merged first, please **label your PR as `merge on release`** so that it does not get merged first. Please also link to the other PR so that we can easily check on its status when we are doing PR reviews.
+If your PR depends on a core PR being released first, please **label your PR with the release it ships in (`patch-release`, `minor-release`, or `major-release`)** so that it does not get merged first. Please also link to the other PR so that we can easily check on its status when we are doing PR reviews.
 
 If your PR includes content for the Docs site to be translated and reflected in all languages, please **only submit your content in English**. This includes any related updates to the navigation sidebar etc. We have a robust system in place for updating the status of affected pages and all related site infrastructure in our other languages, and often our translators are in the best position to notice the "ripple effects" of your changes in their specific pages.
 
