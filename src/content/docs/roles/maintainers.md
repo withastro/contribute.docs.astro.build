@@ -153,7 +153,7 @@ Welcome to Team Docs, [name]! {pun mentioning some word in the PR title} [emoji]
 
 This section is much shorter now that we are protecting the `main` branch of the Astro repos! 😅
 
-If your PR depends on a core PR being released first, please **label your PR with the release it ships in (`patch-release`, `minor-release`, or `major-release`)** so that it does not get merged first. Please also link to the other PR so that we can easily check on its status when we are doing PR reviews.
+If your PR depends on a core PR being released first, please **label your PR with the type of release it ships in (`patch-release`, `minor-release`, or `major-release`)** so that it does not get merged first. Please also link to the other PR so that we can easily check on its status when we are doing PR reviews.
 
 If your PR includes content for the Docs site to be translated and reflected in all languages, please **only submit your content in English**. This includes any related updates to the navigation sidebar etc. We have a robust system in place for updating the status of affected pages and all related site infrastructure in our other languages, and often our translators are in the best position to notice the "ripple effects" of your changes in their specific pages.
 

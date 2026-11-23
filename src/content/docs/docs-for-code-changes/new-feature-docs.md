@@ -89,6 +89,6 @@ Astro maintainers are welcome to merge their own PRs in either repo (astro or do
 There is a nightly GitHub action to create a PR to the docs repo with any documentation changes from the core repo. These docs changes will therefore typically be published on the docs site the next day after merging. This action can also be run manually to expedite the process, as is regularly done for major and minor releases.
 
 ### Docs for upcoming features
-Unlike PRs to the astro repo, **PRs to the docs repo are published live immediately upon merging**. Therefore, the docs repo labels upcoming feature docs with the release they ship in (**`patch-release`**, **`minor-release`**, or **`major-release`**) and waits for a feature to be released before merging approved PRs.
+Unlike PRs to the astro repo, **PRs to the docs repo are published live immediately upon merging**. Therefore, the docs repo labels upcoming feature docs with the type of release they ship in (**`patch-release`**, **`minor-release`**, or **`major-release`**) and waits for a feature to be released before merging approved PRs.
 
 Minor releases happen every other Thursday for the astro core package itself and **the Docs Lead prepares and merges these docs** on that regular schedule. Even as a maintainer, you will not merge these PRs yourself.
